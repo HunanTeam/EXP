@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NewLife.Bootstrap</name>
+    </assembly>
+    <members>
+        <member name="T:NewLife.Bootstrap.BootstrapJs">
+            <summary>Bootstrap脚本提供者</summary>
+        </member>
+        <member name="M:NewLife.Bootstrap.BootstrapJs.OnAlert(System.String)">
+            <summary>重载Alert实现</summary>
+            <param name="msg"></param>
+        </member>
+    </members>
+</doc>
