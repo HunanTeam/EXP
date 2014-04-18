@@ -9,8 +9,7 @@ namespace Exp.Study.NewLifeDo
     {
         static void Main(string[] args)
         {
-            
-           
+          
         }
     }
 }
