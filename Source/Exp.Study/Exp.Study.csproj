@@ -31,7 +31,16 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Exp.Study.NewLifeDo.Demo</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="NewLife.CommonEntity">
+      <HintPath>..\lib\NewLife\NewLife.CommonEntity.dll</HintPath>
+    </Reference>
+    <Reference Include="NewLife.Core">
+      <HintPath>..\lib\NewLife\NewLife.Core.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -39,8 +48,18 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="XCode">
+      <HintPath>..\lib\NewLife\XCode.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NewLifeDo\Demo.cs" />
+    <Compile Include="NewLifeDo\Entity\Address.Biz.cs" />
+    <Compile Include="NewLifeDo\Entity\Address.cs" />
+    <Compile Include="NewLifeDo\Entity\LoginInfo.Biz.cs" />
+    <Compile Include="NewLifeDo\Entity\LoginInfo.cs" />
+    <Compile Include="NewLifeDo\Entity\User.Biz.cs" />
+    <Compile Include="NewLifeDo\Entity\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
