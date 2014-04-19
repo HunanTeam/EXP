@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exp.Web", "Exp.Web\Exp.Web.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exp.Framework", "Exp.Framework\Exp.Framework.csproj", "{0E38CB80-1471-49FD-BB2A-998A09413E0E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exp.Services", "Exp.Services\Exp.Services.csproj", "{79841AB6-72C2-4DB8-BF45-53C0BA333540}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exp.Admin", "Exp.Web\Admin\Exp.Admin.csproj", "{D82B6C80-EA4C-42A9-B68A-A132A9B9BD1C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{0E38CB80-1471-49FD-BB2A-998A09413E0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0E38CB80-1471-49FD-BB2A-998A09413E0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0E38CB80-1471-49FD-BB2A-998A09413E0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79841AB6-72C2-4DB8-BF45-53C0BA333540}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79841AB6-72C2-4DB8-BF45-53C0BA333540}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79841AB6-72C2-4DB8-BF45-53C0BA333540}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79841AB6-72C2-4DB8-BF45-53C0BA333540}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D82B6C80-EA4C-42A9-B68A-A132A9B9BD1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D82B6C80-EA4C-42A9-B68A-A132A9B9BD1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D82B6C80-EA4C-42A9-B68A-A132A9B9BD1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D82B6C80-EA4C-42A9-B68A-A132A9B9BD1C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
