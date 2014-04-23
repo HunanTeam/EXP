@@ -9,7 +9,7 @@ using System.Web.Mvc;
 using System.Web.Routing;
 
 
-namespace Exp.Framework.Themes
+namespace Exp.Web.Framework.Themes
 {
     public abstract class ThemeableVirtualPathProviderViewEngine : VirtualPathProviderViewEngine
     {
@@ -42,10 +42,10 @@ namespace Exp.Framework.Themes
             }
             string areaName = GetAreaName(controllerContext.RouteData);
 
-            //little hack to get nop's admin area to be in /Administration/ instead of /Nop/Admin/ or Areas/Admin/
+    
             if (!string.IsNullOrEmpty(areaName) && areaName.Equals("admin", StringComparison.InvariantCultureIgnoreCase))
             {
-                //admin area does not support mobile devices
+               
                 if (mobile)
                 {
                     searchedLocations = new string[0];

@@ -4,7 +4,7 @@ using Exp.Core;
 using Exp.Core.Fakes;
 using Exp.Core.Infrastructure.DependencyManagement;
 using Exp.Core.Plugins;
-using Exp.Framework.Themes;
+using Exp.Web.Framework.Themes;
 using Exp.Services.Common;
 using Exp.Services.Common.Impl;
 using System;
@@ -13,7 +13,7 @@ using System.Linq;
 using System.Text;
 using System.Web;
 
-namespace Exp.Framework
+namespace Exp.Web.Framework
 {
   public  class DependencyRegistrar : IDependencyRegistrar
     {

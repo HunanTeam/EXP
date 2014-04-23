@@ -7,7 +7,7 @@ using System.Linq;
 using System.Xml;
 
 
-namespace Exp.Framework.Themes
+namespace Exp.Web.Framework.Themes
 {
     public partial class ThemeProvider : IThemeProvider
     {

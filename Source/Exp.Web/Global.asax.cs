@@ -1,5 +1,5 @@
 ﻿using Exp.Core.Infrastructure;
-using Exp.Framework.Themes;
+using Exp.Web.Framework.Themes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,20 +18,26 @@ namespace Exp.Web
         protected void Application_Start()
         {
 
-            
+           
             EngineContext.Initialize(false);
-            AreaRegistration.RegisterAllAreas();
-
 
             ViewEngines.Engines.Clear();
             ViewEngines.Engines.Add(new ThemeableRazorViewEngine());
-         
+
+            AreaRegistration.RegisterAllAreas();
 
             WebApiConfig.Register(GlobalConfiguration.Configuration);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
+
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+        
+
+
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-           
+
+
+            
+
         }
     }
 }

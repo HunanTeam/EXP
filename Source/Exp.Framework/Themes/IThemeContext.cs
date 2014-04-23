@@ -1,4 +1,4 @@
-﻿namespace Exp.Framework.Themes
+﻿namespace Exp.Web.Framework.Themes
 {
     /// <summary>
     /// Work context

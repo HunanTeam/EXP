@@ -2,7 +2,7 @@
 using System.Linq;
 using Exp.Core;
 
-namespace Exp.Framework.Themes
+namespace Exp.Web.Framework.Themes
 {
     /// <summary>
     /// Theme context

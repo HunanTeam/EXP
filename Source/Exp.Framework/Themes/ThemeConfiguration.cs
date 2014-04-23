@@ -1,6 +1,6 @@
 ﻿using System.Xml;
 
-namespace Exp.Framework.Themes
+namespace Exp.Web.Framework.Themes
 {
     public class ThemeConfiguration
     {

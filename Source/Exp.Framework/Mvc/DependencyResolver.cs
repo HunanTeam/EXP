@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Web.Mvc;
 
-namespace Exp.Framework.Mvc
+namespace Exp.Web.Framework.Mvc
 {
     class DependencyResolver : IDependencyResolver
     {

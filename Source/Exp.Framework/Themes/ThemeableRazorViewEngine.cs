@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Web.Mvc;
 
-namespace Exp.Framework.Themes
+namespace Exp.Web.Framework.Themes
 {
     public class ThemeableRazorViewEngine : ThemeableBuildManagerViewEngine
     {

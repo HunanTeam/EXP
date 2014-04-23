@@ -7,8 +7,8 @@
     <ProjectGuid>{0E38CB80-1471-49FD-BB2A-998A09413E0E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Exp.Framework</RootNamespace>
-    <AssemblyName>Exp.Framework</AssemblyName>
+    <RootNamespace>Exp.Web.Framework</RootNamespace>
+    <AssemblyName>Exp.Web.Framework</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>

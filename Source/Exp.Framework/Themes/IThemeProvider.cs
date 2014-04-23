@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Exp.Framework.Themes
+namespace Exp.Web.Framework.Themes
 {
     public partial interface IThemeProvider
     {

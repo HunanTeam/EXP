@@ -1,7 +1,7 @@
 ﻿using System.Web.Compilation;
 using System.Web.Mvc;
 
-namespace Exp.Framework.Themes
+namespace Exp.Web.Framework.Themes
 {
     public abstract class ThemeableBuildManagerViewEngine : ThemeableVirtualPathProviderViewEngine
     {

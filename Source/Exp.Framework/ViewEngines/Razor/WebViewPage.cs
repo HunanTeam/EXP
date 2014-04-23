@@ -1,6 +1,6 @@
 ﻿using Exp.Core;
 using Exp.Core.Infrastructure;
-using Exp.Framework.Themes;
+using Exp.Web.Framework.Themes;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -9,7 +9,7 @@ using System.Text;
 using System.Web.Mvc;
 using System.Web.WebPages;
 
-namespace Exp.Framework.ViewEngines.Razor
+namespace Exp.Web.Framework.ViewEngines.Razor
 {
     public abstract class WebViewPage<TModel> : System.Web.Mvc.WebViewPage<TModel>
     {
