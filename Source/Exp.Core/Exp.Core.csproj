@@ -95,6 +95,9 @@
     <Compile Include="AppVersion.cs" />
     <Compile Include="BusinessException.cs" />
     <Compile Include="ComponentException.cs" />
+    <Compile Include="Data\DataSettings.cs" />
+    <Compile Include="Data\DataSettingsHelper.cs" />
+    <Compile Include="Data\DataSettingsManager.cs" />
     <Compile Include="PublicHelper.cs" />
     <Compile Include="Extensions\CollectionExtensions.cs" />
     <Compile Include="CommonHelper.cs" />

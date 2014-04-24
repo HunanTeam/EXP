@@ -7,20 +7,16 @@ namespace Exp.Core
 {
     public class ComponentException : AppException
     {
-        private string p;
-        private Exception e;
-
-        public ComponentException(string p, Exception e)
+        public ComponentException(string msg)
+            : base(msg)
         {
-            // TODO: Complete member initialization
-            this.p = p;
-            this.e = e;
+
         }
 
-        public ComponentException(string p)
+        public ComponentException(string msg, Exception e)
+            : base(msg, e)
         {
-            // TODO: Complete member initialization
-            this.p = p;
+
         }
     }
 }
