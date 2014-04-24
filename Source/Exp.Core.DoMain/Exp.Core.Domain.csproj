@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{79841AB6-72C2-4DB8-BF45-53C0BA333540}</ProjectGuid>
+    <ProjectGuid>{C67235A4-0FC3-4983-B821-92F7A6910E17}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Exp.Services</RootNamespace>
-    <AssemblyName>Exp.Services</AssemblyName>
+    <RootNamespace>Exp.Core.Domain</RootNamespace>
+    <AssemblyName>Exp.Core.Domain</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -32,7 +32,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -40,19 +39,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Common\IMobileDeviceHelper.cs" />
-    <Compile Include="Common\Impl\MobileDeviceHelper.cs" />
+    <Compile Include="Base\EntityBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Exp.Core.DoMain\Exp.Core.Domain.csproj">
-      <Project>{c67235a4-0fc3-4983-b821-92f7a6910e17}</Project>
-      <Name>Exp.Core.Domain</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Exp.Core\Exp.Core.csproj">
-      <Project>{63298208-6f7e-4ffc-826e-239081de94ec}</Project>
-      <Name>Exp.Core</Name>
-    </ProjectReference>
+    <Compile Include="Users\User.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

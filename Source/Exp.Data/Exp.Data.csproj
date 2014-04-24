@@ -41,6 +41,10 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.SqlServer.Compact.4.0.8876.1\lib\net40\System.Data.SqlServerCe.dll</HintPath>
+    </Reference>
     <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -80,9 +84,15 @@
     <Compile Include="EFUnitOfWorkContext.cs" />
     <Compile Include="Extensions\DbContextExtensions.cs" />
     <Compile Include="IEntityMapper.cs" />
+    <Compile Include="Initializers\CreateCeDatabaseIfNotExists.cs" />
+    <Compile Include="Initializers\CreateTablesIfNotExist.cs" />
+    <Compile Include="Initializers\DropCreateCeDatabaseAlways.cs" />
+    <Compile Include="Initializers\DropCreateCeDatabaseIfModelChanges.cs" />
+    <Compile Include="Initializers\SqlCeInitializer.cs" />
     <Compile Include="IRepository.cs" />
     <Compile Include="IUnitOfWork.cs" />
     <Compile Include="IUnitOfWorkContext.cs" />
+    <Compile Include="Mapping\Users\UserMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProviderWrapperToolkit\DbCommandDefinitionWrapper.cs" />
     <Compile Include="ProviderWrapperToolkit\DbCommandWrapper.cs">
@@ -114,11 +124,16 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Exp.Core.DoMain\Exp.Core.Domain.csproj">
+      <Project>{c67235a4-0fc3-4983-b821-92f7a6910e17}</Project>
+      <Name>Exp.Core.Domain</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Exp.Core\Exp.Core.csproj">
       <Project>{63298208-6f7e-4ffc-826e-239081de94ec}</Project>
       <Name>Exp.Core</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

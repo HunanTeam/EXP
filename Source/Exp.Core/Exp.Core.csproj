@@ -102,7 +102,6 @@
     <Compile Include="ComponentModel\WriteLockDisposable.cs" />
     <Compile Include="Configuration\AppConfig.cs" />
     <Compile Include="Data\DataAccessException.cs" />
-    <Compile Include="Data\EntityBase.cs" />
     <Compile Include="Extensions\EnumExtensions.cs" />
     <Compile Include="Fakes\Extensions.cs" />
     <Compile Include="Fakes\FakeHttpContext.cs" />
@@ -146,6 +145,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Cache\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Exp.Core.DoMain\Exp.Core.Domain.csproj">
+      <Project>{c67235a4-0fc3-4983-b821-92f7a6910e17}</Project>
+      <Name>Exp.Core.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\AutoMapper.3.2.0\tools\AutoMapper.targets" Condition="Exists('..\packages\AutoMapper.3.2.0\tools\AutoMapper.targets')" />

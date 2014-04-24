@@ -106,6 +106,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Exp.Core.DoMain\Exp.Core.Domain.csproj">
+      <Project>{c67235a4-0fc3-4983-b821-92f7a6910e17}</Project>
+      <Name>Exp.Core.Domain</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Exp.Core\Exp.Core.csproj">
       <Project>{63298208-6f7e-4ffc-826e-239081de94ec}</Project>
       <Name>Exp.Core</Name>
