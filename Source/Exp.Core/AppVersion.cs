@@ -11,7 +11,7 @@ namespace Exp.Core
         {
             get
             {
-                return "3.30";
+                return "1.00";
             }
         }
     }
