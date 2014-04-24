@@ -5,6 +5,7 @@ namespace Exp.Web.Framework.Themes
 {
     public class ThemeableRazorViewEngine : ThemeableBuildManagerViewEngine
     {
+
         public ThemeableRazorViewEngine()
         {
             AreaViewLocationFormats = new[]
@@ -69,10 +70,10 @@ namespace Exp.Web.Framework.Themes
 
 
                                             //Admin
-                                            "~/Admin/Views/{1}/{0}.cshtml",
-                                            "~/Admin/Views/{1}/{0}.vbhtml",
-                                            "~/Admin/Views/Shared/{0}.cshtml",
-                                            "~/Admin/Views/Shared/{0}.vbhtml",
+                                            "~/Administration/Views/{1}/{0}.cshtml",
+                                            "~/Administration/Views/{1}/{0}.vbhtml",
+                                            "~/Administration/Views/Shared/{0}.cshtml",
+                                            "~/Administration/Views/Shared/{0}.vbhtml",
                                       };
 
             MasterLocationFormats = new[]
@@ -105,10 +106,10 @@ namespace Exp.Web.Framework.Themes
                                                 "~/Views/Shared/{0}.vbhtml",
 
                                                 //Admin
-                                                "~/Admin/Views/{1}/{0}.cshtml",
-                                                "~/Admin/Views/{1}/{0}.vbhtml",
-                                                "~/Admin/Views/Shared/{0}.cshtml",
-                                                "~/Admin/Views/Shared/{0}.vbhtml",
+                                                "~/Administration/Views/{1}/{0}.cshtml",
+                                                "~/Administration/Views/{1}/{0}.vbhtml",
+                                                "~/Administration/Views/Shared/{0}.cshtml",
+                                                "~/Administration/Views/Shared/{0}.vbhtml",
                                              };
 
             FileExtensions = new[] { "cshtml", "vbhtml" };

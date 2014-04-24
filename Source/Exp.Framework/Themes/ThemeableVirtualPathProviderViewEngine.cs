@@ -52,10 +52,10 @@ namespace Exp.Web.Framework.Themes
                     return string.Empty;
                 }
                 var newLocations = areaLocations.ToList();
-                newLocations.Insert(0, "~/Admin/Views/{1}/{0}.cshtml");
-                newLocations.Insert(0, "~/Admin/Views/{1}/{0}.vbhtml");
-                newLocations.Insert(0, "~/Admin/Views/Shared/{0}.cshtml");
-                newLocations.Insert(0, "~/Admin/Views/Shared/{0}.vbhtml");
+                newLocations.Insert(0, "~/Administration/Views/{1}/{0}.cshtml");
+                newLocations.Insert(0, "~/Administration/Views/{1}/{0}.vbhtml");
+                newLocations.Insert(0, "~/Administration/Views/Shared/{0}.cshtml");
+                newLocations.Insert(0, "~/Administration/Views/Shared/{0}.vbhtml");
                 areaLocations = newLocations.ToArray();
             }
 
