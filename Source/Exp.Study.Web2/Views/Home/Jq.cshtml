@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "Jq";
+}
+
+<a id="a_01" mydata="123" href="javascript:void(0)">百度</a>
+@section scripts {
+    <script type="text/javascript">
+        $(function () {
+
+            $("#a_01").click(function () {
+                alert(this.myData);
+            });
+        });
+
+    </script>
+}
