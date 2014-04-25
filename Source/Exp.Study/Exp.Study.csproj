@@ -35,6 +35,12 @@
     <StartupObject>Exp.Study.NewLifeDo.Demo</StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="NewLife.CommonEntity">
       <HintPath>..\lib\NewLife\NewLife.CommonEntity.dll</HintPath>
     </Reference>
@@ -42,6 +48,7 @@
       <HintPath>..\lib\NewLife\NewLife.Core.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -53,6 +60,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EF\BaseEntity.cs" />
+    <Compile Include="EF\Entities\Role.cs" />
+    <Compile Include="EF\Entities\User.cs" />
+    <Compile Include="EF\Entities\UserRole.cs" />
     <Compile Include="NewLifeDo\Customer.cs" />
     <Compile Include="NewLifeDo\Demo.cs" />
     <Compile Include="NewLifeDo\Entity\Address.Biz.cs" />
@@ -63,6 +74,11 @@
     <Compile Include="NewLifeDo\Entity\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
