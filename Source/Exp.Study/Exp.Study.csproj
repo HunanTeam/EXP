@@ -36,10 +36,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.6.1.0\lib\net40\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\packages\EntityFramework.6.1.0\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="NewLife.CommonEntity">
       <HintPath>..\lib\NewLife\NewLife.CommonEntity.dll</HintPath>
@@ -50,6 +47,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -61,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EF\BaseEntity.cs" />
+    <Compile Include="EF\Demo.cs" />
     <Compile Include="EF\Entities\Role.cs" />
     <Compile Include="EF\Entities\User.cs" />
     <Compile Include="EF\Entities\UserRole.cs" />
