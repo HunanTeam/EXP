@@ -3,7 +3,7 @@ using System.Data.Entity;
 using System.Data.SqlServerCe;
 using System.IO;
 
-namespace Nop.Data.Initializers
+namespace Exp.Data.Initializers
 {
     public abstract class SqlCeInitializer<T> : IDatabaseInitializer<T> where T : DbContext
     {

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Exp.Core.Domain.Users
 {
-    public class User : Base.EntityBase<int>
+    public class User : BaseEntity
     {
         public string Name { get; set; }
     }

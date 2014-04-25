@@ -4,7 +4,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using Exp.Core;
 using Exp.Core.Data;
-using Exp.Core.Domain.Base;
+ 
 
 namespace Exp.Data
 {

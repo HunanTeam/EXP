@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Data.Entity;
 using System.Transactions;
-using Nop.Data.Initializers;
+using Exp.Data.Initializers;
 
 namespace Exp.Data.Initializers
 {

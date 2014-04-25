@@ -7,8 +7,9 @@ using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
+using Exp.Core;
 using Exp.Core.Data;
-using Exp.Core.Domain.Base;
+
 using EntityState = System.Data.Entity.EntityState;
 
 namespace Exp.Data.Extensions

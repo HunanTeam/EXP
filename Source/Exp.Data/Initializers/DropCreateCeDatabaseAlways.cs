@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Data.Entity;
-using Nop.Data.Initializers;
+using Exp.Data.Initializers;
 
 namespace Exp.Data.Initializers
 {

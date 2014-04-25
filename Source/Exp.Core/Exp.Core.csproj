@@ -95,9 +95,16 @@
     <Compile Include="AppVersion.cs" />
     <Compile Include="BusinessException.cs" />
     <Compile Include="ComponentException.cs" />
+    <Compile Include="Data\BaseDataProviderManager.cs" />
     <Compile Include="Data\DataSettings.cs" />
     <Compile Include="Data\DataSettingsHelper.cs" />
     <Compile Include="Data\DataSettingsManager.cs" />
+    <Compile Include="Data\IDataProvider.cs" />
+    <Compile Include="Data\IRepository.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="EntityBase.cs" />
     <Compile Include="PublicHelper.cs" />
     <Compile Include="Extensions\CollectionExtensions.cs" />
     <Compile Include="CommonHelper.cs" />
@@ -148,12 +155,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Cache\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Exp.Core.DoMain\Exp.Core.Domain.csproj">
-      <Project>{c67235a4-0fc3-4983-b821-92f7a6910e17}</Project>
-      <Name>Exp.Core.Domain</Name>
-    </ProjectReference>
+    <Folder Include="Domain\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\AutoMapper.3.2.0\tools\AutoMapper.targets" Condition="Exists('..\packages\AutoMapper.3.2.0\tools\AutoMapper.targets')" />
