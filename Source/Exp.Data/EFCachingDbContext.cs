@@ -1,14 +1,4 @@
-﻿// 源文件头信息：
-// <copyright file="EFCachingDbContext.cs">
-// Copyright(c)2012-2013 GMFCN.All rights reserved.
-// CLR版本：4.0.30319.239
-// 开发组织：郭明锋@中国
-// 公司网站：http://www.gmfcn.net
-// 所属工程：GMF.Component.Data
-// 最后修改：郭明锋
-// 最后修改：2013/07/12 14:49
-// </copyright>
-
+﻿
 using System.Configuration;
 using System.Data.Common;
 using EFCachingProvider;

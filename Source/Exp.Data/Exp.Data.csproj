@@ -80,9 +80,9 @@
     <Compile Include="DataHelper.cs" />
     <Compile Include="EFCachingDbContext.cs" />
     <Compile Include="EFDbContext.cs" />
-    <Compile Include="EFRepositoryBase.cs" />
-    <Compile Include="EFRepositoryContext.cs" />
+    <Compile Include="EFRepository.cs" />
     <Compile Include="Extensions\DbContextExtensions.cs" />
+    <Compile Include="IEFRepositoryContext.cs" />
     <Compile Include="IEntityMapper.cs" />
     <Compile Include="Initializers\CreateCeDatabaseIfNotExists.cs" />
     <Compile Include="Initializers\CreateTablesIfNotExist.cs" />
@@ -110,7 +110,7 @@
     <Compile Include="ProviderWrapperToolkit\EFProviderWriterExtensionMethods.cs" />
     <Compile Include="ProviderWrapperToolkit\EntityConnectionWrapperUtils.cs" />
     <Compile Include="ProviderWrapperToolkit\GlobalSuppressions.cs" />
-    <Compile Include="RepositoryContextBase.cs" />
+    <Compile Include="EFRepositoryContext.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="CachingProvider\CustomDictionary.xml" />

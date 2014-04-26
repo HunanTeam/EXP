@@ -4,7 +4,8 @@ using System.Linq;
 using System.Linq.Expressions;
 using Exp.Core;
 using Exp.Core.Data;
- 
+using System.Data.Entity;
+
 
 namespace Exp.Data
 {
@@ -13,37 +14,51 @@ namespace Exp.Data
     /// </summary>
     /// <typeparam name="TEntity">动态实体类型</typeparam>
     /// <typeparam name="TKey">实体主键类型</typeparam>
-    public abstract class EFRepositoryBase<TEntity, TKey> : IRepository<TEntity, TKey> where TEntity : EntityBase<TKey>
+    public partial class EFRepository<TEntity, TKey> : IRepository<TEntity, TKey> where TEntity : EntityBase<TKey>
     {
+        private DbSet<TEntity> _entities = null;
+        private object _lockObj = new object();
+        public EFRepository(IEFRepositoryContext repositoryContext)
+        {
+            this.EFContext = repositoryContext;
+
+        }
         #region 属性
 
         /// <summary>
         ///     获取 仓储上下文的实例
         /// </summary>
-       
-        public IUnitOfWork UnitOfWork { get; set; }
 
-        /// <summary>
-        ///     获取 EntityFramework的数据仓储上下文
-        /// </summary>
-        protected RepositoryContextBase EFContext
+        public IUnitOfWork UnitOfWork
         {
             get
             {
-                if (UnitOfWork is RepositoryContextBase)
-                {
-                    return UnitOfWork as RepositoryContextBase;
-                }
-                throw new DataAccessException(string.Format("数据仓储上下文对象类型不正确，应为UnitOfWorkContextBase，实际为 {0}", UnitOfWork.GetType().Name));
+                return EFContext as IUnitOfWork;
             }
         }
+
+        public IEFRepositoryContext EFContext { get; private set; }
 
         /// <summary>
         ///     获取 当前实体的查询数据集
         /// </summary>
         public virtual IQueryable<TEntity> Entities
         {
-            get { return EFContext.Set<TEntity, TKey>(); }
+            get
+            {
+                if (_entities == null)
+                {
+                    lock (_lockObj)
+                    {
+                        if (_entities==null)
+                        {
+                            _entities = EFContext.Set<TEntity, TKey>();
+                        }
+                    }
+                }
+
+                return _entities;
+            }
         }
 
         #endregion
@@ -86,6 +101,7 @@ namespace Exp.Data
         {
             PublicHelper.CheckArgument(id, "id");
             TEntity entity = EFContext.Set<TEntity, TKey>().Find(id);
+
             return entity != null ? Delete(entity, isSave) : 0;
         }
 

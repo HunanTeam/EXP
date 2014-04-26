@@ -12,6 +12,7 @@ namespace Exp.Core.Data
     /// </summary>
     public interface IRepositoryContext : IUnitOfWork, IDisposable
     {
+       
         /// <summary>
         ///   注册一个新的对象到仓储上下文中
         /// </summary>
