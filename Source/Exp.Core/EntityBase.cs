@@ -7,6 +7,6 @@ namespace Exp.Core
     {
         public Key Id { get; set; }
 
-        public bool IsDeleted { get; set; }
+      
     }
 }

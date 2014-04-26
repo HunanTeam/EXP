@@ -12,6 +12,7 @@ namespace Exp.Core.Data
     /// <typeparam name="TKey">实体主键类型</typeparam>
     public interface IRepository<TEntity, in TKey> where TEntity : EntityBase<TKey>
     {
+        IUnitOfWork UnitOfWork { get; }
         #region 属性
 
         /// <summary>

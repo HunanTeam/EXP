@@ -7,6 +7,10 @@ namespace Exp.Core.Domain.Base
 {
     public class Entity : EntityBase<int>
     {
-       
+        public Entity()
+        {
+            this.CreateOn = DateTime.Now;
+        }
+        public DateTime CreateOn { get; set; }
     }
 }

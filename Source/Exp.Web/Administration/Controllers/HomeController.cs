@@ -11,16 +11,23 @@ namespace Exp.Admin.Controllers
     public class HomeController : Controller
     {
         private readonly IRepository<User, int> _userRepository;
+
         public HomeController(IRepository<User, int> userRepository)
         {
             _userRepository = userRepository;
+
         }
         //
         // GET: /Home/
 
         public ActionResult Index()
         {
-            return View();
+            for (int loop = 0; loop < 10; loop++)
+            {
+                _userRepository.Insert(new User { Email = loop.ToString(), Name = loop.ToString(), IsDeleted = true }, false);
+            }
+            var result = _userRepository.UnitOfWork.Commit();
+            return View(result);
         }
 
     }

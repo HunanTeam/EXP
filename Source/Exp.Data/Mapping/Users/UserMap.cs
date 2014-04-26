@@ -16,6 +16,7 @@ namespace Exp.Data.Mapping.Users
             this.HasKey(c => c.Id);
             this.Property(c => c.Name).HasMaxLength(500);
             this.Property(c => c.Email).HasMaxLength(500);
+            this.Property(c => c.IsDeleted);
         }
 
     }

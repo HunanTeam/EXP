@@ -20,7 +20,7 @@ namespace Exp.Data
         private object _lockObj = new object();
         public EFRepository(IEFRepositoryContext repositoryContext)
         {
-            this.EFContext = repositoryContext;
+            this.EFContext = repositoryContext ;
 
         }
         #region 属性
