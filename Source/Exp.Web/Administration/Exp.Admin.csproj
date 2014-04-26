@@ -156,10 +156,6 @@
       <Project>{63298208-6f7e-4ffc-826e-239081de94ec}</Project>
       <Name>Exp.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Exp.Data\Exp.Data.csproj">
-      <Project>{1d2dcba6-2479-4cd2-8121-cc56b1f0273d}</Project>
-      <Name>Exp.Data</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\Exp.Framework\Exp.Web.Framework.csproj">
       <Project>{0e38cb80-1471-49fd-bb2a-998a09413e0e}</Project>
       <Name>Exp.Web.Framework</Name>
