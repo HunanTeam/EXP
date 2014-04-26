@@ -25,7 +25,7 @@ namespace Exp.Data
     /// <summary>
     ///     单元操作实现基类
     /// </summary>
-    public abstract class UnitOfWorkContextBase : IUnitOfWorkContext
+    public abstract class RepositoryContextBase : IRepositoryContext
     {
         /// <summary>
         /// 获取 当前使用的数据访问上下文对象

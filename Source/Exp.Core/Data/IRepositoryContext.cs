@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using Exp.Core;
 using Exp.Core.Data;
- 
 
-namespace Exp.Data
+
+namespace Exp.Core.Data
 {
     /// <summary>
     ///     数据单元操作接口
     /// </summary>
-    public interface IUnitOfWorkContext : IUnitOfWork, IDisposable
+    public interface IRepositoryContext : IUnitOfWork, IDisposable
     {
         /// <summary>
         ///   注册一个新的对象到仓储上下文中

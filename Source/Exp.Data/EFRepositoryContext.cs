@@ -6,7 +6,7 @@ using Exp.Core;
 namespace Exp.Data
 {
  
-    public class EFUnitOfWorkContext : UnitOfWorkContextBase
+    public class EFRepositoryContext : RepositoryContextBase
     {
         /// <summary>
         ///     获取 当前使用的数据访问上下文对象

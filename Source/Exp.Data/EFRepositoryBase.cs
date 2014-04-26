@@ -26,13 +26,13 @@ namespace Exp.Data
         /// <summary>
         ///     获取 EntityFramework的数据仓储上下文
         /// </summary>
-        protected UnitOfWorkContextBase EFContext
+        protected RepositoryContextBase EFContext
         {
             get
             {
-                if (UnitOfWork is UnitOfWorkContextBase)
+                if (UnitOfWork is RepositoryContextBase)
                 {
-                    return UnitOfWork as UnitOfWorkContextBase;
+                    return UnitOfWork as RepositoryContextBase;
                 }
                 throw new DataAccessException(string.Format("数据仓储上下文对象类型不正确，应为UnitOfWorkContextBase，实际为 {0}", UnitOfWork.GetType().Name));
             }

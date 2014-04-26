@@ -104,6 +104,8 @@
       <SubType>
       </SubType>
     </Compile>
+    <Compile Include="Data\IRepositoryContext.cs" />
+    <Compile Include="Data\IUnitOfWork.cs" />
     <Compile Include="EntityBase.cs" />
     <Compile Include="PublicHelper.cs" />
     <Compile Include="Extensions\CollectionExtensions.cs" />
