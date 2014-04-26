@@ -27,9 +27,9 @@ namespace Exp.Data
     /// </summary>
     public class EFRepositoryContext : IEFRepositoryContext
     {
-        public EFRepositoryContext(DbContext context)
+        public EFRepositoryContext(string connectionString)
         {
-            this.DbContext = context;
+            this.DbContext = new EFDbContext(connectionString);
         }
 
 

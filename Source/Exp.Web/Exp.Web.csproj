@@ -139,6 +139,9 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="App_Data\Settings.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\bootstrap\css\bootstrap-responsive.css" />
     <Content Include="Content\bootstrap\css\bootstrap-responsive.min.css" />
     <Content Include="Content\bootstrap\css\bootstrap.css" />
@@ -164,7 +167,6 @@
     <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Models\" />
     <Folder Include="Themes\" />
   </ItemGroup>

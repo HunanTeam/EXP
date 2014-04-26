@@ -151,6 +151,24 @@
   <ItemGroup>
     <Content Include="Views\Shared\_AdminLayout.cshtml" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Exp.Core\Exp.Core.csproj">
+      <Project>{63298208-6f7e-4ffc-826e-239081de94ec}</Project>
+      <Name>Exp.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Exp.Data\Exp.Data.csproj">
+      <Project>{1d2dcba6-2479-4cd2-8121-cc56b1f0273d}</Project>
+      <Name>Exp.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Exp.Framework\Exp.Web.Framework.csproj">
+      <Project>{0e38cb80-1471-49fd-bb2a-998a09413e0e}</Project>
+      <Name>Exp.Web.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Exp.Services\Exp.Services.csproj">
+      <Project>{79841ab6-72c2-4db8-bf45-53c0ba333540}</Project>
+      <Name>Exp.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

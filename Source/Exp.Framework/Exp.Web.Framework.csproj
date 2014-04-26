@@ -88,7 +88,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DependencyRegistrar.cs" />
-    <Compile Include="Mvc\DependencyResolver.cs" />
+    <Compile Include="Mvc\ExpDependencyResolver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Themes\IThemeContext.cs" />
     <Compile Include="Themes\IThemeProvider.cs" />
@@ -109,6 +109,10 @@
     <ProjectReference Include="..\Exp.Core\Exp.Core.csproj">
       <Project>{63298208-6f7e-4ffc-826e-239081de94ec}</Project>
       <Name>Exp.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Exp.Data\Exp.Data.csproj">
+      <Project>{1d2dcba6-2479-4cd2-8121-cc56b1f0273d}</Project>
+      <Name>Exp.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\Exp.Services\Exp.Services.csproj">
       <Project>{79841ab6-72c2-4db8-bf45-53c0ba333540}</Project>

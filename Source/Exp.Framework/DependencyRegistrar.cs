@@ -12,6 +12,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Web;
+using Exp.Core.Data;
+using Exp.Data;
 
 namespace Exp.Web.Framework
 {
@@ -54,6 +56,17 @@ namespace Exp.Web.Framework
             builder.RegisterType<MobileDeviceHelper>().As<IMobileDeviceHelper>().InstancePerHttpRequest();
             builder.RegisterType<ThemeProvider>().As<IThemeProvider>().InstancePerHttpRequest();
             builder.RegisterType<ThemeContext>().As<IThemeContext>().InstancePerHttpRequest();
+
+
+            //data layer
+            var dataSettingsManager = new DataSettingsManager();
+            var dataProviderSettings = dataSettingsManager.LoadSettings();
+            builder.Register(c => dataSettingsManager.LoadSettings()).As<DataSettings>();
+            builder.Register(x => new EfDataProviderManager(x.Resolve<DataSettings>())).As<BaseDataProviderManager>().InstancePerDependency();
+            builder.Register(x => x.Resolve<BaseDataProviderManager>().LoadDataProvider()).As<IDataProvider>().InstancePerDependency();
+
+            builder.Register<IRepositoryContext>(c => new EFRepositoryContext(dataSettingsManager.LoadSettings().DataConnectionString)).InstancePerHttpRequest();
+            builder.RegisterGeneric(typeof(EFRepository<,>)).As(typeof(IRepository<,>)).InstancePerHttpRequest();
         }
 
         public int Order

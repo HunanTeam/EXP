@@ -1,4 +1,5 @@
 ﻿using Exp.Core.Infrastructure;
+using Exp.Web.Framework.Mvc;
 using Exp.Web.Framework.Themes;
 using System;
 using System.Collections.Generic;
@@ -20,7 +21,8 @@ namespace Exp.Web
 
            
             EngineContext.Initialize(false);
-
+            var dependencyResolver = new ExpDependencyResolver();
+            DependencyResolver.SetResolver(dependencyResolver);
             ViewEngines.Engines.Clear();
             ViewEngines.Engines.Add(new ThemeableRazorViewEngine());
 

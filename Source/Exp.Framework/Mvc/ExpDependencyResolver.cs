@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace Exp.Web.Framework.Mvc
 {
-    class DependencyResolver : IDependencyResolver
+   public class ExpDependencyResolver : IDependencyResolver
     {
         public object GetService(Type serviceType)
         {

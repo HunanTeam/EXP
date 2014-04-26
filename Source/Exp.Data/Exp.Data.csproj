@@ -46,6 +46,7 @@
       <HintPath>..\packages\Microsoft.SqlServer.Compact.4.0.8876.1\lib\net40\System.Data.SqlServerCe.dll</HintPath>
     </Reference>
     <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -79,6 +80,7 @@
     <Compile Include="CachingProvider\GlobalSuppressions.cs" />
     <Compile Include="DataHelper.cs" />
     <Compile Include="EFCachingDbContext.cs" />
+    <Compile Include="EfDataProviderManager.cs" />
     <Compile Include="EFDbContext.cs" />
     <Compile Include="EFRepository.cs" />
     <Compile Include="Extensions\DbContextExtensions.cs" />
@@ -111,6 +113,8 @@
     <Compile Include="ProviderWrapperToolkit\EntityConnectionWrapperUtils.cs" />
     <Compile Include="ProviderWrapperToolkit\GlobalSuppressions.cs" />
     <Compile Include="EFRepositoryContext.cs" />
+    <Compile Include="SqlCeDataProvider.cs" />
+    <Compile Include="SqlServerDataProvider.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="CachingProvider\CustomDictionary.xml" />

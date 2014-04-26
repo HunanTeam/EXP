@@ -106,6 +106,8 @@
     </Compile>
     <Compile Include="Data\IRepositoryContext.cs" />
     <Compile Include="Data\IUnitOfWork.cs" />
+    <Compile Include="Domain\Base\Entity.cs" />
+    <Compile Include="Domain\Users\User.cs" />
     <Compile Include="EntityBase.cs" />
     <Compile Include="PublicHelper.cs" />
     <Compile Include="Extensions\CollectionExtensions.cs" />
@@ -157,7 +159,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Cache\" />
-    <Folder Include="Domain\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\AutoMapper.3.2.0\tools\AutoMapper.targets" Condition="Exists('..\packages\AutoMapper.3.2.0\tools\AutoMapper.targets')" />
