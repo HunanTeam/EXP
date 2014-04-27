@@ -17,7 +17,7 @@ using Exp.Data;
 
 namespace Exp.Web.Framework
 {
-  public  class DependencyRegistrar : IDependencyRegistrar
+    public class DependencyRegistrar : IDependencyRegistrar
     {
         public void Register(ContainerBuilder builder, Core.Infrastructure.ITypeFinder typeFinder)
         {
@@ -52,7 +52,7 @@ namespace Exp.Web.Framework
             //plugins
             builder.RegisterType<PluginFinder>().As<IPluginFinder>().InstancePerHttpRequest();
 
-      
+
             builder.RegisterType<MobileDeviceHelper>().As<IMobileDeviceHelper>().InstancePerHttpRequest();
             builder.RegisterType<ThemeProvider>().As<IThemeProvider>().InstancePerHttpRequest();
             builder.RegisterType<ThemeContext>().As<IThemeContext>().InstancePerHttpRequest();
@@ -64,7 +64,12 @@ namespace Exp.Web.Framework
             builder.Register(c => dataSettingsManager.LoadSettings()).As<DataSettings>();
             builder.Register(x => new EfDataProviderManager(x.Resolve<DataSettings>())).As<BaseDataProviderManager>().InstancePerDependency();
             builder.Register(x => x.Resolve<BaseDataProviderManager>().LoadDataProvider()).As<IDataProvider>().InstancePerDependency();
-
+            if (dataProviderSettings != null && dataProviderSettings.IsValid())
+            {
+                var efDataProviderManager = new EfDataProviderManager(dataSettingsManager.LoadSettings());
+                var dataProvider = (IDataProvider)efDataProviderManager.LoadDataProvider();
+                dataProvider.InitDatabase();
+            }
             builder.Register<IEFRepositoryContext>(c => new EFRepositoryContext(dataSettingsManager.LoadSettings().DataConnectionString)).InstancePerHttpRequest();
             builder.RegisterGeneric(typeof(EFRepository<,>)).As(typeof(IRepository<,>)).InstancePerHttpRequest();
         }
