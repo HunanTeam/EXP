@@ -17,6 +17,8 @@ namespace Exp.Data.Mapping.Users
             this.Property(c => c.Name).HasMaxLength(500);
             this.Property(c => c.Email).HasMaxLength(500);
             this.Property(c => c.IsDeleted);
+            this.Property(c => c.CreateOn).HasColumnType("datetime2");
+  
         }
 
     }
