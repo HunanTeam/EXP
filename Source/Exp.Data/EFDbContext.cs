@@ -9,7 +9,7 @@ using System.Reflection;
 using System.Linq;
 namespace Exp.Data
 {
-
+    [DbConfigurationType(typeof(MySql.Data.Entity.MySqlEFConfiguration))]
     public class EFDbContext : DbContext
     {
         public EFDbContext()

@@ -1,2 +1,2 @@
-DataProvider: sqlserver
-DataConnectionString: Data Source=.\SQLEXPRESS;Initial Catalog=Exp_01;Integrated Security=False;Persist Security Info=False;User ID=sa;Password=sa123;MultipleActiveResultSets=True
+DataProvider: mysql
+DataConnectionString: server = localhost;user id =root password =; database =exp_01

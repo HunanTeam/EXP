@@ -22,9 +22,10 @@ namespace Exp.Admin.Controllers
 
         public ActionResult Index()
         {
+            _userRepository.AutoCommit = false;
             for (int loop = 0; loop < 10; loop++)
             {
-                //_userRepository.Insert(new User { Email = loop.ToString(), Name = loop.ToString(), CreateOn = DateTime.Now, IsDeleted = true }, false);
+                _userRepository.Insert(new User { Email = loop.ToString(), Name = loop.ToString(), CreateOn = DateTime.Now, IsDeleted = true });
             }
             var result = _userRepository.UnitOfWork.Commit();
             return View(result);
