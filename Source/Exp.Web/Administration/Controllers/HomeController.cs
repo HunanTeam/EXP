@@ -24,7 +24,7 @@ namespace Exp.Admin.Controllers
         {
             for (int loop = 0; loop < 10; loop++)
             {
-                _userRepository.Insert(new User { Email = loop.ToString(), Name = loop.ToString(), IsDeleted = true }, false);
+                _userRepository.Insert(new User { Email = loop.ToString(), Name = loop.ToString(), CreateOn = DateTime.Now, IsDeleted = true }, false);
             }
             var result = _userRepository.UnitOfWork.Commit();
             return View(result);
