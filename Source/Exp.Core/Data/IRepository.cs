@@ -19,7 +19,7 @@ namespace Exp.Core.Data
         ///     获取 当前实体的查询数据集
         /// </summary>
         IQueryable<TEntity> Entities { get; }
-
+        bool AutoCommit { get; set; }
         #endregion
 
         #region 公共方法
@@ -30,7 +30,7 @@ namespace Exp.Core.Data
         /// <param name="entity"> 实体对象 </param>
         /// <param name="isSave"> 是否执行保存 </param>
         /// <returns> 操作影响的行数 </returns>
-        int Insert(TEntity entity, bool isSave = true);
+        int Insert(TEntity entity);
 
         /// <summary>
         ///     批量插入实体记录集合
@@ -38,7 +38,7 @@ namespace Exp.Core.Data
         /// <param name="entities"> 实体记录集合 </param>
         /// <param name="isSave"> 是否执行保存 </param>
         /// <returns> 操作影响的行数 </returns>
-        int Insert(IEnumerable<TEntity> entities, bool isSave = true);
+        int Insert(IEnumerable<TEntity> entities);
 
         /// <summary>
         ///     删除指定编号的记录
@@ -46,7 +46,7 @@ namespace Exp.Core.Data
         /// <param name="id"> 实体记录编号 </param>
         /// <param name="isSave"> 是否执行保存 </param>
         /// <returns> 操作影响的行数 </returns>
-        int Delete(TKey id, bool isSave = true);
+        int Delete(TKey id);
 
         /// <summary>
         ///     删除实体记录
@@ -54,7 +54,7 @@ namespace Exp.Core.Data
         /// <param name="entity"> 实体对象 </param>
         /// <param name="isSave"> 是否执行保存 </param>
         /// <returns> 操作影响的行数 </returns>
-        int Delete(TEntity entity, bool isSave = true);
+        int Delete(TEntity entity);
 
         /// <summary>
         ///     删除实体记录集合
@@ -62,7 +62,7 @@ namespace Exp.Core.Data
         /// <param name="entities"> 实体记录集合 </param>
         /// <param name="isSave"> 是否执行保存 </param>
         /// <returns> 操作影响的行数 </returns>
-        int Delete(IEnumerable<TEntity> entities, bool isSave = true);
+        int Delete(IEnumerable<TEntity> entities);
 
         /// <summary>
         ///     删除所有符合特定表达式的数据
@@ -70,7 +70,7 @@ namespace Exp.Core.Data
         /// <param name="predicate"> 查询条件谓语表达式 </param>
         /// <param name="isSave"> 是否执行保存 </param>
         /// <returns> 操作影响的行数 </returns>
-        int Delete(Expression<Func<TEntity, bool>> predicate, bool isSave = true);
+        int Delete(Expression<Func<TEntity, bool>> predicate);
 
         /// <summary>
         ///     更新实体记录
@@ -78,7 +78,7 @@ namespace Exp.Core.Data
         /// <param name="entity"> 实体对象 </param>
         /// <param name="isSave"> 是否执行保存 </param>
         /// <returns> 操作影响的行数 </returns>
-        int Update(TEntity entity, bool isSave = true);
+        int Update(TEntity entity);
 
         /// <summary>
         /// 使用附带新值的实体信息更新指定实体属性的值
@@ -87,7 +87,7 @@ namespace Exp.Core.Data
         /// <param name="isSave">是否执行保存</param>
         /// <param name="entity">附带新值的实体信息，必须包含主键</param>
         /// <returns>操作影响的行数</returns>
-        int Update(Expression<Func<TEntity, object>> propertyExpression, TEntity entity, bool isSave = true);
+        int Update(Expression<Func<TEntity, object>> propertyExpression, TEntity entity);
 
         /// <summary>
         ///     查找指定主键的实体记录

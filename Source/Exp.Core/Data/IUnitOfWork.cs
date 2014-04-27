@@ -21,7 +21,7 @@
         /// </summary>
         /// <param name="validateOnSaveEnabled">保存时是否自动验证跟踪实体</param>
         /// <returns></returns>
-        int Commit(bool validateOnSaveEnabled = true);
+        int Commit();
 
         /// <summary>
         ///     把当前单元操作回滚成未提交状态

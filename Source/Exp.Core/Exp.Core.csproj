@@ -100,6 +100,7 @@
     </Compile>
     <Compile Include="Data\IRepositoryContext.cs" />
     <Compile Include="Data\IUnitOfWork.cs" />
+    <Compile Include="Data\Repository.cs" />
     <Compile Include="Domain\Base\Entity.cs" />
     <Compile Include="Domain\Users\User.cs" />
     <Compile Include="EntityBase.cs" />

@@ -48,8 +48,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DatabaseSessionFactory.cs" />
     <Compile Include="INHRepositoryContext.cs" />
     <Compile Include="NHRepository.cs" />
+    <Compile Include="NHRepositoryContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
