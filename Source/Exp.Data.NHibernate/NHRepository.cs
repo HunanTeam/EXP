@@ -68,6 +68,8 @@ namespace Exp.Data.NHibernate
         public override int Update(TEntity entity)
         {
             this.NHContext.RegisterModified<TEntity, TKey>(entity);
+
+            return 1;
         }
 
         public override int Update(Expression<Func<TEntity, object>> propertyExpression, TEntity entity)
