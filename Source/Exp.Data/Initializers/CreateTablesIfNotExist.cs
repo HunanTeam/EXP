@@ -33,7 +33,8 @@ namespace Exp.Data.Initializers
             }
             if (dbExists)
             {
-                CreateDatabaseForSqlServer(context);
+                //CreateDatabaseForSqlServer(context);
+                this.CreateDatabaseForMySql(context);
             }
             else
             {
