@@ -22,13 +22,16 @@ namespace Exp.Admin.Controllers
 
         public ActionResult Index()
         {
-            _userRepository.AutoCommit = false;
-            for (int loop = 0; loop < 10; loop++)
-            {
-                _userRepository.Insert(new User { Email = loop.ToString(), Name = loop.ToString(), CreateOn = DateTime.Now, IsDeleted = true });
-            }
-            var result = _userRepository.UnitOfWork.Commit();
-            return View(result);
+            //_userRepository.AutoCommit = false;
+            //for (int loop = 0; loop < 10; loop++)
+            //{
+            //    var user = new User { Email = loop.ToString(), Name = loop.ToString(), CreateOn = DateTime.Now, IsDeleted = true };
+            //    user.UserRoles.Add(new Core.Domain.Securities.Role { Name = loop.ToString(), IsEnabled = true, Description = DateTime.Now.ToString() });
+            //    _userRepository.Insert(user);
+            //}
+            //var result = _userRepository.UnitOfWork.Commit();
+            var uses = _userRepository.Entities.FirstOrDefault();
+            return View();
         }
 
     }

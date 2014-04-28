@@ -8,7 +8,7 @@ using System.Text;
 
 namespace Exp.Data.Mapping.Users
 {
-    public class UserMap : EntityTypeConfiguration<User>
+    public partial class UserMap : EntityTypeConfiguration<User>
     {
         public UserMap()
         {
@@ -17,7 +17,8 @@ namespace Exp.Data.Mapping.Users
             this.Property(c => c.Name).HasMaxLength(500).HasColumnType("varchar");
             this.Property(c => c.Email).HasMaxLength(500).HasColumnType("varchar");
             this.Property(c => c.IsDeleted);
-            //this.Property(c => c.CreateOn).HasColumnType("datetime2");
+
+            this.HasMany(c => c.UserRoles).WithMany().Map(m=>m.ToTable("Sys_UserRole_Mapping"));
   
         }
 

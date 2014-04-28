@@ -96,6 +96,7 @@
     <Compile Include="Initializers\DropCreateCeDatabaseAlways.cs" />
     <Compile Include="Initializers\DropCreateCeDatabaseIfModelChanges.cs" />
     <Compile Include="Initializers\SqlCeInitializer.cs" />
+    <Compile Include="Mapping\Securities\RoleMap.cs" />
     <Compile Include="Mapping\Users\UserMap.cs" />
     <Compile Include="MySqlConnectionFactory.cs" />
     <Compile Include="MySqlDataProvider.cs" />
