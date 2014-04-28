@@ -18,9 +18,9 @@ namespace Exp.Data
     {
         private DbSet<TEntity> _entities = null;
         private object _lockObj = new object();
-        public EFRepository(IEFRepositoryContext repositoryContext)
+        public EFRepository(IRepositoryContext repositoryContext)
         {
-            this.EFContext = repositoryContext ;
+            this.EFContext = repositoryContext as IEFRepositoryContext;
 
         }
         #region 属性
@@ -37,7 +37,7 @@ namespace Exp.Data
             }
         }
 
-        public  IEFRepositoryContext EFContext { get; private set; }
+        public IEFRepositoryContext EFContext { get; private set; }
 
         /// <summary>
         ///     获取 当前实体的查询数据集
@@ -50,7 +50,7 @@ namespace Exp.Data
                 {
                     lock (_lockObj)
                     {
-                        if (_entities==null)
+                        if (_entities == null)
                         {
                             _entities = EFContext.Set<TEntity, TKey>();
                         }

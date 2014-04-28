@@ -120,6 +120,8 @@
     <Compile Include="ProviderWrapperToolkit\EntityConnectionWrapperUtils.cs" />
     <Compile Include="ProviderWrapperToolkit\GlobalSuppressions.cs" />
     <Compile Include="EFRepositoryContext.cs" />
+    <Compile Include="Repositories\Users\Impl\UserRepository.cs" />
+    <Compile Include="Repositories\Users\IUserRepository.cs" />
     <Compile Include="SqlCeDataProvider.cs" />
     <Compile Include="SqlServerDataProvider.cs" />
   </ItemGroup>
