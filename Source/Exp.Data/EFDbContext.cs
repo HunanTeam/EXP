@@ -17,7 +17,7 @@ namespace Exp.Data
             // static constructors are guaranteed to only fire once per application.
             // I do this here instead of App_Start so I can avoid including EF
             // in my MVC project (I use UnitOfWork/Repository pattern instead)
-           // DbConfiguration.SetConfiguration(new MySql.Data.Entity.MySqlEFConfiguration());
+            // DbConfiguration.SetConfiguration(new MySql.Data.Entity.MySqlEFConfiguration());
         }
         public EFDbContext()
             : base("default") { }
@@ -28,21 +28,10 @@ namespace Exp.Data
         public EFDbContext(DbConnection existingConnection)
             : base(existingConnection, true) { }
 
-        //   public IEnumerable<IEntityMapper> EntityMappers { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            //modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
 
-            //if (EntityMappers == null)
-            //{
-            //    return;
-            //}
-
-            //foreach (var mapper in EntityMappers)
-            //{
-            //    mapper.RegistTo(modelBuilder.Configurations);
-            //}
 
             var typesToRegister = Assembly.GetExecutingAssembly().GetTypes()
          .Where(type => !String.IsNullOrEmpty(type.Namespace))
@@ -52,8 +41,7 @@ namespace Exp.Data
                 dynamic configurationInstance = Activator.CreateInstance(type);
                 modelBuilder.Configurations.Add(configurationInstance);
             }
-            //...or do it manually below. For example,
-            //modelBuilder.Configurations.Add(new LanguageMap());
+
 
 
 

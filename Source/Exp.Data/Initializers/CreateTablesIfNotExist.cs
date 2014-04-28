@@ -33,8 +33,8 @@ namespace Exp.Data.Initializers
             }
             if (dbExists)
             {
-                //CreateDatabaseForSqlServer(context);
-                this.CreateDatabaseForMySql(context);
+                
+                this.CreateTables(context);
             }
             else
             {
@@ -42,7 +42,7 @@ namespace Exp.Data.Initializers
             }
         }
 
-        private void CreateDatabaseForSqlServer(TContext context)
+        private void CreateTableForSqlServer(TContext context)
         {
             bool createTables = false;
             if (_tablesToValidate != null && _tablesToValidate.Length > 0)
@@ -78,7 +78,7 @@ namespace Exp.Data.Initializers
             }
         }
 
-        private void CreateDatabaseForMySql(TContext context)
+        private void CreateTables(TContext context)
         {
             string sql = string.Empty;
             string countSql = string.Empty;
