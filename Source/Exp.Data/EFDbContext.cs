@@ -9,16 +9,10 @@ using System.Reflection;
 using System.Linq;
 namespace Exp.Data
 {
-    //[DbConfigurationType(typeof(MySql.Data.Entity.MySqlEFConfiguration))]
+    
     public class EFDbContext : DbContext
     {
-        static EFDbContext()
-        {
-            // static constructors are guaranteed to only fire once per application.
-            // I do this here instead of App_Start so I can avoid including EF
-            // in my MVC project (I use UnitOfWork/Repository pattern instead)
-            // DbConfiguration.SetConfiguration(new MySql.Data.Entity.MySqlEFConfiguration());
-        }
+         
         public EFDbContext()
             : base("default") { }
 
