@@ -1,2 +1,2 @@
 DataProvider: mysql
-DataConnectionString: server = localhost;user id =root password =; database =exp_01
+DataConnectionString: server =localhost;user id =root;password =;database =exp_01

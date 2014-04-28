@@ -23,7 +23,7 @@ namespace Exp.Data
             : base("default") { }
 
         public EFDbContext(string nameOrConnectionString)
-            : base("default") { }
+            : base(nameOrConnectionString) { }
 
         public EFDbContext(DbConnection existingConnection)
             : base(existingConnection, true) { }
