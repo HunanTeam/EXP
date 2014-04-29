@@ -102,10 +102,13 @@
     <Compile Include="Data\IUnitOfWork.cs" />
     <Compile Include="Data\Repository.cs" />
     <Compile Include="Domain\Base\Entity.cs" />
-    <Compile Include="Domain\Common\Menu.cs" />
-    <Compile Include="Domain\Securities\Permission.cs" />
-    <Compile Include="Domain\Securities\Role.cs" />
-    <Compile Include="Domain\Users\User.cs" />
+    <Compile Include="Domain\System\Module.cs" />
+    <Compile Include="Domain\System\OperateLog.cs" />
+    <Compile Include="Domain\System\Permission.cs" />
+    <Compile Include="Domain\System\Role.cs" />
+    <Compile Include="Domain\System\RoleModulePermission.cs" />
+    <Compile Include="Domain\System\User.cs" />
+    <Compile Include="Domain\System\UserRole.cs" />
     <Compile Include="EntityBase.cs" />
     <Compile Include="ExceptionMessager.cs" />
     <Compile Include="OperationResult.cs" />

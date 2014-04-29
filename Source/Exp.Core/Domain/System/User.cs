@@ -1,10 +1,10 @@
-﻿using Exp.Core.Domain.Securities;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Exp.Core.Domain.Users
+namespace Exp.Core.Domain.System
 {
     public partial class User : Base.Entity
     {
