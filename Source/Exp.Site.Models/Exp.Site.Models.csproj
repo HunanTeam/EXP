@@ -7,8 +7,8 @@
     <ProjectGuid>{A279EFE0-20A6-4855-BE01-538D3337726B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Quick.Site.Models</RootNamespace>
-    <AssemblyName>Quick.Site.Models</AssemblyName>
+    <RootNamespace>Exp.Site.Models</RootNamespace>
+    <AssemblyName>Exp.Site.Models</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
