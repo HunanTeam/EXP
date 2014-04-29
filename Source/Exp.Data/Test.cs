@@ -1,18 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 
-namespace Exp.Study
+namespace Exp.Data
 {
-    class Program
+    public class Test
     {
-        static void Main(string[] args)
+        public void Doit()
         {
-
-         
+            
         }
-
-       
     }
 }

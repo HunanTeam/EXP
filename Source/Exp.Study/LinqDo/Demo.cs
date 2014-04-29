@@ -3,16 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Exp.Study
+namespace Exp.Study.LinqDo
 {
-    class Program
+  public class Demo
     {
-        static void Main(string[] args)
-        {
-
+      static void Main(string[] args)
+      {
          
-        }
-
-       
+      }
+      
     }
 }

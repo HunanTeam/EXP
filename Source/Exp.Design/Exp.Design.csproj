@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E3390369-A8F7-4E2B-B55A-51C404AE69D6}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{9BF951AC-9446-42E0-86F7-A49CF1894342}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Exp.Study</RootNamespace>
-    <AssemblyName>Exp.Study</AssemblyName>
+    <RootNamespace>Exp.Design</RootNamespace>
+    <AssemblyName>Exp.Design</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -31,54 +29,23 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject>Exp.Study.Program</StartupObject>
-  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="NewLife.CommonEntity">
-      <HintPath>..\lib\NewLife\NewLife.CommonEntity.dll</HintPath>
-    </Reference>
-    <Reference Include="NewLife.Core">
-      <HintPath>..\lib\NewLife\NewLife.Core.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="XCode">
-      <HintPath>..\lib\NewLife\XCode.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EF\BaseEntity.cs" />
-    <Compile Include="EF\Demo.cs" />
-    <Compile Include="EF\Entities\Role.cs" />
-    <Compile Include="EF\Entities\User.cs" />
-    <Compile Include="EF\Entities\UserRole.cs" />
-    <Compile Include="LinqDo\Demo.cs" />
-    <Compile Include="NewLifeDo\Customer.cs" />
-    <Compile Include="NewLifeDo\Demo.cs" />
-    <Compile Include="NewLifeDo\Entity\Address.Biz.cs" />
-    <Compile Include="NewLifeDo\Entity\Address.cs" />
-    <Compile Include="NewLifeDo\Entity\LoginInfo.Biz.cs" />
-    <Compile Include="NewLifeDo\Entity\LoginInfo.cs" />
-    <Compile Include="NewLifeDo\Entity\User.Biz.cs" />
-    <Compile Include="NewLifeDo\Entity\User.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Address.cs" />
+    <Compile Include="BaseEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="User.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
+    <None Include="System.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
