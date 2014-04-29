@@ -1,4 +1,5 @@
 ﻿using Exp.Core.Data;
+using Exp.Core.Domain.Common;
 using Exp.Core.Domain.Users;
 using System;
 using System.Collections.Generic;
@@ -10,9 +11,9 @@ namespace Exp.Admin.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly IRepository<User, int> _userRepository;
+        private readonly IRepository<Menu, int> _userRepository;
 
-        public HomeController(IRepository<User, int> userRepository)
+        public HomeController(IRepository<Menu, int> userRepository)
         {
             _userRepository = userRepository;
 
@@ -30,8 +31,13 @@ namespace Exp.Admin.Controllers
             //    _userRepository.Insert(user);
             //}
             //var result = _userRepository.UnitOfWork.Commit();
-            var uses = _userRepository.Entities.FirstOrDefault();
-            return View();
+            //var uses = _userRepository.Entities.FirstOrDefault();
+            Menu m = new Menu() { Title="父亲"};
+            m.ChildMenus = new List<Menu>();
+            m.ChildMenus.Add(new Menu() { Title="儿子"});
+            var r= _userRepository.Insert(m);
+            _userRepository.UnitOfWork.Commit();
+          return View(r);
         }
 
     }

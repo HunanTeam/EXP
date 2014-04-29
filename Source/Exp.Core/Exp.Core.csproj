@@ -102,6 +102,7 @@
     <Compile Include="Data\IUnitOfWork.cs" />
     <Compile Include="Data\Repository.cs" />
     <Compile Include="Domain\Base\Entity.cs" />
+    <Compile Include="Domain\Common\Menu.cs" />
     <Compile Include="Domain\Securities\Permission.cs" />
     <Compile Include="Domain\Securities\Role.cs" />
     <Compile Include="Domain\Users\User.cs" />
