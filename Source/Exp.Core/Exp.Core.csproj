@@ -107,6 +107,7 @@
     <Compile Include="Domain\Securities\Role.cs" />
     <Compile Include="Domain\Users\User.cs" />
     <Compile Include="EntityBase.cs" />
+    <Compile Include="OperationResult.cs" />
     <Compile Include="PublicHelper.cs" />
     <Compile Include="Extensions\CollectionExtensions.cs" />
     <Compile Include="CommonHelper.cs" />
