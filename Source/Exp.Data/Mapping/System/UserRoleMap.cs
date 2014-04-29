@@ -28,7 +28,7 @@ namespace Exp.Data.Mapping.System
                 .HasMaxLength(50);
 
             // Table & Column Mappings
-            this.ToTable("Common_Auth_UserRole");
+            this.ToTable("Sys_Auth_UserRole");
             this.Property(t => t.Id).HasColumnName("Id").HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             this.Property(t => t.UserId).HasColumnName("UserId");
             this.Property(t => t.RoleId).HasColumnName("RoleId");

@@ -29,7 +29,7 @@ namespace Exp.Data.Mapping.System
                 .HasMaxLength(50);
 
             // Table & Column Mappings
-            this.ToTable("Common_Auth_ModulePermission");
+            this.ToTable("Sys_Auth_ModulePermission");
             this.Property(t => t.Id).HasColumnName("Id").HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             this.Property(t => t.ModuleId).HasColumnName("ModuleId");
             this.Property(t => t.PermissionId).HasColumnName("PermissionId");
