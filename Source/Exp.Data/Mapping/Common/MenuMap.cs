@@ -12,11 +12,10 @@ namespace Exp.Data.Mapping.Common
         public MenuMap()
         {
             this.ToTable("Sys_Menu");
-            this.HasOptional(m => m.ParentMenu)
-              .WithMany(c => c.ChildMenus)
-              .HasForeignKey(d => d.ParentMenuId)
-              .WillCascadeOnDelete(false);
-            
+            this.HasOptional(m => m.ParentMenu).WithMany(c => c.ChildMenus)
+                .HasForeignKey(d => d.ParentMenuId).WillCascadeOnDelete(false);
+            this.Property(c => c.Title);
+
         }
     }
 }
