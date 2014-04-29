@@ -230,6 +230,7 @@
     <Content Include="Content\unicorn\js\unicorn.login.js" />
     <Content Include="Content\unicorn\js\unicorn.tables.js" />
     <Content Include="Content\unicorn\js\unicorn.wizard.js" />
+    <Content Include="Content\unicorn\说明.txt" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
