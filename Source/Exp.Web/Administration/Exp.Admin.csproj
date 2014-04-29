@@ -127,10 +127,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\unicorn\buttons.html" />
-    <Content Include="Content\unicorn\calendar.html" />
-    <Content Include="Content\unicorn\charts.html" />
-    <Content Include="Content\unicorn\chat.html" />
     <Content Include="Content\unicorn\css\bootstrap-responsive.min.css" />
     <Content Include="Content\unicorn\css\bootstrap.min.css" />
     <Content Include="Content\unicorn\css\colorpicker.css" />
@@ -144,11 +140,6 @@
     <Content Include="Content\unicorn\css\unicorn.main.css" />
     <Content Include="Content\unicorn\css\unicorn.red.css" />
     <Content Include="Content\unicorn\css\uniform.css" />
-    <Content Include="Content\unicorn\form-common.html" />
-    <Content Include="Content\unicorn\form-validation.html" />
-    <Content Include="Content\unicorn\form-wizard.html" />
-    <Content Include="Content\unicorn\gallery.html" />
-    <Content Include="Content\unicorn\grid.html" />
     <Content Include="Content\unicorn\img\alpha.png" />
     <Content Include="Content\unicorn\img\breadcrumb.png" />
     <Content Include="Content\unicorn\img\demo\av1.jpg" />
@@ -209,9 +200,6 @@
     <Content Include="Content\unicorn\img\select2x2.png" />
     <Content Include="Content\unicorn\img\spinner.gif" />
     <Content Include="Content\unicorn\img\sprite.png" />
-    <Content Include="Content\unicorn\index.html" />
-    <Content Include="Content\unicorn\interface.html" />
-    <Content Include="Content\unicorn\invoice.html" />
     <Content Include="Content\unicorn\js\bootstrap-colorpicker.js" />
     <Content Include="Content\unicorn\js\bootstrap-datepicker.js" />
     <Content Include="Content\unicorn\js\bootstrap.min.js" />
@@ -242,9 +230,6 @@
     <Content Include="Content\unicorn\js\unicorn.login.js" />
     <Content Include="Content\unicorn\js\unicorn.tables.js" />
     <Content Include="Content\unicorn\js\unicorn.wizard.js" />
-    <Content Include="Content\unicorn\login.html" />
-    <Content Include="Content\unicorn\tables.html" />
-    <Content Include="Content\unicorn\widgets.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
