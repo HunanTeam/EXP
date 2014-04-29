@@ -96,9 +96,13 @@
     <Compile Include="Initializers\DropCreateCeDatabaseAlways.cs" />
     <Compile Include="Initializers\DropCreateCeDatabaseIfModelChanges.cs" />
     <Compile Include="Initializers\SqlCeInitializer.cs" />
-    <Compile Include="Mapping\Common\MenuMap.cs" />
-    <Compile Include="Mapping\Securities\RoleMap.cs" />
-    <Compile Include="Mapping\Users\UserMap.cs" />
+    <Compile Include="Mapping\System\ModuleMap.cs" />
+    <Compile Include="Mapping\System\ModulePermissionMap.cs" />
+    <Compile Include="Mapping\System\PermissionMap.cs" />
+    <Compile Include="Mapping\System\RoleMap.cs" />
+    <Compile Include="Mapping\System\RoleModulePermissionMap.cs" />
+    <Compile Include="Mapping\System\UserMap.cs" />
+    <Compile Include="Mapping\System\UserRoleMap.cs" />
     <Compile Include="MySqlConnectionFactory.cs" />
     <Compile Include="MySqlDataProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

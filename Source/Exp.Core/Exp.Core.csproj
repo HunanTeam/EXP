@@ -103,6 +103,7 @@
     <Compile Include="Data\Repository.cs" />
     <Compile Include="Domain\Base\Entity.cs" />
     <Compile Include="Domain\System\Module.cs" />
+    <Compile Include="Domain\System\ModulePermission.cs" />
     <Compile Include="Domain\System\OperateLog.cs" />
     <Compile Include="Domain\System\Permission.cs" />
     <Compile Include="Domain\System\Role.cs" />
