@@ -7,8 +7,8 @@
     <ProjectGuid>{1828DD78-B811-46AA-8E8B-5624B5F047F7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Exp.Domain.Data</RootNamespace>
-    <AssemblyName>Exp.Domain.Data</AssemblyName>
+    <RootNamespace>ExpApp.Domain.Data</RootNamespace>
+    <AssemblyName>ExpApp.Domain.Data</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -37,6 +37,7 @@
       <HintPath>..\..\packages\EntityFramework.6.1.0\lib\net40\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,6 +47,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Mapping\System\Configuration\ModuleMap.generated.cs" />
+    <Compile Include="Mapping\System\Configuration\ModulePermissionMap.generated.cs" />
+    <Compile Include="Mapping\System\Configuration\PermissionMap.generated.cs" />
+    <Compile Include="Mapping\System\Configuration\RoleMap.generated.cs" />
+    <Compile Include="Mapping\System\Configuration\RoleModulePermissionMap.generated.cs" />
+    <Compile Include="Mapping\System\Configuration\UserMap.generated.cs" />
+    <Compile Include="Mapping\System\Configuration\UserRoleMap.generated.cs" />
     <Compile Include="Mapping\System\ModuleMap.cs" />
     <Compile Include="Mapping\System\ModulePermissionMap.cs" />
     <Compile Include="Mapping\System\PermissionMap.cs" />
@@ -54,10 +62,68 @@
     <Compile Include="Mapping\System\UserMap.cs" />
     <Compile Include="Mapping\System\UserRoleMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\System\IModulePermissionRepository.cs" />
+    <Compile Include="Repositories\System\IModuleRepository.cs" />
+    <Compile Include="Repositories\System\Impl\ModulePermissionRepository.cs" />
+    <Compile Include="Repositories\System\Impl\ModuleRepository.cs" />
+    <Compile Include="Repositories\System\Impl\PermissionRepository.cs" />
+    <Compile Include="Repositories\System\Impl\RoleModulePermissionRepository.cs" />
+    <Compile Include="Repositories\System\Impl\RoleRepository.cs" />
+    <Compile Include="Repositories\System\Impl\UserRepository.cs" />
+    <Compile Include="Repositories\System\Impl\UserRoleRepository.cs" />
+    <Compile Include="Repositories\System\IPermissionRepository.cs" />
+    <Compile Include="Repositories\System\IRoleModulePermissionRepository.cs" />
+    <Compile Include="Repositories\System\IRoleRepository.cs" />
+    <Compile Include="Repositories\System\IUserRepository.cs" />
+    <Compile Include="Repositories\System\IUserRoleRepository.cs" />
+    <Compile Include="T4\EntityCodeScript.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EntityCodeScript.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <None Include="T4\EntityCodeScript.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EntityCodeScript.cs</LastGenOutput>
+      <LastOutputs>
+..\Mapping\System\Configuration\ModuleMap.generated.cs
+..\Mapping\System\Configuration\ModulePermissionMap.generated.cs
+..\Mapping\System\Configuration\PermissionMap.generated.cs
+..\Mapping\System\Configuration\RoleMap.generated.cs
+..\Mapping\System\Configuration\RoleModulePermissionMap.generated.cs
+..\Mapping\System\Configuration\UserMap.generated.cs
+..\Mapping\System\Configuration\UserRoleMap.generated.cs
+..\Mapping\System\ModuleMap.cs
+..\Mapping\System\ModulePermissionMap.cs
+..\Mapping\System\PermissionMap.cs
+..\Mapping\System\RoleMap.cs
+..\Mapping\System\RoleModulePermissionMap.cs
+..\Mapping\System\UserMap.cs
+..\Mapping\System\UserRoleMap.cs
+..\Repositories\System\IModulePermissionRepository.cs
+..\Repositories\System\IModuleRepository.cs
+..\Repositories\System\Impl\ModulePermissionRepository.cs
+..\Repositories\System\Impl\ModuleRepository.cs
+..\Repositories\System\Impl\PermissionRepository.cs
+..\Repositories\System\Impl\RoleModulePermissionRepository.cs
+..\Repositories\System\Impl\RoleRepository.cs
+..\Repositories\System\Impl\UserRepository.cs
+..\Repositories\System\Impl\UserRoleRepository.cs
+..\Repositories\System\IPermissionRepository.cs
+..\Repositories\System\IRoleModulePermissionRepository.cs
+..\Repositories\System\IRoleRepository.cs
+..\Repositories\System\IUserRepository.cs
+..\Repositories\System\IUserRoleRepository.cs
+.\EntityCodeScript.cs
+</LastOutputs>
+    </None>
+    <None Include="T4\Include\EntityMapConfigurationTemplate.ttinclude" />
+    <None Include="T4\Include\EntityMapTemplate.ttinclude" />
+    <None Include="T4\Include\EntityRepositoryTemplate.ttinclude" />
+    <None Include="T4\Include\IEntityRepositoryTemplate.ttinclude" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Exp\Exp.Core\Exp.Core.csproj">
@@ -68,10 +134,16 @@
       <Project>{1d2dcba6-2479-4cd2-8121-cc56b1f0273d}</Project>
       <Name>Exp.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ExpApp.Core.Domain.Models\ExpApp.Domain.Models.csproj">
+    <ProjectReference Include="..\ExpApp.Domain.Models\ExpApp.Domain.Models.csproj">
       <Project>{623e6d3c-7ade-4bc1-953f-8d322ae20844}</Project>
       <Name>ExpApp.Domain.Models</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Migrations\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,0 +1,86 @@
+﻿<#@ template language="C#" debug="True" #>
+<#@ output extension="cs" #>
+<#@ Assembly Name="System.Core" #>
+<#@ Assembly Name="$(SolutionDir)Exp\Exp.Tool\bin\Debug\Exp.Tool.dll" #>
+<#@ Assembly Name="$(SolutionDir)Exp\Exp.Core\bin\Debug\Exp.Core.dll" #>
+<#@ import namespace="System.IO" #>
+<#@ Import Namespace="System.Linq" #>
+<#@ Import Namespace="System.Text" #>
+<#@ import namespace="System.Reflection" #>
+<#@ Import Namespace="System.Collections.Generic" #>
+<#@ Import Namespace="Exp.Tool" #>
+<#@ Import Namespace="Exp.Tool.T4" #>
+<#@ Import Namespace="Exp.Core" #>
+<#@ include file="T4Toolbox.tt" #>
+<#@ include file="Include\EntityMapConfigurationTemplate.ttinclude" #>
+<#@ include file="Include\EntityMapTemplate.ttinclude" #>
+<#@ include file="Include\EntityRepositoryTemplate.ttinclude" #>
+<#@ include file="Include\IEntityRepositoryTemplate.ttinclude" #>
+<#
+    //******* Configuration *******
+
+    string currentNamespace = @"\ExpApp.Domain.Data";
+    string modelsDLLPath = @"ExpApp.Domain.Models\bin\Debug\ExpApp.Domain.Models.dll";
+    string configurationFolder = "Mapping";
+
+    //******* Configuration *******
+ 
+    string currentPath = Path.GetDirectoryName(Host.TemplateFile);
+    string projectPath = currentPath.Substring(0, currentPath.IndexOf(@"\T4"));
+    string solutionPath = currentPath.Substring(0, currentPath.IndexOf(currentNamespace));
+ 
+    string modelFile= Path.Combine(solutionPath, modelsDLLPath);
+    byte[] fileData= File.ReadAllBytes(modelFile);
+    Assembly assembly = Assembly.Load(fileData);
+    Type baseType = typeof(EntityBase<>);
+    IEnumerable<Type> modelTypes = assembly.GetTypes().Where(m => m.IsAssignableToGenericType(baseType) && !m.IsAbstract);
+    foreach(Type modelType in modelTypes)
+    {
+        T4ModelInfo model = new T4ModelInfo(modelType, true);
+        
+        //实体映射类
+        EntityMapConfigurationTemplate config = new EntityMapConfigurationTemplate(model);   
+
+        var path = model.UseModuleDir 
+            ? string.Format(@"{0}\{1}\{2}\Configuration", projectPath, configurationFolder, model.ModuleName)
+            : string.Format(@"{0}\{1}\Configuration", projectPath, configurationFolder);
+
+        config.Output.Encoding = Encoding.UTF8;
+        config.RenderToFile(Path.Combine(path, config.FileName));
+
+        //实体配置类
+        EntityMapTemplate mapconfig = new EntityMapTemplate(model);
+
+        var mapPath = model.UseModuleDir 
+            ? string.Format(@"{0}\{1}\{2}", projectPath, configurationFolder, model.ModuleName)
+            : string.Format(@"{0}\{1}", projectPath, configurationFolder);
+        if(!File.Exists(mapPath))
+        {   
+            mapconfig.Output.Encoding = Encoding.UTF8;
+            mapconfig.RenderToFile(Path.Combine(mapPath, mapconfig.FileName));
+        }
+
+        //实体仓储操作接口
+        IEntityRepositoryTemplate irep= new IEntityRepositoryTemplate(model);
+        var  path2 = model.UseModuleDir
+            ? string.Format(@"{0}\Repositories\{1}", projectPath, model.ModuleName)
+            : string.Format(@"{0}\Repositories", projectPath);
+        if(!File.Exists(path2))
+        {   
+            irep.Output.Encoding = Encoding.UTF8;
+            irep.RenderToFile(Path.Combine(path2, irep.FileName));
+        }  
+        //实体仓储操作实现 
+        EntityRepositoryTemplate rep= new EntityRepositoryTemplate(model);
+
+        var path3 = model.UseModuleDir
+            ? string.Format(@"{0}\Repositories\{1}\Impl", projectPath, model.ModuleName)
+            : string.Format(@"{0}\Repositories\Impl", projectPath);
+        if(!File.Exists(path2))
+        {   
+            rep.Output.Encoding = Encoding.UTF8;
+            rep.RenderToFile(Path.Combine(path3, rep.FileName));
+        }
+
+    }
+#>

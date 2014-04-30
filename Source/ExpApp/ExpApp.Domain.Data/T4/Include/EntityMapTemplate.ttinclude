@@ -1,0 +1,63 @@
+﻿<#+
+// <copyright file="EntityMapTemplate.tt"  >
+ 
+// </copyright>
+
+public class EntityMapTemplate : CSharpTemplate
+{
+    private T4ModelInfo _model;
+        
+    public EntityMapTemplate(T4ModelInfo model)
+    {
+        _model = model;
+    }
+
+    /// <summary>
+    /// 获取生成的文件名，根据模型名定义
+    /// </summary>
+    public string FileName
+    {
+        get
+        { 
+            return string.Format("{0}Map.cs", _model.Name);
+        }
+    }
+
+	public override string TransformText()
+	{
+#>
+using System;
+using System.ComponentModel.DataAnnotations.Schema;
+using ExpApp.Domain.Models<#= _model.UseModuleDir ? "." + _model.ModuleName : null #>;
+namespace ExpApp.Domain.Data.Mapping<#= _model.UseModuleDir ? "." + _model.ModuleName : null #>
+{
+    /// <summary>
+    /// 数据表映射 —— <#= _model.Description #>
+    /// </summary>    
+	partial class <#= _model.Name #>Map
+    {
+        /// <summary>
+		/// 映射配置
+		/// </summary>
+        partial void <#= _model.Name #>MapAppend()
+        {
+			// Primary Key
+            this.HasKey(t => t.Id);
+
+            // Properties
+            
+            // Table & Column Mappings
+            this.ToTable("");
+            this.Property(t => t.Id).HasColumnName("Id").HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+            
+            // Relation
+        }
+
+		
+    }
+}
+<#+
+        return this.GenerationEnvironment.ToString();
+	}
+}
+#>

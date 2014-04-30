@@ -259,7 +259,7 @@
       <Project>{63298208-6f7e-4ffc-826e-239081de94ec}</Project>
       <Name>Exp.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\ExpApp.Core.Domain.Models\ExpApp.Domain.Models.csproj">
+    <ProjectReference Include="..\..\ExpApp.Domain.Models\ExpApp.Domain.Models.csproj">
       <Project>{623e6d3c-7ade-4bc1-953f-8d322ae20844}</Project>
       <Name>ExpApp.Domain.Models</Name>
     </ProjectReference>
