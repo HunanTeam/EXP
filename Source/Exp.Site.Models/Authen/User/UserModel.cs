@@ -41,7 +41,8 @@ namespace Exp.Site.Models.Authen.User
         [Display(Name = "确认密码")]
         [Required(ErrorMessage = "新密码确认不能为空")]
         [DataType(DataType.Password)]
-       // [System.ComponentModel.DataAnnotations.Compare("NewLoginPwd", ErrorMessage = "新密码和确认密码不一致")]
+        //      [System.ComponentModel.DataAnnotations.Compare("NewLoginPwd", ErrorMessage = "新密码和确认密码不一致")](Net4.5才有)
+       [Compare("NewLoginPwd", ErrorMessage = "新密码和确认密码不一致")]
         public string NewLoginPwdConfirm { get; set; }
 
         [Display(Name = "姓名")]
