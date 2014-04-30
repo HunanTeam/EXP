@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{79841AB6-72C2-4DB8-BF45-53C0BA333540}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ExpApp.Services</RootNamespace>
+    <AssemblyName>ExpApp.Services</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\IMobileDeviceHelper.cs" />
+    <Compile Include="Common\Impl\MobileDeviceHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="System\IModulePermissionService.cs" />
+    <Compile Include="System\IModuleService.cs" />
+    <Compile Include="System\IPermissionService.cs" />
+    <Compile Include="System\IRoleModulePermissionService.cs" />
+    <Compile Include="System\IRoleService.cs" />
+    <Compile Include="System\IUserRoleService.cs" />
+    <Compile Include="System\IUserService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Exp\Exp.Core\Exp.Core.csproj">
+      <Project>{63298208-6f7e-4ffc-826e-239081de94ec}</Project>
+      <Name>Exp.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Exp\Exp.Data\Exp.Data.csproj">
+      <Project>{1d2dcba6-2479-4cd2-8121-cc56b1f0273d}</Project>
+      <Name>Exp.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ExpApp.Core.Domain.Models\ExpApp.Domain.Models.csproj">
+      <Project>{623e6d3c-7ade-4bc1-953f-8d322ae20844}</Project>
+      <Name>ExpApp.Domain.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ExpApp.Domain.Data\ExpApp.Domain.Data.csproj">
+      <Project>{1828dd78-b811-46aa-8e8b-5624b5f047f7}</Project>
+      <Name>ExpApp.Domain.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ExpApp.Side.Common\ExpApp.Side.Common.csproj">
+      <Project>{8d7b0160-766e-47de-9521-8961f1d996eb}</Project>
+      <Name>ExpApp.Side.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ExpApp.Site.Models\ExpApp.Site.Models.csproj">
+      <Project>{a279efe0-20a6-4855-be01-538d3337726b}</Project>
+      <Name>ExpApp.Site.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
