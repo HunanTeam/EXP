@@ -123,6 +123,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdminAreaRegistration.cs" />
+    <Compile Include="Common\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -265,6 +266,14 @@
     <ProjectReference Include="..\..\Exp.Services\Exp.Services.csproj">
       <Project>{79841ab6-72c2-4db8-bf45-53c0ba333540}</Project>
       <Name>Exp.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Exp.Side.Common\Exp.Side.Common.csproj">
+      <Project>{8d7b0160-766e-47de-9521-8961f1d996eb}</Project>
+      <Name>Exp.Side.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Exp.Site.Models\Exp.Site.Models.csproj">
+      <Project>{a279efe0-20a6-4855-be01-538d3337726b}</Project>
+      <Name>Exp.Site.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
