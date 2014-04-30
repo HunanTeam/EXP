@@ -15,6 +15,7 @@
 // </copyright>
 //------------------------------------------------------------------------------
 
+using Exp.Core.Domain.System;
 using System;
 using System.Linq;
 

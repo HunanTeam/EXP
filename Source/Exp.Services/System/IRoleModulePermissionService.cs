@@ -6,6 +6,7 @@ using System.Collections.Generic;
  
 using Exp.Core;
 using Exp.Core.Domain.System;
+using Exp.Site.Models.Authen.RoleModulePermission;
 
 
 namespace Exp.Services.System

@@ -17,6 +17,7 @@
 
 using Exp.Core;
 using Exp.Core.Domain.System;
+using Exp.Site.Models.Authen.RoleModulePermission;
 using System;
 using System.Linq;
 

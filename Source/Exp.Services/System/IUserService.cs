@@ -2,6 +2,7 @@
 
 using Exp.Core;
 using Exp.Core.Domain.System;
+using Exp.Site.Models.Authen.User;
 using System;
 using System.Linq;
  

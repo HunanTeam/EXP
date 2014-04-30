@@ -56,6 +56,14 @@
       <Project>{63298208-6f7e-4ffc-826e-239081de94ec}</Project>
       <Name>Exp.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Exp.Side.Common\Exp.Side.Common.csproj">
+      <Project>{8d7b0160-766e-47de-9521-8961f1d996eb}</Project>
+      <Name>Exp.Side.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Exp.Site.Models\Exp.Site.Models.csproj">
+      <Project>{a279efe0-20a6-4855-be01-538d3337726b}</Project>
+      <Name>Exp.Site.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
