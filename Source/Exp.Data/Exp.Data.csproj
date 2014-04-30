@@ -87,8 +87,9 @@
     <Compile Include="DataHelper.cs" />
     <Compile Include="EFCachingDbContext.cs" />
     <Compile Include="EfDataProviderManager.cs" />
-    <Compile Include="EFDbContext.cs" />
+    <Compile Include="EFDbContextBase.cs" />
     <Compile Include="EFRepository.cs" />
+    <Compile Include="EFRepositoryContext.cs" />
     <Compile Include="Extensions\DbContextExtensions.cs" />
     <Compile Include="IEFRepositoryContext.cs" />
     <Compile Include="Initializers\CreateCeDatabaseIfNotExists.cs" />
@@ -96,13 +97,6 @@
     <Compile Include="Initializers\DropCreateCeDatabaseAlways.cs" />
     <Compile Include="Initializers\DropCreateCeDatabaseIfModelChanges.cs" />
     <Compile Include="Initializers\SqlCeInitializer.cs" />
-    <Compile Include="Mapping\System\ModuleMap.cs" />
-    <Compile Include="Mapping\System\ModulePermissionMap.cs" />
-    <Compile Include="Mapping\System\PermissionMap.cs" />
-    <Compile Include="Mapping\System\RoleMap.cs" />
-    <Compile Include="Mapping\System\RoleModulePermissionMap.cs" />
-    <Compile Include="Mapping\System\UserMap.cs" />
-    <Compile Include="Mapping\System\UserRoleMap.cs" />
     <Compile Include="MySqlConnectionFactory.cs" />
     <Compile Include="MySqlDataProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -125,9 +119,7 @@
     <Compile Include="ProviderWrapperToolkit\EFProviderWriterExtensionMethods.cs" />
     <Compile Include="ProviderWrapperToolkit\EntityConnectionWrapperUtils.cs" />
     <Compile Include="ProviderWrapperToolkit\GlobalSuppressions.cs" />
-    <Compile Include="EFRepositoryContext.cs" />
-    <Compile Include="Repositories\Users\Impl\UserRepository.cs" />
-    <Compile Include="Repositories\Users\IUserRepository.cs" />
+    <Compile Include="EFRepositoryContextBase.cs" />
     <Compile Include="SqlCeDataProvider.cs" />
     <Compile Include="SqlServerDataProvider.cs" />
   </ItemGroup>
@@ -140,6 +132,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Exp.Core.Domain\Exp.Core.Domain.csproj">
+      <Project>{623e6d3c-7ade-4bc1-953f-8d322ae20844}</Project>
+      <Name>Exp.Core.Domain</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Exp.Core\Exp.Core.csproj">
       <Project>{63298208-6f7e-4ffc-826e-239081de94ec}</Project>
       <Name>Exp.Core</Name>

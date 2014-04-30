@@ -10,16 +10,16 @@ using System.Linq;
 namespace Exp.Data
 {
     
-    public class EFDbContext : DbContext
+    public  class EFDbContextBase : DbContext
     {
          
-        public EFDbContext()
+        public EFDbContextBase()
             : base("default") { }
 
-        public EFDbContext(string nameOrConnectionString)
+        public EFDbContextBase(string nameOrConnectionString)
             : base(nameOrConnectionString) { }
 
-        public EFDbContext(DbConnection existingConnection)
+        public EFDbContextBase(DbConnection existingConnection)
             : base(existingConnection, true) { }
 
 

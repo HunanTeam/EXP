@@ -69,11 +69,11 @@ namespace Exp.Web.Framework
                 var efDataProviderManager = new EfDataProviderManager(dataSettingsManager.LoadSettings());
                 var dataProvider = (IDataProvider)efDataProviderManager.LoadDataProvider();
                 dataProvider.InitDatabase();
-                builder.Register<IRepositoryContext>(c => new EFRepositoryContext(dataProviderSettings.DataConnectionString)).InstancePerHttpRequest();
+                builder.Register<IRepositoryContext>(c => new EFRepositoryContextBase(dataProviderSettings.DataConnectionString)).InstancePerHttpRequest();
             }
             else
             {
-                builder.Register<IRepositoryContext>(c => new EFRepositoryContext(dataSettingsManager.LoadSettings().DataConnectionString)).InstancePerHttpRequest();
+                builder.Register<IRepositoryContext>(c => new EFRepositoryContextBase(dataSettingsManager.LoadSettings().DataConnectionString)).InstancePerHttpRequest();
             }
          
             builder.RegisterGeneric(typeof(EFRepository<,>)).As(typeof(IRepository<,>)).InstancePerHttpRequest();

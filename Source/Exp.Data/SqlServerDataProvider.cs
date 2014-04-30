@@ -110,7 +110,7 @@ namespace Exp.Data
             customCommands.AddRange(ParseCommands(HostingEnvironment.MapPath("~/App_Data/SqlServer.StoredProcedures.sql"), false));
             tablesToValidate = new string[] { };
             customCommands = new List<string>();
-            var initializer = new CreateTablesIfNotExist<EFDbContext>(tablesToValidate, customCommands.ToArray());
+            var initializer = new CreateTablesIfNotExist<EFDbContextBase>(tablesToValidate, customCommands.ToArray());
             Database.SetInitializer(initializer);
         }
 

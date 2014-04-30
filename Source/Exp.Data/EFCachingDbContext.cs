@@ -11,7 +11,7 @@ namespace Exp.Data
     ///     启用缓存的自定义EntityFramework数据访问上下文
     /// </summary>
    
-    public class EFCachingDbContext : EFDbContext
+    public class EFCachingDbContext : EFDbContextBase
     {
         private static readonly InMemoryCache InMemoryCache = new InMemoryCache();
 

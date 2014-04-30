@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{79841AB6-72C2-4DB8-BF45-53C0BA333540}</ProjectGuid>
+    <ProjectGuid>{623E6D3C-7ADE-4BC1-953F-8D322AE20844}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Exp.Services</RootNamespace>
-    <AssemblyName>Exp.Services</AssemblyName>
+    <RootNamespace>Exp.Core.Domain</RootNamespace>
+    <AssemblyName>Exp.Core.Domain</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -32,7 +32,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -40,37 +39,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Common\IMobileDeviceHelper.cs" />
-    <Compile Include="Common\Impl\MobileDeviceHelper.cs" />
+    <Compile Include="Base\Entity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="System\IModulePermissionService.cs" />
-    <Compile Include="System\IModuleService.cs" />
-    <Compile Include="System\IPermissionService.cs" />
-    <Compile Include="System\IRoleModulePermissionService.cs" />
-    <Compile Include="System\IRoleService.cs" />
-    <Compile Include="System\IUserRoleService.cs" />
-    <Compile Include="System\IUserService.cs" />
+    <Compile Include="System\Module.cs" />
+    <Compile Include="System\ModulePermission.cs" />
+    <Compile Include="System\OperateLog.cs" />
+    <Compile Include="System\Permission.cs" />
+    <Compile Include="System\Role.cs" />
+    <Compile Include="System\RoleModulePermission.cs" />
+    <Compile Include="System\User.cs" />
+    <Compile Include="System\UserRole.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Exp.Core.Domain\Exp.Core.Domain.csproj">
-      <Project>{623e6d3c-7ade-4bc1-953f-8d322ae20844}</Project>
-      <Name>Exp.Core.Domain</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Exp.Core\Exp.Core.csproj">
       <Project>{63298208-6f7e-4ffc-826e-239081de94ec}</Project>
       <Name>Exp.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Exp.Data\Exp.Data.csproj">
-      <Project>{1d2dcba6-2479-4cd2-8121-cc56b1f0273d}</Project>
-      <Name>Exp.Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Exp.Side.Common\Exp.Side.Common.csproj">
-      <Project>{8d7b0160-766e-47de-9521-8961f1d996eb}</Project>
-      <Name>Exp.Side.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Exp.Site.Models\Exp.Site.Models.csproj">
-      <Project>{a279efe0-20a6-4855-be01-538d3337726b}</Project>
-      <Name>Exp.Site.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

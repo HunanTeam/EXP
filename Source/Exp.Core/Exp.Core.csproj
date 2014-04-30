@@ -101,15 +101,6 @@
     <Compile Include="Data\IRepositoryContext.cs" />
     <Compile Include="Data\IUnitOfWork.cs" />
     <Compile Include="Data\Repository.cs" />
-    <Compile Include="Domain\Base\Entity.cs" />
-    <Compile Include="Domain\System\Module.cs" />
-    <Compile Include="Domain\System\ModulePermission.cs" />
-    <Compile Include="Domain\System\OperateLog.cs" />
-    <Compile Include="Domain\System\Permission.cs" />
-    <Compile Include="Domain\System\Role.cs" />
-    <Compile Include="Domain\System\RoleModulePermission.cs" />
-    <Compile Include="Domain\System\User.cs" />
-    <Compile Include="Domain\System\UserRole.cs" />
     <Compile Include="EntityBase.cs" />
     <Compile Include="ExceptionMessager.cs" />
     <Compile Include="OperationResult.cs" />

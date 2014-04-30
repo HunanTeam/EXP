@@ -35,7 +35,7 @@ namespace Exp.Data
         /// </summary>
         public virtual void SetDatabaseInitializer()
         {
-            var initializer = new CreateCeDatabaseIfNotExists<EFDbContext>();
+            var initializer = new CreateCeDatabaseIfNotExists<EFDbContextBase>();
             Database.SetInitializer(initializer);
         }
 
