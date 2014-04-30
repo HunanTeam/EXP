@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Web.Hosting;
 
-namespace ExpApp.Core.Data
+namespace Exp.Core.Data
 {
     public partial class DataSettingsManager
     {

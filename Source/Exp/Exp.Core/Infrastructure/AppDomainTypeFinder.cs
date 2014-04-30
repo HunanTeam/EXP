@@ -7,7 +7,7 @@ using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace ExpApp.Core.Infrastructure
+namespace Exp.Core.Infrastructure
 {
     public class AppDomainTypeFinder : ITypeFinder
     {

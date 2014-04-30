@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ExpApp.Core.Plugins
+namespace Exp.Core.Plugins
 {
     /// <summary>
     /// Plugin finder

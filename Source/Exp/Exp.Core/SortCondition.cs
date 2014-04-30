@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace ExpApp.Core
+namespace Exp.Core
 {
     /// <summary>
     ///     属性排序条件信息类

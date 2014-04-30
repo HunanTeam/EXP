@@ -1,4 +1,4 @@
-﻿namespace ExpApp.Core.Plugins
+﻿namespace Exp.Core.Plugins
 {
     public abstract class BasePlugin : IPlugin
     {

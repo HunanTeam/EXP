@@ -1,4 +1,4 @@
-﻿using ExpApp.Core.Infrastructure;
+﻿using Exp.Core.Infrastructure;
 using ExpApp.Web.Framework.Mvc;
 using ExpApp.Web.Framework.Themes;
 using System;

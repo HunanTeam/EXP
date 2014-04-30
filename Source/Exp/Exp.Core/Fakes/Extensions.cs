@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Web;
 
-namespace ExpApp.Core.Fakes
+namespace Exp.Core.Fakes
 {
     public static class Extensions
     {

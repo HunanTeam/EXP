@@ -1,8 +1,8 @@
-﻿using ExpApp.Core.Data;
+﻿using Exp.Core.Data;
 using System;
  
 
-namespace ExpApp.Data
+namespace Exp.Data
 {
     public partial class EfDataProviderManager : BaseDataProviderManager
     {

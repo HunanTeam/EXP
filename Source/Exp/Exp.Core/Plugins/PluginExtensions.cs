@@ -1,7 +1,7 @@
 using System;
 using System.IO;
 
-namespace ExpApp.Core.Plugins
+namespace Exp.Core.Plugins
 {
     public static class PluginExtensions
     {

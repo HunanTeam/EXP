@@ -1,12 +1,12 @@
-﻿using ExpApp.Core.Data;
-using ExpApp.Data.Initializers;
+﻿using Exp.Core.Data;
+using Exp.Data.Initializers;
 using System.Data.Common;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Data.SqlClient;
 
 
-namespace ExpApp.Data
+namespace Exp.Data
 {
     public class SqlCeDataProvider : IDataProvider
     {

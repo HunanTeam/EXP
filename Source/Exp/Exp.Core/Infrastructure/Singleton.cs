@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ExpApp.Core.Infrastructure
+namespace Exp.Core.Infrastructure
 {
     /// <summary>
     /// A statically compiled "singleton" used to store objects throughout the 

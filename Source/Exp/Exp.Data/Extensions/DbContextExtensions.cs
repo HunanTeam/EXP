@@ -7,12 +7,12 @@ using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
-using ExpApp.Core;
-using ExpApp.Core.Data;
+using Exp.Core;
+using Exp.Core.Data;
 
 using EntityState = System.Data.Entity.EntityState;
 
-namespace ExpApp.Data.Extensions
+namespace Exp.Data.Extensions
 {
     public static class DbContextExtensions
     {

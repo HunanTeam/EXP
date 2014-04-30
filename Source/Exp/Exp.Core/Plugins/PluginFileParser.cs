@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 
-namespace ExpApp.Core.Plugins
+namespace Exp.Core.Plugins
 {
     /// <summary>
     /// Plugin files parser

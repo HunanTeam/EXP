@@ -7,7 +7,7 @@ using System.Data.Entity.ModelConfiguration;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Reflection;
 using System.Linq;
-namespace ExpApp.Data
+namespace Exp.Data
 {
 
     public class EFDbContext : DbContext

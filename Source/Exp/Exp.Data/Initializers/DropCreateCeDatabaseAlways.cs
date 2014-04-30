@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Data.Entity;
-using ExpApp.Data.Initializers;
+using Exp.Data.Initializers;
 
-namespace ExpApp.Data.Initializers
+namespace Exp.Data.Initializers
 {
     /// <summary>
     /// An implementation of IDatabaseInitializer that will always recreate and optionally re-seed the

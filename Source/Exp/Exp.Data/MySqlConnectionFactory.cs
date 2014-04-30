@@ -6,7 +6,7 @@ using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Text;
 
-namespace ExpApp.Data
+namespace Exp.Data
 {
     public class MySqlConnectionFactory : IDbConnectionFactory
     {

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Xml;
 
-namespace ExpApp.Core.Configuration
+namespace Exp.Core.Configuration
 {
     /// <summary>
     /// Represents a NopConfig

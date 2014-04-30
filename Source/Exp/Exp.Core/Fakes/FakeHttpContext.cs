@@ -5,7 +5,7 @@ using System.Security.Principal;
 using System.Web;
 using System.Web.SessionState;
 
-namespace ExpApp.Core.Fakes
+namespace Exp.Core.Fakes
 {
     public class FakeHttpContext : HttpContextBase
     {

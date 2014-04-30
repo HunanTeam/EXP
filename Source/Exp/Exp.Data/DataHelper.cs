@@ -1,6 +1,6 @@
 ﻿
 
-namespace ExpApp.Data
+namespace Exp.Data
 {
     /// <summary>
     ///     数据辅助操作类

@@ -1,4 +1,4 @@
-﻿using ExpApp.Core.ComponentModel;
+﻿using Exp.Core.ComponentModel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,7 +11,7 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using System.Web;
 
-namespace ExpApp.Core
+namespace Exp.Core
 {
     /// <summary>
     /// Represents a common helper

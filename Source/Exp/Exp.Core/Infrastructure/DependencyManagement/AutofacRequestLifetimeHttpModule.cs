@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Web;
 
-namespace ExpApp.Core.Infrastructure.DependencyManagement
+namespace Exp.Core.Infrastructure.DependencyManagement
 {
     /// <summary>
     /// An <see cref="IHttpModule"/> and <see cref="ILifetimeScopeProvider"/> implementation 

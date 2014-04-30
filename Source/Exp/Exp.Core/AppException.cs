@@ -4,7 +4,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 
-namespace ExpApp.Core
+namespace Exp.Core
 {
     /// <summary>
     /// Represents errors that occur during application execution

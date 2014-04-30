@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using ExpApp.Core.Data;
+using Exp.Core.Data;
 
-namespace ExpApp.Core
+namespace Exp.Core
 {
     public class PublicHelper
     {

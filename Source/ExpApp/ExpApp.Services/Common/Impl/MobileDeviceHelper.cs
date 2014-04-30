@@ -1,5 +1,5 @@
 ﻿using System.Web;
-using ExpApp.Core;
+using Exp.Core;
 
 namespace ExpApp.Services.Common.Impl
 {

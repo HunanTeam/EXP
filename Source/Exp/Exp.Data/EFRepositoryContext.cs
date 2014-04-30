@@ -5,12 +5,12 @@ using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Data.SqlClient;
 using System.Linq.Expressions;
-using ExpApp.Core;
-using ExpApp.Core.Data;
+using Exp.Core;
+using Exp.Core.Data;
 
-using ExpApp.Data.Extensions;
+using Exp.Data.Extensions;
 
-namespace ExpApp.Data
+namespace Exp.Data
 {
     /// <summary>
     ///     单元操作实现

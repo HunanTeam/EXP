@@ -2,7 +2,7 @@
 using System;
 using System.Reflection;
 
-namespace ExpApp.Core
+namespace Exp.Core
 {
     /// <summary>
     ///     枚举扩展方法类

@@ -1,4 +1,4 @@
-﻿namespace ExpApp.Core.Plugins
+﻿namespace Exp.Core.Plugins
 {
     /// <summary>
     /// Interface denoting plug-in attributes that are displayed throughout 

@@ -1,4 +1,4 @@
-﻿using ExpApp.Core.Infrastructure;
+﻿using Exp.Core.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Globalization;

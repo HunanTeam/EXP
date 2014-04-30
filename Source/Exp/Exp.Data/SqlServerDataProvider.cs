@@ -1,5 +1,5 @@
-﻿using ExpApp.Core.Data;
-using ExpApp.Data.Initializers;
+﻿using Exp.Core.Data;
+using Exp.Data.Initializers;
 using System;
 using System.Collections.Generic;
 using System.Data.Common;
@@ -12,7 +12,7 @@ using System.Web.Hosting;
  
 
 
-namespace ExpApp.Data
+namespace Exp.Data
 {
     public class SqlServerDataProvider : IDataProvider
     {

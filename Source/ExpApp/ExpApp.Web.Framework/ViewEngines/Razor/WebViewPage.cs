@@ -1,5 +1,5 @@
-﻿using ExpApp.Core;
-using ExpApp.Core.Infrastructure;
+﻿using Exp.Core;
+using Exp.Core.Infrastructure;
 using ExpApp.Web.Framework.Themes;
 using System;
 using System.Collections.Generic;

@@ -1,11 +1,11 @@
-﻿using ExpApp.Core.Configuration;
-using ExpApp.Core.Infrastructure.DependencyManagement;
+﻿using Exp.Core.Configuration;
+using Exp.Core.Infrastructure.DependencyManagement;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ExpApp.Core.Infrastructure
+namespace Exp.Core.Infrastructure
 {
     public interface IEngine
     {

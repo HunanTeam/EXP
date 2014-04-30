@@ -1,5 +1,5 @@
-﻿using ExpApp.Core.Data;
-using ExpApp.Data.Initializers;
+﻿using Exp.Core.Data;
+using Exp.Data.Initializers;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -10,7 +10,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 
-namespace ExpApp.Data
+namespace Exp.Data
 {
     public class MySqlDataProvider : IDataProvider
     {

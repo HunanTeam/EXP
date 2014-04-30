@@ -5,7 +5,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 
-namespace ExpApp.Core.Infrastructure
+namespace Exp.Core.Infrastructure
 {
     public interface ITypeFinder
     {

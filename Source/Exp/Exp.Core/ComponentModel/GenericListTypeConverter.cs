@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Globalization;
 using System.Linq;
 
-namespace ExpApp.Core.ComponentModel
+namespace Exp.Core.ComponentModel
 {
     public class GenericListTypeConverter<T> : TypeConverter
     {

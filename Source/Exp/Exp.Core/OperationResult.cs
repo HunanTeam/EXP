@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 
-namespace ExpApp.Core
+namespace Exp.Core
 {
     /// <summary>
     ///     业务操作结果信息类，对操作结果进行封装

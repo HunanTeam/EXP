@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace ExpApp.Core.Plugins
+namespace Exp.Core.Plugins
 {
     /// <summary>
     /// Plugin finder

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading;
 
-namespace ExpApp.Core.ComponentModel
+namespace Exp.Core.ComponentModel
 {
     /// <summary>
     /// Provides a convenience methodology for implementing locked access to resources. 

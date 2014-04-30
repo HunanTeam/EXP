@@ -1,5 +1,6 @@
 ﻿using System;
-using ExpApp.Core;
+using Exp.Core;
+
 
 namespace ExpApp.Domain.Models.Base
 {

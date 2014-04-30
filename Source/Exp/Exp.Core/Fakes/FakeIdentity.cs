@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Security.Principal;
 
-namespace ExpApp.Core.Fakes
+namespace Exp.Core.Fakes
 {
     public class FakeIdentity : IIdentity
     {

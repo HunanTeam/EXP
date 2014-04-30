@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Linq.Expressions;
-using ExpApp.Core.Data;
+using Exp.Core.Data;
 
-namespace ExpApp.Core
+namespace Exp.Core
 {
     /// <summary>
     ///     集合扩展方法类

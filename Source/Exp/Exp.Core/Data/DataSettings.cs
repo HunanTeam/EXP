@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ExpApp.Core.Data
+namespace Exp.Core.Data
 {
     public partial class DataSettings
     {

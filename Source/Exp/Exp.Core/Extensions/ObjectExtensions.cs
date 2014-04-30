@@ -11,7 +11,7 @@
 
 using System;
 
-namespace ExpApp.Core
+namespace Exp.Core
 {
     /// <summary>
     ///     通用类型扩展方法类

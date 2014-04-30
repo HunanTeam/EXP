@@ -5,7 +5,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Reflection;
 
-namespace ExpApp.Core
+namespace Exp.Core
 {
     /// <summary>
     ///     类型扩展方法类

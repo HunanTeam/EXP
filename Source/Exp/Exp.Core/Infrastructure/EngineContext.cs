@@ -1,4 +1,4 @@
-﻿using ExpApp.Core.Configuration;
+﻿using Exp.Core.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 
-namespace ExpApp.Core.Infrastructure
+namespace Exp.Core.Infrastructure
 {
     public class EngineContext
     {

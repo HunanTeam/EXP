@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ExpApp.Core.Data
+namespace Exp.Core.Data
 {
     public partial class DataSettingsHelper
     {

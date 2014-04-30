@@ -1,17 +1,20 @@
 ﻿using Autofac;
 using Autofac.Integration.Mvc;
-using ExpApp.Core;
-using ExpApp.Core.Fakes;
-using ExpApp.Core.Infrastructure.DependencyManagement;
-using ExpApp.Core.Plugins;
+using Exp.Core;
+using Exp.Core.Data;
+using Exp.Core.Fakes;
+using Exp.Core.Infrastructure;
+using Exp.Core.Infrastructure.DependencyManagement;
+using Exp.Core.Fakes;
+using Exp.Core.Plugins;
+using Exp.Data;
 using ExpApp.Web.Framework.Themes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Web;
-using ExpApp.Core.Data;
-using ExpApp.Data;
+
 using ExpApp.Services.Common;
 using ExpApp.Services.Common.Impl;
 
@@ -19,7 +22,7 @@ namespace ExpApp.Web.Framework
 {
     public class DependencyRegistrar : IDependencyRegistrar
     {
-        public void Register(ContainerBuilder builder, Core.Infrastructure.ITypeFinder typeFinder)
+        public void Register(ContainerBuilder builder,ITypeFinder typeFinder)
         {
             builder.Register(c =>
                 //register FakeHttpContext when HttpContext is not available

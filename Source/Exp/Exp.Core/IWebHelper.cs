@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Web;
 
-namespace ExpApp.Core
+namespace Exp.Core
 {
     public partial interface IWebHelper
     {

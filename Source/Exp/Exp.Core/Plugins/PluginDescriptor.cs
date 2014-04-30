@@ -1,11 +1,11 @@
-﻿using ExpApp.Core.Infrastructure;
+﻿using Exp.Core.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 
 
-namespace ExpApp.Core.Plugins
+namespace Exp.Core.Plugins
 {
     public class PluginDescriptor : IComparable<PluginDescriptor>
     {

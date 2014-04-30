@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ExpApp.Core
+namespace Exp.Core
 {
     [Serializable]
     public class EntityBase<Key>

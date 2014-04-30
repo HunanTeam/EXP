@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Web;
 using Autofac.Integration.Mvc;
-namespace ExpApp.Core.Infrastructure.DependencyManagement
+namespace Exp.Core.Infrastructure.DependencyManagement
 {
 
     public class ContainerManager

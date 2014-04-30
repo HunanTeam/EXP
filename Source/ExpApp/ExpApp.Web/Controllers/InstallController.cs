@@ -1,5 +1,5 @@
-﻿using ExpApp.Core.Data;
-using ExpApp.Core.Infrastructure;
+﻿using Exp.Core.Data;
+using Exp.Core.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;

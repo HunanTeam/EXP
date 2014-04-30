@@ -1,12 +1,12 @@
-﻿using ExpApp.Core;
-using ExpApp.Core.Data;
+﻿using Exp.Core;
+using Exp.Core.Data;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Text;
 
-namespace ExpApp.Data
+namespace Exp.Data
 {
     public interface IEFRepositoryContext : IRepositoryContext
     {

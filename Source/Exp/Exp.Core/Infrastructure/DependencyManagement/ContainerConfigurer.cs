@@ -1,10 +1,10 @@
-﻿using ExpApp.Core.Configuration;
+﻿using Exp.Core.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ExpApp.Core.Infrastructure.DependencyManagement
+namespace Exp.Core.Infrastructure.DependencyManagement
 {
   public  class ContainerConfigurer
     {

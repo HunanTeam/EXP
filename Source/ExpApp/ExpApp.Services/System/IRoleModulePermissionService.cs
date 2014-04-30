@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using ExpApp.Core;
+using Exp.Core;
 using ExpApp.Site.Models.Authen.RoleModulePermission;
 using ExpApp.Domain.Models.System;
 

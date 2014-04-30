@@ -1,6 +1,6 @@
 ﻿
 
-using ExpApp.Core;
+using Exp.Core;
 using ExpApp.Site.Models.Authen.User;
 using System;
 using System.Linq;

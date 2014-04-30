@@ -1,4 +1,4 @@
-﻿using ExpApp.Core.Infrastructure;
+﻿using Exp.Core.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -8,7 +8,7 @@ using System.Text;
 using System.Web;
 using System.Web.Hosting;
 
-namespace ExpApp.Core
+namespace Exp.Core
 {
     public partial class WebHelper : IWebHelper
     {

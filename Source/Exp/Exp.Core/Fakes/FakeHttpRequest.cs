@@ -3,7 +3,7 @@ using System.Collections.Specialized;
 using System.Web;
 using System.Web.Mvc;
 
-namespace ExpApp.Core.Fakes
+namespace Exp.Core.Fakes
 {
     public class FakeHttpRequest : HttpRequestBase
     {

@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using ExpApp.Core;
-using ExpApp.Core.Data;
+using Exp.Core;
+using Exp.Core.Data;
 using System.Data.Entity;
 
 
-namespace ExpApp.Data
+namespace Exp.Data
 {
     /// <summary>
     ///     EntityFramework仓储操作基类

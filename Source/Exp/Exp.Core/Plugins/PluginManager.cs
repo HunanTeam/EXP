@@ -11,15 +11,15 @@ using System.Web.Compilation;
 using System.Web.Hosting;
 
 
-using ExpApp.Core;
-using ExpApp.Core.ComponentModel;
-using ExpApp.Core.Plugins;
+using Exp.Core;
+using Exp.Core.ComponentModel;
+using Exp.Core.Plugins;
 
 //Contributor: Umbraco (http://www.umbraco.com). Thanks a lot! 
 //SEE THIS POST for full details of what this does - http://shazwazza.com/post/Developing-a-plugin-framework-in-ASPNET-with-medium-trust.aspx
 
 [assembly: PreApplicationStartMethod(typeof(PluginManager), "Initialize")]
-namespace ExpApp.Core.Plugins
+namespace Exp.Core.Plugins
 {
     /// <summary>
     /// Sets the application up for the plugin referencing

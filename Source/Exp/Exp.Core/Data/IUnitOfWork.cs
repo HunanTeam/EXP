@@ -1,4 +1,4 @@
-﻿namespace ExpApp.Core.Data
+﻿namespace Exp.Core.Data
 {
     /// <summary>
     ///     业务单元操作接口

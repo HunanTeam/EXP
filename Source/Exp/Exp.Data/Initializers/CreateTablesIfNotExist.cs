@@ -6,7 +6,7 @@ using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Transactions;
 
-namespace ExpApp.Data.Initializers
+namespace Exp.Data.Initializers
 {
     public class CreateTablesIfNotExist<TContext> : IDatabaseInitializer<TContext> where TContext : DbContext
     {

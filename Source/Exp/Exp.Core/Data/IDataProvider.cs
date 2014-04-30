@@ -1,7 +1,7 @@
 ﻿
 using System.Data.Common;
 
-namespace ExpApp.Core.Data
+namespace Exp.Core.Data
 {
     /// <summary>
     /// Data provider interface

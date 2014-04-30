@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Data.Entity;
 using System.Transactions;
-using ExpApp.Data.Initializers;
+using Exp.Data.Initializers;
 
-namespace ExpApp.Data.Initializers
+namespace Exp.Data.Initializers
 {
 
     /// <summary>

@@ -3,9 +3,9 @@ using System.Configuration;
 using System.Data.Common;
 using EFCachingProvider;
 using EFCachingProvider.Caching;
-using ExpApp.Core;
+using Exp.Core;
 
-namespace ExpApp.Data
+namespace Exp.Data
 {
     /// <summary>
     ///     启用缓存的自定义EntityFramework数据访问上下文

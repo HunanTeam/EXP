@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Linq;
-using ExpApp.Core;
+using Exp.Core;
 
 namespace ExpApp.Web.Framework.Themes
 {

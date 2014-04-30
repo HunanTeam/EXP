@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ExpApp.Core
+namespace Exp.Core
 {
     /// <summary>
     ///     异常信息封装类
