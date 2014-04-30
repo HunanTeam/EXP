@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Reflection;
-
+using System.Linq;
 namespace Exp.Tool.T4
 {
     /// <summary>
@@ -63,7 +63,22 @@ namespace Exp.Tool.T4
 
             var descAttributes = modelType.GetCustomAttributes(typeof(DescriptionAttribute), true);
             Description = descAttributes.Length == 1 ? ((DescriptionAttribute)descAttributes[0]).Description : Name;
-            Properties = modelType.GetProperties();
+
+            List<Type> sysTypeNameList = new List<Type>();
+            sysTypeNameList.Add(typeof(int));
+            sysTypeNameList.Add(typeof(decimal));
+            sysTypeNameList.Add(typeof(double));
+            sysTypeNameList.Add(typeof(DateTime));
+            sysTypeNameList.Add(typeof(string));
+            sysTypeNameList.Add(typeof(bool));
+            sysTypeNameList.Add(typeof(int?));
+            sysTypeNameList.Add(typeof(decimal?));
+            sysTypeNameList.Add(typeof(double?));
+            sysTypeNameList.Add(typeof(DateTime?));
+            sysTypeNameList.Add(typeof(string));
+            sysTypeNameList.Add(typeof(bool?));
+      
+            Properties = modelType.GetProperties(BindingFlags.Instance|BindingFlags.Public).Where(c=> sysTypeNameList.Contains(c.PropertyType));
         }
     }
 }

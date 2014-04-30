@@ -41,14 +41,14 @@
   <ItemGroup>
     <Compile Include="Base\Entity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="System\Module.cs" />
-    <Compile Include="System\ModulePermission.cs" />
-    <Compile Include="System\OperateLog.cs" />
-    <Compile Include="System\Permission.cs" />
-    <Compile Include="System\Role.cs" />
-    <Compile Include="System\RoleModulePermission.cs" />
-    <Compile Include="System\User.cs" />
-    <Compile Include="System\UserRole.cs" />
+    <Compile Include="Sys\Module.cs" />
+    <Compile Include="Sys\ModulePermission.cs" />
+    <Compile Include="Sys\OperateLog.cs" />
+    <Compile Include="Sys\Permission.cs" />
+    <Compile Include="Sys\Role.cs" />
+    <Compile Include="Sys\RoleModulePermission.cs" />
+    <Compile Include="Sys\User.cs" />
+    <Compile Include="Sys\UserRole.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Exp\Exp.Core\Exp.Core.csproj">

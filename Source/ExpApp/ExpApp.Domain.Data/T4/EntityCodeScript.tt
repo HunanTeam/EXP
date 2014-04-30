@@ -16,9 +16,9 @@
 <#@ include file="Include\EntityMapTemplate.ttinclude" #>
 <#@ include file="Include\EntityRepositoryTemplate.ttinclude" #>
 <#@ include file="Include\IEntityRepositoryTemplate.ttinclude" #>
-<#
+<#      
     //******* Configuration *******
-
+ 
     string currentNamespace = @"\ExpApp.Domain.Data";
     string modelsDLLPath = @"ExpApp.Domain.Models\bin\Debug\ExpApp.Domain.Models.dll";
     string configurationFolder = "Mapping";
@@ -59,7 +59,7 @@
             mapconfig.Output.Encoding = Encoding.UTF8;
             mapconfig.RenderToFile(Path.Combine(mapPath, mapconfig.FileName));
         }
-
+ 
         //实体仓储操作接口
         IEntityRepositoryTemplate irep= new IEntityRepositoryTemplate(model);
         var  path2 = model.UseModuleDir

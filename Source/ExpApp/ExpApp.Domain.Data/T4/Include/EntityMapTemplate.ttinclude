@@ -43,12 +43,20 @@ namespace ExpApp.Domain.Data.Mapping<#= _model.UseModuleDir ? "." + _model.Modul
         {
 			// Primary Key
             this.HasKey(t => t.Id);
-
-            // Properties
-            
             // Table & Column Mappings
             this.ToTable("");
             this.Property(t => t.Id).HasColumnName("Id").HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+            // Properties
+            <#+ foreach(var p in _model.Properties)
+            {
+                if(p.Name=="Id")
+                {
+                    continue;
+                }
+#> 
+           this.Property(t => t.<#=p.Name #>).HasColumnName("<#=p.Name #>");
+           <#+  }#>
+          
             
             // Relation
         }

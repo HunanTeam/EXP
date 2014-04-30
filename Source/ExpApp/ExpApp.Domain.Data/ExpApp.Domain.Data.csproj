@@ -47,35 +47,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Mapping\System\Configuration\ModuleMap.generated.cs" />
-    <Compile Include="Mapping\System\Configuration\ModulePermissionMap.generated.cs" />
-    <Compile Include="Mapping\System\Configuration\PermissionMap.generated.cs" />
-    <Compile Include="Mapping\System\Configuration\RoleMap.generated.cs" />
-    <Compile Include="Mapping\System\Configuration\RoleModulePermissionMap.generated.cs" />
-    <Compile Include="Mapping\System\Configuration\UserMap.generated.cs" />
-    <Compile Include="Mapping\System\Configuration\UserRoleMap.generated.cs" />
-    <Compile Include="Mapping\System\ModuleMap.cs" />
-    <Compile Include="Mapping\System\ModulePermissionMap.cs" />
-    <Compile Include="Mapping\System\PermissionMap.cs" />
-    <Compile Include="Mapping\System\RoleMap.cs" />
-    <Compile Include="Mapping\System\RoleModulePermissionMap.cs" />
-    <Compile Include="Mapping\System\UserMap.cs" />
-    <Compile Include="Mapping\System\UserRoleMap.cs" />
+    <Compile Include="Mapping\Sys\Configuration\ModuleMap.generated.cs" />
+    <Compile Include="Mapping\Sys\Configuration\ModulePermissionMap.generated.cs" />
+    <Compile Include="Mapping\Sys\Configuration\PermissionMap.generated.cs" />
+    <Compile Include="Mapping\Sys\Configuration\RoleMap.generated.cs" />
+    <Compile Include="Mapping\Sys\Configuration\RoleModulePermissionMap.generated.cs" />
+    <Compile Include="Mapping\Sys\Configuration\UserMap.generated.cs" />
+    <Compile Include="Mapping\Sys\Configuration\UserRoleMap.generated.cs" />
+    <Compile Include="Mapping\Sys\ModuleMap.cs" />
+    <Compile Include="Mapping\Sys\ModulePermissionMap.cs" />
+    <Compile Include="Mapping\Sys\PermissionMap.cs" />
+    <Compile Include="Mapping\Sys\RoleMap.cs" />
+    <Compile Include="Mapping\Sys\RoleModulePermissionMap.cs" />
+    <Compile Include="Mapping\Sys\UserMap.cs" />
+    <Compile Include="Mapping\Sys\UserRoleMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\System\IModulePermissionRepository.cs" />
-    <Compile Include="Repositories\System\IModuleRepository.cs" />
-    <Compile Include="Repositories\System\Impl\ModulePermissionRepository.cs" />
-    <Compile Include="Repositories\System\Impl\ModuleRepository.cs" />
-    <Compile Include="Repositories\System\Impl\PermissionRepository.cs" />
-    <Compile Include="Repositories\System\Impl\RoleModulePermissionRepository.cs" />
-    <Compile Include="Repositories\System\Impl\RoleRepository.cs" />
-    <Compile Include="Repositories\System\Impl\UserRepository.cs" />
-    <Compile Include="Repositories\System\Impl\UserRoleRepository.cs" />
-    <Compile Include="Repositories\System\IPermissionRepository.cs" />
-    <Compile Include="Repositories\System\IRoleModulePermissionRepository.cs" />
-    <Compile Include="Repositories\System\IRoleRepository.cs" />
-    <Compile Include="Repositories\System\IUserRepository.cs" />
-    <Compile Include="Repositories\System\IUserRoleRepository.cs" />
+    <Compile Include="Repositories\Sys\IModulePermissionRepository.cs" />
+    <Compile Include="Repositories\Sys\IModuleRepository.cs" />
+    <Compile Include="Repositories\Sys\Impl\ModulePermissionRepository.cs" />
+    <Compile Include="Repositories\Sys\Impl\ModuleRepository.cs" />
+    <Compile Include="Repositories\Sys\Impl\PermissionRepository.cs" />
+    <Compile Include="Repositories\Sys\Impl\RoleModulePermissionRepository.cs" />
+    <Compile Include="Repositories\Sys\Impl\RoleRepository.cs" />
+    <Compile Include="Repositories\Sys\Impl\UserRepository.cs" />
+    <Compile Include="Repositories\Sys\Impl\UserRoleRepository.cs" />
+    <Compile Include="Repositories\Sys\IPermissionRepository.cs" />
+    <Compile Include="Repositories\Sys\IRoleModulePermissionRepository.cs" />
+    <Compile Include="Repositories\Sys\IRoleRepository.cs" />
+    <Compile Include="Repositories\Sys\IUserRepository.cs" />
+    <Compile Include="Repositories\Sys\IUserRoleRepository.cs" />
     <Compile Include="T4\EntityCodeScript.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -89,34 +89,34 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>EntityCodeScript.cs</LastGenOutput>
       <LastOutputs>
-..\Mapping\System\Configuration\ModuleMap.generated.cs
-..\Mapping\System\Configuration\ModulePermissionMap.generated.cs
-..\Mapping\System\Configuration\PermissionMap.generated.cs
-..\Mapping\System\Configuration\RoleMap.generated.cs
-..\Mapping\System\Configuration\RoleModulePermissionMap.generated.cs
-..\Mapping\System\Configuration\UserMap.generated.cs
-..\Mapping\System\Configuration\UserRoleMap.generated.cs
-..\Mapping\System\ModuleMap.cs
-..\Mapping\System\ModulePermissionMap.cs
-..\Mapping\System\PermissionMap.cs
-..\Mapping\System\RoleMap.cs
-..\Mapping\System\RoleModulePermissionMap.cs
-..\Mapping\System\UserMap.cs
-..\Mapping\System\UserRoleMap.cs
-..\Repositories\System\IModulePermissionRepository.cs
-..\Repositories\System\IModuleRepository.cs
-..\Repositories\System\Impl\ModulePermissionRepository.cs
-..\Repositories\System\Impl\ModuleRepository.cs
-..\Repositories\System\Impl\PermissionRepository.cs
-..\Repositories\System\Impl\RoleModulePermissionRepository.cs
-..\Repositories\System\Impl\RoleRepository.cs
-..\Repositories\System\Impl\UserRepository.cs
-..\Repositories\System\Impl\UserRoleRepository.cs
-..\Repositories\System\IPermissionRepository.cs
-..\Repositories\System\IRoleModulePermissionRepository.cs
-..\Repositories\System\IRoleRepository.cs
-..\Repositories\System\IUserRepository.cs
-..\Repositories\System\IUserRoleRepository.cs
+..\Mapping\Sys\Configuration\ModuleMap.generated.cs
+..\Mapping\Sys\Configuration\ModulePermissionMap.generated.cs
+..\Mapping\Sys\Configuration\PermissionMap.generated.cs
+..\Mapping\Sys\Configuration\RoleMap.generated.cs
+..\Mapping\Sys\Configuration\RoleModulePermissionMap.generated.cs
+..\Mapping\Sys\Configuration\UserMap.generated.cs
+..\Mapping\Sys\Configuration\UserRoleMap.generated.cs
+..\Mapping\Sys\ModuleMap.cs
+..\Mapping\Sys\ModulePermissionMap.cs
+..\Mapping\Sys\PermissionMap.cs
+..\Mapping\Sys\RoleMap.cs
+..\Mapping\Sys\RoleModulePermissionMap.cs
+..\Mapping\Sys\UserMap.cs
+..\Mapping\Sys\UserRoleMap.cs
+..\Repositories\Sys\IModulePermissionRepository.cs
+..\Repositories\Sys\IModuleRepository.cs
+..\Repositories\Sys\Impl\ModulePermissionRepository.cs
+..\Repositories\Sys\Impl\ModuleRepository.cs
+..\Repositories\Sys\Impl\PermissionRepository.cs
+..\Repositories\Sys\Impl\RoleModulePermissionRepository.cs
+..\Repositories\Sys\Impl\RoleRepository.cs
+..\Repositories\Sys\Impl\UserRepository.cs
+..\Repositories\Sys\Impl\UserRoleRepository.cs
+..\Repositories\Sys\IPermissionRepository.cs
+..\Repositories\Sys\IRoleModulePermissionRepository.cs
+..\Repositories\Sys\IRoleRepository.cs
+..\Repositories\Sys\IUserRepository.cs
+..\Repositories\Sys\IUserRoleRepository.cs
 .\EntityCodeScript.cs
 </LastOutputs>
     </None>
