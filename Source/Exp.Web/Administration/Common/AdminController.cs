@@ -19,13 +19,14 @@ namespace Exp.Admin.Common
         }
         protected User GetCurrentUser()
         {
-            var user = SessionHelper.GetSession("CurrentUser") as User;
-            return user;
+            return null;
+            //var user = SessionHelper.GetSession("CurrentUser") as User;
+            //return user;
         }
 
         protected void CreateBaseData<T>(T model) where T : EntityCommon
         {
-            var user = SessionHelper.GetSession("CurrentUser") as User;
+            var user = GetCurrentUser();
             if (user != null)
             {
                 model.CreateId = user.Id;
@@ -39,7 +40,7 @@ namespace Exp.Admin.Common
 
         protected void UpdateBaseData<T>(T model) where T : EntityCommon
         {
-            var user = SessionHelper.GetSession("CurrentUser") as User;
+            var user = GetCurrentUser();
             if (user != null)
             {
                 model.ModifyId = user.Id;
