@@ -19,6 +19,8 @@ using ExpApp.Services.Common;
 using ExpApp.Services.Common.Impl;
 using ExpApp.Domain.Data.Repositories.Sys;
 using ExpApp.Domain.Data.Repositories.Sys.Impl;
+using ExpApp.Services.Sys;
+using ExpApp.Services.Sys.Impl;
 namespace ExpApp.Web.Framework
 {
     public class DependencyRegistrar : IDependencyRegistrar
@@ -89,6 +91,14 @@ namespace ExpApp.Web.Framework
             builder.RegisterType<ModuleRepository>().As<IModuleRepository>().InstancePerHttpRequest();
             builder.RegisterType<ModulePermissionRepository>().As<IModulePermissionRepository>().InstancePerHttpRequest();
             
+            //Service
+            builder.RegisterType<ModulePermissionService>().As<IModulePermissionService>().InstancePerHttpRequest();
+            builder.RegisterType<ModulePermissionService>().As<IModuleService>().InstancePerHttpRequest();
+            builder.RegisterType<PermissionService>().As<IPermissionService>().InstancePerHttpRequest();
+            builder.RegisterType<RoleModulePermissionService>().As<IRoleModulePermissionService>().InstancePerHttpRequest();
+            builder.RegisterType<RoleService>().As<IRoleService>().InstancePerHttpRequest();
+            builder.RegisterType<UserRoleService>().As<IUserRoleService>().InstancePerHttpRequest();
+            builder.RegisterType<UserService>().As<IUserService>().InstancePerHttpRequest();
         }
 
         public int Order

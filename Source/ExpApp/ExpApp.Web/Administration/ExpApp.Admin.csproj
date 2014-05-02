@@ -126,9 +126,49 @@
     <Compile Include="AdminAreaRegistration.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ModuleController.cs" />
+    <Compile Include="Controllers\PermissionController.cs" />
+    <Compile Include="Controllers\RoleController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\admin\css\bootstrap-responsive.min.css" />
+    <Content Include="Content\admin\css\bootstrap.min.css" />
+    <Content Include="Content\admin\css\font.css" />
+    <Content Include="Content\admin\css\matrix-login.css" />
+    <Content Include="Content\admin\css\matrix-media.css" />
+    <Content Include="Content\admin\css\matrix-style.css" />
+    <Content Include="Content\admin\css\select2.css" />
+    <Content Include="Content\admin\css\uniform.css" />
+    <Content Include="Content\admin\font-awesome\css\font-awesome.css" />
+    <Content Include="Content\admin\images\icon\details_close.png" />
+    <Content Include="Content\admin\images\icon\details_open.png" />
+    <Content Include="Content\admin\images\icon\sort_asc.png" />
+    <Content Include="Content\admin\images\icon\sort_asc_disabled.png" />
+    <Content Include="Content\admin\images\icon\sort_both.png" />
+    <Content Include="Content\admin\images\icon\sort_desc.png" />
+    <Content Include="Content\admin\images\icon\sort_desc_disabled.png" />
+    <Content Include="Content\admin\img\breadcrumb.png" />
+    <Content Include="Content\admin\img\glyphicons-halflings-white.png" />
+    <Content Include="Content\admin\img\gritter.png" />
+    <Content Include="Content\admin\img\hue.png" />
+    <Content Include="Content\admin\img\larrow.png" />
+    <Content Include="Content\admin\img\line.png" />
+    <Content Include="Content\admin\img\logo.png" />
+    <Content Include="Content\admin\img\menu-active.png" />
+    <Content Include="Content\admin\img\rarrow.png" />
+    <Content Include="Content\admin\img\saturation.png" />
+    <Content Include="Content\admin\img\select2.png" />
+    <Content Include="Content\admin\img\spinner.gif" />
+    <Content Include="Content\admin\img\sprite.png" />
+    <Content Include="Content\admin\js\bootbox.min.js" />
+    <Content Include="Content\admin\js\bootstrap.min.js" />
+    <Content Include="Content\admin\js\jquery.dataTables.AjaxSource.min.js" />
+    <Content Include="Content\admin\js\jquery.dataTables.columnFilter.js" />
+    <Content Include="Content\admin\js\jquery.dataTables.min.js" />
+    <Content Include="Content\admin\js\jquery.min.js" />
+    <Content Include="Content\admin\js\matrix.js" />
+    <Content Include="Content\admin\js\select2.min.js" />
     <Content Include="Content\unicorn\css\bootstrap-responsive.min.css" />
     <Content Include="Content\unicorn\css\bootstrap.min.css" />
     <Content Include="Content\unicorn\css\colorpicker.css" />
@@ -325,6 +365,18 @@
     <Content Include="Views\Shared\_MainLayout.cshtml" />
     <Content Include="Views\Shared\_SidebarMenu.cshtml" />
     <Content Include="Views\Shared\_TopSearch.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\admin\font-awesome\css\Descr.WD3" />
+    <Content Include="Content\admin\font-awesome\font\Descr.WD3" />
+    <Content Include="Content\admin\font-awesome\font\fontawesome-webfont.eot" />
+    <Content Include="Content\admin\font-awesome\font\fontawesome-webfont.eot%40" />
+    <Content Include="Content\admin\font-awesome\font\fontawesome-webfont.ttf" />
+    <Content Include="Content\admin\font-awesome\font\fontawesome-webfont.woff" />
+    <Content Include="Content\admin\images\backgrounds\blank2" />
+    <Content Include="Content\admin\images\backgrounds\Descr.WD3" />
+    <Content Include="Content\admin\images\backgrounds\skype_3Asuniljoshi19%40call" />
+    <Content Include="Content\admin\img\Descr.WD3" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

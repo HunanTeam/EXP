@@ -28,8 +28,8 @@ namespace ExpApp.Services.Sys
         #endregion
 
         #region 查询
-        IList<ModuleModel> QueryParentModules();
-        IList<ModuleModel> QueryModuleModels();
+        //IList<ModuleModel> QueryParentModules();
+        //IList<ModuleModel> QueryModuleModels();
         #endregion
     }
 }

@@ -38,6 +38,7 @@
       <HintPath>..\..\packages\AutoMapper.3.2.0\lib\net40\AutoMapper.Net4.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
@@ -49,9 +50,17 @@
   <ItemGroup>
     <Compile Include="Common\IMobileDeviceHelper.cs" />
     <Compile Include="Common\Impl\MobileDeviceHelper.cs" />
+    <Compile Include="CoreServiceBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sys\IModulePermissionService.cs" />
     <Compile Include="Sys\IModuleService.cs" />
+    <Compile Include="Sys\Impl\ModulePermissionService.cs" />
+    <Compile Include="Sys\Impl\ModuleService.cs" />
+    <Compile Include="Sys\Impl\PermissionService.cs" />
+    <Compile Include="Sys\Impl\RoleModulePermissionService.cs" />
+    <Compile Include="Sys\Impl\RoleService.cs" />
+    <Compile Include="Sys\Impl\UserRoleService.cs" />
+    <Compile Include="Sys\Impl\UserService.cs" />
     <Compile Include="Sys\IOperateLogService.cs" />
     <Compile Include="Sys\IPermissionService.cs" />
     <Compile Include="Sys\IRoleModulePermissionService.cs" />
@@ -71,6 +80,10 @@
     <ProjectReference Include="..\..\Exp\Exp.Tool\Exp.Tool.csproj">
       <Project>{eb72c07a-11ea-4f69-949c-04ad69b078e3}</Project>
       <Name>Exp.Tool</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ExpApp.Domain.Data\ExpApp.Domain.Data.csproj">
+      <Project>{1828dd78-b811-46aa-8e8b-5624b5f047f7}</Project>
+      <Name>ExpApp.Domain.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\ExpApp.Domain.Models\ExpApp.Domain.Models.csproj">
       <Project>{623e6d3c-7ade-4bc1-953f-8d322ae20844}</Project>

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Collections.Generic;
 using ExpApp.Site.Common.Models;
 using Exp.Core;
-using ExpApp.Site.Models.Authen.RoleModulePermission;
+using ExpApp.Site.Models.Authen.Permission;
 using ExpApp.Domain.Models.Sys;
 
 
