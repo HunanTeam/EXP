@@ -17,7 +17,8 @@ using System.Web;
 
 using ExpApp.Services.Common;
 using ExpApp.Services.Common.Impl;
-
+using ExpApp.Domain.Data.Repositories.Sys;
+using ExpApp.Domain.Data.Repositories.Sys.Impl;
 namespace ExpApp.Web.Framework
 {
     public class DependencyRegistrar : IDependencyRegistrar
@@ -80,6 +81,13 @@ namespace ExpApp.Web.Framework
             }
           
             builder.RegisterGeneric(typeof(EFRepository<,>)).As(typeof(IRepository<,>)).InstancePerHttpRequest();
+            builder.RegisterType<RoleRepository>().As<IRoleRepository>().InstancePerHttpRequest();
+            builder.RegisterType<UserRepository>().As<IUserRepository>().InstancePerHttpRequest();
+            builder.RegisterType<UserRoleRepository>().As<IUserRoleRepository>().InstancePerHttpRequest();
+            builder.RegisterType<>(PermissionRepository).As<IPermissionRepository>().InstancePerHttpRequest();
+            builder.RegisterType<RoleModulePermissionRepository>().As<IRoleModulePermissionRepository>().InstancePerHttpRequest();
+            builder.RegisterType<ModuleRepository>().As<IModuleRepository>().InstancePerHttpRequest();
+            builder.RegisterType<ModulePermissionRepository>().As<IModulePermissionRepository>().InstancePerHttpRequest();
             
         }
 

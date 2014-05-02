@@ -117,6 +117,14 @@
       <Project>{1d2dcba6-2479-4cd2-8121-cc56b1f0273d}</Project>
       <Name>Exp.Data</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ExpApp.Domain.Data\ExpApp.Domain.Data.csproj">
+      <Project>{1828dd78-b811-46aa-8e8b-5624b5f047f7}</Project>
+      <Name>ExpApp.Domain.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ExpApp.Domain.Models\ExpApp.Domain.Models.csproj">
+      <Project>{623e6d3c-7ade-4bc1-953f-8d322ae20844}</Project>
+      <Name>ExpApp.Domain.Models</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ExpApp.Services\ExpApp.Services.csproj">
       <Project>{79841ab6-72c2-4db8-bf45-53c0ba333540}</Project>
       <Name>ExpApp.Services</Name>
