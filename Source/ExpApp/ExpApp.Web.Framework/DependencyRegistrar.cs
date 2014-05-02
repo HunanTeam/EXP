@@ -78,8 +78,9 @@ namespace ExpApp.Web.Framework
             {
                 builder.Register<IRepositoryContext>(c => new EFRepositoryContext(dataSettingsManager.LoadSettings().DataConnectionString, null)).InstancePerHttpRequest();
             }
-
+          
             builder.RegisterGeneric(typeof(EFRepository<,>)).As(typeof(IRepository<,>)).InstancePerHttpRequest();
+            
         }
 
         public int Order

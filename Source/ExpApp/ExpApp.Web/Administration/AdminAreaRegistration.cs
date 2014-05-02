@@ -22,7 +22,7 @@ namespace ExpApp.Admin
                 "Admin_default",
                 "Admin/{controller}/{action}/{id}",
                 new { controller = "Home", action = "Index", area = "Admin", id = UrlParameter.Optional },
-                new[] { "Exp.Admin.Controllers" }
+                new[] { "ExpApp.Admin.Controllers" }
             );
         }
     }

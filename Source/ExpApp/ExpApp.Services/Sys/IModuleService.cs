@@ -1,9 +1,9 @@
 ﻿using System.Linq;
 using Exp.Core;
 using ExpApp.Site.Models.Authen.RoleModulePermission;
-using ExpApp.Domain.Models.System;
+using ExpApp.Domain.Models.Sys;
 
-namespace ExpApp.Services.System
+namespace ExpApp.Services.Sys
 {
 	/// <summary>
     /// 服务层接口 —— IModuleService

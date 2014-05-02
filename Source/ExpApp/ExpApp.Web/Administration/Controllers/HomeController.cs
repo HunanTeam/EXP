@@ -1,6 +1,6 @@
 ﻿using Exp.Core.Data;
 
-
+using ExpApp.Domain.Data.Repositories.Sys;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,11 +11,11 @@ namespace ExpApp.Admin.Controllers
 {
     public class HomeController : Controller
     {
-       
+        private IUserRepository _user;
 
-        public HomeController( )
+        public HomeController(IUserRepository user )
         {
-          
+            _user = user;
 
         }
         //

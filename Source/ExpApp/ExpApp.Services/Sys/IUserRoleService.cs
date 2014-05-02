@@ -2,10 +2,10 @@
 
 using System;
 using System.Linq;
-using ExpApp.Domain.Models.System;
+using ExpApp.Domain.Models.Sys;
 
 
-namespace ExpApp.Services.System
+namespace ExpApp.Services.Sys
 {
 	/// <summary>
     /// 服务层接口 —— IUserRoleService

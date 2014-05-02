@@ -43,13 +43,13 @@
     <Compile Include="Common\IMobileDeviceHelper.cs" />
     <Compile Include="Common\Impl\MobileDeviceHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="System\IModulePermissionService.cs" />
-    <Compile Include="System\IModuleService.cs" />
-    <Compile Include="System\IPermissionService.cs" />
-    <Compile Include="System\IRoleModulePermissionService.cs" />
-    <Compile Include="System\IRoleService.cs" />
-    <Compile Include="System\IUserRoleService.cs" />
-    <Compile Include="System\IUserService.cs" />
+    <Compile Include="Sys\IModulePermissionService.cs" />
+    <Compile Include="Sys\IModuleService.cs" />
+    <Compile Include="Sys\IPermissionService.cs" />
+    <Compile Include="Sys\IRoleModulePermissionService.cs" />
+    <Compile Include="Sys\IRoleService.cs" />
+    <Compile Include="Sys\IUserRoleService.cs" />
+    <Compile Include="Sys\IUserService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Exp\Exp.Core\Exp.Core.csproj">
