@@ -84,7 +84,7 @@ namespace ExpApp.Web.Framework
             builder.RegisterType<RoleRepository>().As<IRoleRepository>().InstancePerHttpRequest();
             builder.RegisterType<UserRepository>().As<IUserRepository>().InstancePerHttpRequest();
             builder.RegisterType<UserRoleRepository>().As<IUserRoleRepository>().InstancePerHttpRequest();
-            builder.RegisterType<>(PermissionRepository).As<IPermissionRepository>().InstancePerHttpRequest();
+            builder.RegisterType<PermissionRepository>().As<IPermissionRepository>().InstancePerHttpRequest();
             builder.RegisterType<RoleModulePermissionRepository>().As<IRoleModulePermissionRepository>().InstancePerHttpRequest();
             builder.RegisterType<ModuleRepository>().As<IModuleRepository>().InstancePerHttpRequest();
             builder.RegisterType<ModulePermissionRepository>().As<IModulePermissionRepository>().InstancePerHttpRequest();
