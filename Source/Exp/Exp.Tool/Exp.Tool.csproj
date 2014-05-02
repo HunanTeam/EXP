@@ -30,8 +30,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Newtonsoft.Json.6.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -39,9 +48,50 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CollectionHelper.cs" />
+    <Compile Include="Helpers\CollectionHelper.cs" />
+    <Compile Include="Helpers\CacheHelper\ApplicationCache.cs" />
+    <Compile Include="Helpers\CacheHelper\CacheHelper.cs" />
+    <Compile Include="Helpers\FileHelper\DirFile.cs" />
+    <Compile Include="Helpers\FileHelper\FileOperate.cs" />
+    <Compile Include="Helpers\FileHelper\ImageThumbnailMake.cs" />
+    <Compile Include="Helpers\JsonHelper\AjaxResult.cs" />
+    <Compile Include="Helpers\JsonHelper\FormatToJson.cs" />
+    <Compile Include="Helpers\JsonHelper\JsonHelper.cs" />
+    <Compile Include="Helpers\LINQHelper\CommonEqualityComparer.cs" />
+    <Compile Include="Helpers\LINQHelper\FastPropertyComparer.cs" />
+    <Compile Include="Helpers\LINQHelper\LINQHelper.cs" />
+    <Compile Include="Helpers\MessageHelper\FriendlyMessage.cs" />
+    <Compile Include="Helpers\SecurityHelper\DESProvider.cs" />
+    <Compile Include="Helpers\SecurityHelper\MD5Provider.cs" />
+    <Compile Include="Helpers\StringHepler\ConfigHelper.cs" />
+    <Compile Include="Helpers\TimeHelper\DateFormat.cs" />
+    <Compile Include="Helpers\TimeHelper\TimeHelper.cs" />
+    <Compile Include="Helpers\TimeHelper\TimeParser.cs" />
+    <Compile Include="Helpers\ToolsHelper\Base64Provider.cs" />
+    <Compile Include="Helpers\ToolsHelper\ConvertHelper.cs" />
+    <Compile Include="Helpers\ToolsHelper\ConvertHtmlPage.cs" />
+    <Compile Include="Helpers\ToolsHelper\CookieHelper.cs" />
+    <Compile Include="Helpers\ToolsHelper\DownFile.cs" />
+    <Compile Include="Helpers\ToolsHelper\FileUpload.cs" />
+    <Compile Include="Helpers\ToolsHelper\JScript.cs" />
+    <Compile Include="Helpers\ToolsHelper\PageValidate.cs" />
+    <Compile Include="Helpers\ToolsHelper\PaginationHelper.cs" />
+    <Compile Include="Helpers\ToolsHelper\QueryString.cs" />
+    <Compile Include="Helpers\ToolsHelper\RegexHelper.cs" />
+    <Compile Include="Helpers\ToolsHelper\SessionHelper.cs" />
+    <Compile Include="Helpers\ToolsHelper\SMTP.cs" />
+    <Compile Include="Helpers\ToolsHelper\Tools.cs" />
+    <Compile Include="Helpers\ToolsHelper\TypeHelper.cs" />
+    <Compile Include="Helpers\ToolsHelper\XMlHelper.cs" />
+    <Compile Include="Helpers\ToolsHelper\YZMHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="T4\T4ModelInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Helpers\ControlsHelper\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
