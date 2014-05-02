@@ -1,4 +1,5 @@
 ﻿
+using Exp.Core;
 using ExpApp.Domain.Models.Sys;
 using ExpApp.Services.Sys;
 using ExpApp.Site.Common.Models;
@@ -32,14 +33,14 @@ namespace ExpApp.Web.Framework.Extension.Filters
 
 		public AdminPermissionAttribute(PermissionCustomMode mode)
 		{
-			var container = HttpContext.Current.Application["Container"] as CompositionContainer;
-			UserService = container.GetExportedValueOrDefault<IUserService>();
-			RoleService = container.GetExportedValueOrDefault<IRoleService>();
-			UserRoleService = container.GetExportedValueOrDefault<IUserRoleService>();
-			RoleModulePermissionService = container.GetExportedValueOrDefault<IRoleModulePermissionService>();
-			ModuleService = container.GetExportedValueOrDefault<IModuleService>();
-			ModulePermissionService = container.GetExportedValueOrDefault<IModulePermissionService>();
-			PermissionService = container.GetExportedValueOrDefault<IPermissionService>();
+			 
+			UserService = Ioc.Get<IUserService>();
+            RoleService = Ioc.Get<IRoleService>();
+            UserRoleService = Ioc.Get<IUserRoleService>();
+            RoleModulePermissionService = Ioc.Get<IRoleModulePermissionService>();
+            ModuleService = Ioc.Get<IModuleService>();
+            ModulePermissionService = Ioc.Get<IModulePermissionService>();
+            PermissionService = Ioc.Get<IPermissionService>();
 
 			CustomMode = mode;
 		}

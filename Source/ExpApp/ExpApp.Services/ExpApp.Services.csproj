@@ -56,6 +56,7 @@
     <Compile Include="Sys\IModuleService.cs" />
     <Compile Include="Sys\Impl\ModulePermissionService.cs" />
     <Compile Include="Sys\Impl\ModuleService.cs" />
+    <Compile Include="Sys\Impl\OperateLogService.cs" />
     <Compile Include="Sys\Impl\PermissionService.cs" />
     <Compile Include="Sys\Impl\RoleModulePermissionService.cs" />
     <Compile Include="Sys\Impl\RoleService.cs" />

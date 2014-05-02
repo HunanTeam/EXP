@@ -90,15 +90,17 @@ namespace ExpApp.Web.Framework
             builder.RegisterType<RoleModulePermissionRepository>().As<IRoleModulePermissionRepository>().InstancePerHttpRequest();
             builder.RegisterType<ModuleRepository>().As<IModuleRepository>().InstancePerHttpRequest();
             builder.RegisterType<ModulePermissionRepository>().As<IModulePermissionRepository>().InstancePerHttpRequest();
+            builder.RegisterType<OperateLogRepository>().As<IOperateLogRepository>().InstancePerHttpRequest();
             
             //Service
             builder.RegisterType<ModulePermissionService>().As<IModulePermissionService>().InstancePerHttpRequest();
-            builder.RegisterType<ModulePermissionService>().As<IModuleService>().InstancePerHttpRequest();
+            builder.RegisterType<ModuleService>().As<IModuleService>().InstancePerHttpRequest();
             builder.RegisterType<PermissionService>().As<IPermissionService>().InstancePerHttpRequest();
             builder.RegisterType<RoleModulePermissionService>().As<IRoleModulePermissionService>().InstancePerHttpRequest();
             builder.RegisterType<RoleService>().As<IRoleService>().InstancePerHttpRequest();
             builder.RegisterType<UserRoleService>().As<IUserRoleService>().InstancePerHttpRequest();
             builder.RegisterType<UserService>().As<IUserService>().InstancePerHttpRequest();
+            builder.RegisterType<OperateLogService>().As<IOperateLogService>().InstancePerHttpRequest();
         }
 
         public int Order

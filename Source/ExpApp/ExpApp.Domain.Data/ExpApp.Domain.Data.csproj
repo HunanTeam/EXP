@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="Mapping\Sys\Configuration\ModuleMap.generated.cs" />
     <Compile Include="Mapping\Sys\Configuration\ModulePermissionMap.generated.cs" />
+    <Compile Include="Mapping\Sys\Configuration\OperateLogMap.generated.cs" />
     <Compile Include="Mapping\Sys\Configuration\PermissionMap.generated.cs" />
     <Compile Include="Mapping\Sys\Configuration\RoleMap.generated.cs" />
     <Compile Include="Mapping\Sys\Configuration\RoleModulePermissionMap.generated.cs" />
@@ -56,6 +57,7 @@
     <Compile Include="Mapping\Sys\Configuration\UserRoleMap.generated.cs" />
     <Compile Include="Mapping\Sys\ModuleMap.cs" />
     <Compile Include="Mapping\Sys\ModulePermissionMap.cs" />
+    <Compile Include="Mapping\Sys\OperateLogMap.cs" />
     <Compile Include="Mapping\Sys\PermissionMap.cs" />
     <Compile Include="Mapping\Sys\RoleMap.cs" />
     <Compile Include="Mapping\Sys\RoleModulePermissionMap.cs" />
@@ -67,11 +69,13 @@
     <Compile Include="Repositories\Sys\IModuleRepository.cs" />
     <Compile Include="Repositories\Sys\Impl\ModulePermissionRepository.cs" />
     <Compile Include="Repositories\Sys\Impl\ModuleRepository.cs" />
+    <Compile Include="Repositories\Sys\Impl\OperateLogRepository.cs" />
     <Compile Include="Repositories\Sys\Impl\PermissionRepository.cs" />
     <Compile Include="Repositories\Sys\Impl\RoleModulePermissionRepository.cs" />
     <Compile Include="Repositories\Sys\Impl\RoleRepository.cs" />
     <Compile Include="Repositories\Sys\Impl\UserRepository.cs" />
     <Compile Include="Repositories\Sys\Impl\UserRoleRepository.cs" />
+    <Compile Include="Repositories\Sys\IOperateLogRepository.cs" />
     <Compile Include="Repositories\Sys\IPermissionRepository.cs" />
     <Compile Include="Repositories\Sys\IRoleModulePermissionRepository.cs" />
     <Compile Include="Repositories\Sys\IRoleRepository.cs" />
@@ -92,6 +96,7 @@
       <LastOutputs>
 ..\Mapping\Sys\Configuration\ModuleMap.generated.cs
 ..\Mapping\Sys\Configuration\ModulePermissionMap.generated.cs
+..\Mapping\Sys\Configuration\OperateLogMap.generated.cs
 ..\Mapping\Sys\Configuration\PermissionMap.generated.cs
 ..\Mapping\Sys\Configuration\RoleMap.generated.cs
 ..\Mapping\Sys\Configuration\RoleModulePermissionMap.generated.cs
@@ -99,6 +104,7 @@
 ..\Mapping\Sys\Configuration\UserRoleMap.generated.cs
 ..\Mapping\Sys\ModuleMap.cs
 ..\Mapping\Sys\ModulePermissionMap.cs
+..\Mapping\Sys\OperateLogMap.cs
 ..\Mapping\Sys\PermissionMap.cs
 ..\Mapping\Sys\RoleMap.cs
 ..\Mapping\Sys\RoleModulePermissionMap.cs
@@ -108,11 +114,13 @@
 ..\Repositories\Sys\IModuleRepository.cs
 ..\Repositories\Sys\Impl\ModulePermissionRepository.cs
 ..\Repositories\Sys\Impl\ModuleRepository.cs
+..\Repositories\Sys\Impl\OperateLogRepository.cs
 ..\Repositories\Sys\Impl\PermissionRepository.cs
 ..\Repositories\Sys\Impl\RoleModulePermissionRepository.cs
 ..\Repositories\Sys\Impl\RoleRepository.cs
 ..\Repositories\Sys\Impl\UserRepository.cs
 ..\Repositories\Sys\Impl\UserRoleRepository.cs
+..\Repositories\Sys\IOperateLogRepository.cs
 ..\Repositories\Sys\IPermissionRepository.cs
 ..\Repositories\Sys\IRoleModulePermissionRepository.cs
 ..\Repositories\Sys\IRoleRepository.cs

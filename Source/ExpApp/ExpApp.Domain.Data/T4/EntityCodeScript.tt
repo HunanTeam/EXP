@@ -16,9 +16,9 @@
 <#@ include file="Include\EntityMapTemplate.ttinclude" #>
 <#@ include file="Include\EntityRepositoryTemplate.ttinclude" #>
 <#@ include file="Include\IEntityRepositoryTemplate.ttinclude" #>
-<#      
+<#       
     //******* Configuration *******
- 
+  
     string currentNamespace = @"\ExpApp.Domain.Data";
     string modelsDLLPath = @"ExpApp.Domain.Models\bin\Debug\ExpApp.Domain.Models.dll";
     string configurationFolder = "Mapping";

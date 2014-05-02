@@ -4,14 +4,14 @@ using ExpApp.Domain.Models.Sys;
 namespace ExpApp.Domain.Data.Mapping.Sys
 {
     /// <summary>
-    /// 数据表映射 —— UserRole
+    /// 数据表映射 —— OperateLog
     /// </summary>    
-	partial class UserRoleMap
+	partial class OperateLogMap
     {
         /// <summary>
 		/// 映射配置
 		/// </summary>
-        partial void UserRoleMapAppend()
+        partial void OperateLogMapAppend()
         {
 			// Primary Key
             this.HasKey(t => t.Id);
@@ -20,21 +20,21 @@ namespace ExpApp.Domain.Data.Mapping.Sys
             this.Property(t => t.Id).HasColumnName("Id").HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             // Properties
              
+           this.Property(t => t.Area).HasColumnName("Area");
+            
+           this.Property(t => t.Controller).HasColumnName("Controller");
+            
+           this.Property(t => t.Action).HasColumnName("Action");
+            
+           this.Property(t => t.IPAddress).HasColumnName("IPAddress");
+            
+           this.Property(t => t.Description).HasColumnName("Description");
+            
+           this.Property(t => t.LogTime).HasColumnName("LogTime");
+            
+           this.Property(t => t.LoginName).HasColumnName("LoginName");
+            
            this.Property(t => t.UserId).HasColumnName("UserId");
-            
-           this.Property(t => t.RoleId).HasColumnName("RoleId");
-            
-           this.Property(t => t.CreateId).HasColumnName("CreateId");
-            
-           this.Property(t => t.CreateBy).HasColumnName("CreateBy");
-            
-           this.Property(t => t.CreateTime).HasColumnName("CreateTime");
-            
-           this.Property(t => t.ModifyId).HasColumnName("ModifyId");
-            
-           this.Property(t => t.ModifyBy).HasColumnName("ModifyBy");
-            
-           this.Property(t => t.ModifyTime).HasColumnName("ModifyTime");
             
            this.Property(t => t.CreateOn).HasColumnName("CreateOn");
             
