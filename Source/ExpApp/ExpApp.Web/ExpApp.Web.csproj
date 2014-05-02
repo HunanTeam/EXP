@@ -163,15 +163,19 @@
     <Content Include="App_Data\Settings.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\bootstrap\css\bootstrap-responsive.css" />
-    <Content Include="Content\bootstrap\css\bootstrap-responsive.min.css" />
-    <Content Include="Content\bootstrap\css\bootstrap.css" />
-    <Content Include="Content\bootstrap\css\bootstrap.min.css" />
-    <Content Include="Content\bootstrap\img\glyphicons-halflings-white.png" />
-    <Content Include="Content\bootstrap\img\glyphicons-halflings.png" />
+    <Content Include="Content\bootstrapV2.3.2\css\bootstrap-responsive.css" />
+    <Content Include="Content\bootstrapV2.3.2\css\bootstrap-responsive.min.css" />
+    <Content Include="Content\bootstrapV2.3.2\css\bootstrap.css" />
+    <Content Include="Content\bootstrapV2.3.2\css\bootstrap.min.css" />
+    <Content Include="Content\bootstrapV2.3.2\img\glyphicons-halflings-white.png" />
+    <Content Include="Content\bootstrapV2.3.2\img\glyphicons-halflings.png" />
     <Content Include="Global.asax" />
-    <Content Include="Scripts\bootstrap\js\bootstrap.js" />
-    <Content Include="Scripts\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Scripts\bootstrapV3\bootstrap.js" />
+    <Content Include="Scripts\bootstrapV3\bootstrap.min.js" />
+    <Content Include="Scripts\bootstrapV3\respond.js" />
+    <Content Include="Scripts\bootstrapV3\respond.min.js" />
+    <Content Include="Scripts\bootstrapV2.3.2\bootstrap.js" />
+    <Content Include="Scripts\bootstrapV2.3.2\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.11.0.js" />
     <Content Include="Scripts\jquery-1.11.0.min.js" />
     <Content Include="Scripts\jquery-1.8.3.js" />
@@ -188,6 +192,7 @@
     <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Content\bootstrapV3\" />
     <Folder Include="Themes\" />
   </ItemGroup>
   <ItemGroup>
@@ -207,9 +212,9 @@
       <Project>{63298208-6f7e-4ffc-826e-239081de94ec}</Project>
       <Name>Exp.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ExpApp.Side.Common\ExpApp.Side.Common.csproj">
+    <ProjectReference Include="..\ExpApp.Side.Common\ExpApp.Site.Common.csproj">
       <Project>{8d7b0160-766e-47de-9521-8961f1d996eb}</Project>
-      <Name>ExpApp.Side.Common</Name>
+      <Name>ExpApp.Site.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\ExpApp.Site.Models\ExpApp.Site.Models.csproj">
       <Project>{a279efe0-20a6-4855-be01-538d3337726b}</Project>

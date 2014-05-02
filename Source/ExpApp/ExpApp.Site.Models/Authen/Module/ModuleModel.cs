@@ -1,5 +1,5 @@
 ﻿
-using ExpApp.Side.Common.Models;
+using ExpApp.Site.Common.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;

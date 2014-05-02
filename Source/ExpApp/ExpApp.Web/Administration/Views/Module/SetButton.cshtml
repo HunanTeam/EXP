@@ -1,0 +1,10 @@
+﻿ 
+ 
+@model ExpApp.Site.Models.Authen.Permission.ButtonModel
+
+
+<h2>@Model.ModuleName</h2>
+
+@Html.HiddenFor(t => t.ModuleId)
+
+@Html.CheckBoxListFor(t => t.SelectedButtonList, DisplayDirection.Horizon, new { style = "display:inline-block;width:500px;margin:0 10px;" }, new { style = "display:inline-block;width:120px;" })

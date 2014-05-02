@@ -48,6 +48,7 @@
       <HintPath>..\..\packages\Newtonsoft.Json.5.0.4\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web.DynamicData" />
@@ -123,8 +124,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdminAreaRegistration.cs" />
-    <Compile Include="Common\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ModuleController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -241,7 +242,9 @@
     </Content>
     <Content Include="Views\Web.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Views\Module\Index.cshtml" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
@@ -259,6 +262,10 @@
       <Project>{63298208-6f7e-4ffc-826e-239081de94ec}</Project>
       <Name>Exp.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\..\Exp\Exp.Tool\Exp.Tool.csproj">
+      <Project>{eb72c07a-11ea-4f69-949c-04ad69b078e3}</Project>
+      <Name>Exp.Tool</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\ExpApp.Domain.Data\ExpApp.Domain.Data.csproj">
       <Project>{1828dd78-b811-46aa-8e8b-5624b5f047f7}</Project>
       <Name>ExpApp.Domain.Data</Name>
@@ -267,9 +274,13 @@
       <Project>{623e6d3c-7ade-4bc1-953f-8d322ae20844}</Project>
       <Name>ExpApp.Domain.Models</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\ExpApp.Side.Common\ExpApp.Side.Common.csproj">
+    <ProjectReference Include="..\..\ExpApp.Services\ExpApp.Services.csproj">
+      <Project>{79841ab6-72c2-4db8-bf45-53c0ba333540}</Project>
+      <Name>ExpApp.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ExpApp.Side.Common\ExpApp.Site.Common.csproj">
       <Project>{8d7b0160-766e-47de-9521-8961f1d996eb}</Project>
-      <Name>ExpApp.Side.Common</Name>
+      <Name>ExpApp.Site.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\ExpApp.Site.Models\ExpApp.Site.Models.csproj">
       <Project>{a279efe0-20a6-4855-be01-538d3337726b}</Project>
@@ -279,6 +290,41 @@
       <Project>{0e38cb80-1471-49fd-bb2a-998a09413e0e}</Project>
       <Name>ExpApp.Web.Framework</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Module\Create.cshtml" />
+    <Content Include="Views\Module\Edit.cshtml" />
+    <Content Include="Views\Module\List.cshtml" />
+    <Content Include="Views\Module\Search.cshtml" />
+    <Content Include="Views\Module\SetButton.cshtml" />
+    <Content Include="Views\Permission\Create.cshtml" />
+    <Content Include="Views\Permission\Edit.cshtml" />
+    <Content Include="Views\Permission\Index.cshtml" />
+    <Content Include="Views\Permission\List.cshtml" />
+    <Content Include="Views\Permission\Search.cshtml" />
+    <Content Include="Views\Role\Create.cshtml" />
+    <Content Include="Views\Role\Edit.cshtml" />
+    <Content Include="Views\Role\Index.cshtml" />
+    <Content Include="Views\Role\List.cshtml" />
+    <Content Include="Views\Role\Permission.cshtml" />
+    <Content Include="Views\Role\Search.cshtml" />
+    <Content Include="Views\Role\SetPermission.cshtml" />
+    <Content Include="Views\Role\_FormModalPermission.cshtml" />
+    <Content Include="Views\User\ChangePwd.cshtml" />
+    <Content Include="Views\User\Create.cshtml" />
+    <Content Include="Views\User\Edit.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\User\List.cshtml" />
+    <Content Include="Views\User\Search.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_BreadCrumb.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Views\Shared\_FormModal.cshtml" />
+    <Content Include="Views\Shared\_HeaderMenu.cshtml" />
+    <Content Include="Views\Shared\_MainLayout.cshtml" />
+    <Content Include="Views\Shared\_SidebarMenu.cshtml" />
+    <Content Include="Views\Shared\_TopSearch.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -7,8 +7,8 @@
     <ProjectGuid>{8D7B0160-766E-47DE-9521-8961F1D996EB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ExpApp.Side.Common</RootNamespace>
-    <AssemblyName>ExpApp.Side.Common</AssemblyName>
+    <RootNamespace>ExpApp.Site.Common</RootNamespace>
+    <AssemblyName>ExpApp.Site.Common</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

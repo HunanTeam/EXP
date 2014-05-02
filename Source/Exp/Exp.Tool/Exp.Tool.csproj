@@ -51,6 +51,7 @@
     <Compile Include="Helpers\CollectionHelper.cs" />
     <Compile Include="Helpers\CacheHelper\ApplicationCache.cs" />
     <Compile Include="Helpers\CacheHelper\CacheHelper.cs" />
+    <Compile Include="Helpers\DynamicLambdaHelper.cs" />
     <Compile Include="Helpers\FileHelper\DirFile.cs" />
     <Compile Include="Helpers\FileHelper\FileOperate.cs" />
     <Compile Include="Helpers\FileHelper\ImageThumbnailMake.cs" />

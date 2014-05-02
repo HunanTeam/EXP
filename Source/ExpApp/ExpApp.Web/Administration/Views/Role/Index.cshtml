@@ -1,0 +1,169 @@
+﻿@using ExpApp.Site.Models.Authen.Role
+@using ExpApp.Site.Models.AdminCommon
+@model RoleModel
+@{
+    ViewBag.Title = ViewBag.CurrentTitle + " - QucikRMS";
+    var setPermissionButton = new ButtonModel();
+    var editButton = new ButtonModel();    
+    var deleteButton = new ButtonModel();
+    setPermissionButton = ViewBag.SetPermission;
+    editButton = ViewBag.Edit;
+    deleteButton = ViewBag.Delete;
+}
+
+<div id="content-body" class="row-fluid">
+    <div class="span22">
+        <!--操作 -->
+        @Html.Partial("Search", Model.Search)
+
+        <!--列表-->
+        @Html.Partial("List")
+
+        <!--新增 & 编辑-->
+        @Html.Partial("_FormModal")
+
+        <!--授权-->
+        @Html.Partial("_FormModalPermission")
+    </div>
+</div>
+
+@section scripts{
+    <script type="text/javascript">
+        var oTable = null;
+
+        $(function () {
+            var actionUrl = "@Url.Action("List")?rand=" + Math.random();
+            var aoColumns = [
+                    { "sName": "SortId", "bSortable": false },
+                    { "sName": "Name", "bSortable": false },
+                    { "sName": "Description", "bSortable": false },
+                    { "sName": "OrderSort", "bSortable": false },
+                    { "sName": "Enabled", "bSortable": false },
+                    {
+                        "sName": "Id",
+                        "bSortable": false,
+                        "fnRender": function (oObj) {
+                            var btnArray = "";
+                            @if (setPermissionButton != null)
+                            {
+                                <text>btnArray += '<button type="submit" class="btn btn-success btn-normal" title="@setPermissionButton.Text" onclick="SetPermission(' + oObj.aData[oObj.aData.length - 1] + ')"><span class="@setPermissionButton.Icon"></span></button>'</text>
+                            }
+                            @if (editButton != null)
+                            {
+                                <text>btnArray += '<button type="submit" class="btn btn-primary btn-normal" title="@editButton.Text" onclick="Edit(' + oObj.aData[oObj.aData.length - 1] + ')"><span class="@editButton.Icon"></span></button>'</text>
+                            }
+                            @if (deleteButton != null)
+                            {
+                                <text>btnArray += '<button type="submit" class="btn btn-danger btn-normal" title="@deleteButton.Text" onclick="Delete(' + oObj.aData[oObj.aData.length - 1] + ')"><span class="@deleteButton.Icon"></span></button>'</text>
+                            }
+                            return btnArray;
+                        }
+                    }
+            ];
+            //初始化表格
+            oTable = InitDatatables($(".data-table"), actionUrl, aoColumns, oTable);
+        });
+
+                //查询
+                function Search() {
+                    var filterdata = $(".search-form").serialize();
+                    oTable.fnReloadAjax("@Url.Action("List")?rand=" + Math.random() + "&" + filterdata);
+        }
+
+        //新增
+        function Create() {
+            var actionUrl = "@Url.Action("Create")";
+            var param = {};
+            ShowModal(actionUrl, param, "新增角色");
+        }
+
+        //编辑
+        function Edit(id) {
+            var actionUrl = "@Url.Action("Edit")";
+            var param = { Id: id }
+            ShowModal(actionUrl, param, "编辑角色");
+        }
+
+        //保存
+        function Save() {
+            SaveModal(oTable);
+        }
+
+        //删除
+        function Delete(id) {
+            var actionUrl = "@Url.Action("Delete")";
+            var param = { Id: id }
+            DeleteRecord(actionUrl, param, oTable);
+        }
+
+        //授权
+        function SetPermission(id) {
+            var actionUrl = "@Url.Action("SetPermission")/" + id;
+
+            //表单初始化
+            $.get(actionUrl, function (data) {
+                $("#modal-content-permission").html(data);
+                var roleName = $("#RoleName").val();
+                $(".modal-title-permission").html("角色授权 - [" + roleName + "]");
+                $('#modal-form-permission').modal('show');
+                RegisterForm();
+            });
+        }
+
+        //保存授权
+        function SavePermission() {
+            //新模块权限
+            var roleId = $("#RoleId").val();
+            var newModulePermission = new Array();
+            $("input[type = 'checkbox'][name = 'modulectx']").each(function () {
+                if (this.checked) {
+                    //模块
+                    var moduleId = $(this).val();
+                    //权限列表
+                    var permissionObj = $(".childpermissioncheck-" + $(this).val());
+                    if (permissionObj.length == 0) {
+                        //父模块
+                        var newModulePermissionData = {};
+                        newModulePermissionData["RoleId"] = roleId;
+                        newModulePermissionData["ModuleId"] = moduleId;
+                        newModulePermissionData["PermissionId"] = null;
+                        newModulePermission.push(newModulePermissionData);
+                    } else {
+                        permissionObj.each(function () {
+                            if (this.checked) {
+                                var newModulePermissionData = {};
+                                newModulePermissionData["RoleId"] = roleId;
+                                newModulePermissionData["ModuleId"] = moduleId;
+                                newModulePermissionData["PermissionId"] = $(this).val();
+                                //添加到数组
+                                newModulePermission.push(newModulePermissionData);
+                            }
+                        });
+                    }
+                }
+            });
+
+            var actionUrl = "@Url.Action("SetPermission")";
+            var $form = $("#modal-content-permission");
+            var isSet = $("input[name='isSet']").val();
+            var data = { RoleId: roleId, IsSet: isSet, newModulePermission: JSON.stringify(newModulePermission) }
+            $.ajax({
+                type: "POST",
+                url: actionUrl,
+                data: data,
+                success: function (data) {
+                    bootbox.alert(data.Message);
+                    if (data.ResultType == 0) {
+                        $('#modal-form-permission').modal('hide');
+                    }
+                }
+            });
+        }
+
+        function ClosePermissionModal() {
+            $('#modal-form-permission').modal('hide');
+            ClearForm($("#modal-content-permission"));
+        }
+
+    </script>
+}

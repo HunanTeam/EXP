@@ -1,0 +1,23 @@
+﻿@using ExpApp.Site.Models.AdminCommon
+@{
+    var createButton = new ButtonModel();
+    createButton = ViewBag.Create;
+}
+<div class="widget-box">
+    <div class="widget-title">
+        <span class="icon"><i class="icon-search"></i></span>
+        <h5>操作</h5>
+    </div>
+    <div class="widget-content nopadding">
+        <form class="form-horizontal search-form" method="post" name="basic_validate" novalidate="novalidate">
+            <div class="form-actions form-operate text-right" style="border-top:0;">
+                @if (createButton != null)
+                {
+                    <button type="button" class="btn btn-primary" onclick="Create()">
+                        <span class="@createButton.Icon"></span> @createButton.Text
+                    </button>
+                }
+            </div>
+        </form>
+    </div>
+</div>

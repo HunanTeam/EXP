@@ -1,0 +1,112 @@
+﻿@using QuickRMS.Site.Models.Authen.User
+@using QuickRMS.Site.Models.AdminCommon
+@model UserModel
+@{
+    ViewBag.Title = ViewBag.CurrentTitle + " - QucikRMS";
+    var changePwdButton = new ButtonModel();
+    var editButton = new ButtonModel();
+    var deleteButton = new ButtonModel();
+    changePwdButton = ViewBag.ChangePwd;
+    editButton = ViewBag.Edit;
+    deleteButton = ViewBag.Delete;
+}
+@section css{
+     @Styles.Render("~/bundles/css/jqueryui")   
+}
+
+<div id="content-body" class="row-fluid">
+    <div class="span22">
+        <!--操作 -->
+        @Html.Partial("Search", Model.Search)
+
+        <!--列表-->
+        @Html.Partial("List")
+
+        <!--新增 & 编辑-->
+        @Html.Partial("_FormModal")
+    </div>
+</div>
+
+@section scripts{
+    @Scripts.Render("~/bundles/jqueryui")
+    <script type="text/javascript">
+        var oTable = null;
+
+        $(function () {
+            var actionUrl = "@Url.Action("List")?rand=" + Math.random();
+            var aoColumns = [
+                    { "sName": "SortId", "bSortable": false },
+                    { "sName": "LoginName", "bSortable": true },
+                    { "sName": "Email", "bSortable": true },
+                    { "sName": "FullName", "bSortable": false },
+                    { "sName": "Phone", "bSortable": false },
+                    { "sName": "Enabled", "bSortable": true },
+                    { "sName": "RegisterTime", "bSortable": true },
+                    { "sName": "LastLoginTime", "bSortable": true },
+                    {
+                        "sName": "Id",
+                        "bSearchable": false,
+                        "bSortable": false,
+                        "fnRender": function (oObj) {
+                            var btnArray = "";
+                            @if (changePwdButton != null)
+                            {
+                                <text>btnArray += '<button type="submit" class="btn btn-inverse btn-normal" title="@changePwdButton.Text" onclick="ChangePwd(' + oObj.aData[oObj.aData.length - 1] + ')"><span class="@changePwdButton.Icon"></span></button>'</text>
+                            }
+                            @if (editButton != null)
+                            {
+                                <text>btnArray += '<button type="submit" class="btn btn-primary btn-normal" title="@editButton.Text" onclick="Edit(' + oObj.aData[oObj.aData.length - 1] + ')"><span class="@editButton.Icon"></span></button>'</text>
+                            }
+                            @if (deleteButton != null)
+                            {
+                                <text>btnArray += '<button type="submit" class="btn btn-danger btn-normal" title="@deleteButton.Text"  onclick="Delete(' + oObj.aData[oObj.aData.length - 1] + ')"><span class="@deleteButton.Icon"></span></button>'</text>
+                            }
+                            return btnArray;
+                        }
+                    }
+            ];
+            //初始化表格
+            oTable = InitDatatables($(".data-table"), actionUrl, aoColumns, oTable);
+        });
+
+                //查询
+                function Search() {
+                    var filterdata = $(".search-form").serialize();
+                    var actionUrl = "@Url.Action("List")?rand=" + Math.random() + "&" + filterdata;
+            SearchRecord(actionUrl, oTable);
+        }
+
+        //新增
+        function Create() {
+            var actionUrl = "@Url.Action("Create")";
+            var param = {};
+            ShowModal(actionUrl, param, "新增用户");
+        }
+
+        //编辑
+        function Edit(id) {
+            var actionUrl = "@Url.Action("Edit")";
+            var param = { Id: id }
+            ShowModal(actionUrl, param, "编辑用户");
+        }
+
+        //修改密码
+        function ChangePwd(id) {
+            var actionUrl = "@Url.Action("ChangePwd")";
+            var param = { Id: id }
+            ShowModal(actionUrl, param, "修改密码");
+        }
+
+        //保存
+        function Save() {
+            SaveModal(oTable);
+        }
+
+        //删除
+        function Delete(id) {
+            var actionUrl = "@Url.Action("Delete")";
+            var param = { Id: id }
+            DeleteRecord(actionUrl, param, oTable);
+        }
+    </script>
+}

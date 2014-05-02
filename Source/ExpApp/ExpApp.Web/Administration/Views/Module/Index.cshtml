@@ -1,0 +1,150 @@
+﻿ @using ExpApp.Site.Models.AdminCommon;
+ 
+@model ExpApp.Site.Models.Authen.Module.ModuleModel
+@{
+    ViewBag.Title = ViewBag.CurrentTitle + " - QucikRMS";
+    var setButton = new ButtonModel();
+    var editButton = new ButtonModel();
+    var deleteButton = new ButtonModel();
+    setButton = ViewBag.setButton;
+    editButton = ViewBag.Edit;
+    deleteButton = ViewBag.Delete;
+}
+@section css{
+    @Styles.Render("~/bundles/css/jqueryui")
+}
+<div id="content-body" class="row-fluid">
+    <div class="span22">
+        <!--操作 -->
+        @Html.Partial("Search", Model.Search)
+
+        <!--列表-->
+        @Html.Partial("List")
+
+        <!--新增 & 编辑-->
+        @Html.Partial("_FormModal")
+    </div>
+</div>
+
+@section scripts{
+    @Scripts.Render("~/bundles/jqueryui")
+    <script type="text/javascript">
+        var oTable = null;
+
+        $(function () {
+            var actionUrl = "@Url.Action("List")?rand=" + Math.random();
+            var aoColumns = [
+                    { "sName": "SortId", "bSortable": false },
+                    {
+                        "sName": "Name",
+                        "bSortable": false,
+                        "fnRender": function (oObj) {
+                            if (oObj.aData[3] != "") {
+                                return "<label class='th-label'>[ " + oObj.aData[1] + " ]</label>";
+                            } else {
+                                return oObj.aData[1];
+                            }
+                        }
+                    },
+                    { "sName": "Code", "bSortable": false },
+                    { "sName": "ParentName", "bSortable": false },
+                    { "sName": "LinkUrl", "bSortable": false },
+                    { "sName": "OrderSort", "bSortable": false },
+                    { "sName": "IsMenu", "bSortable": false, },
+                    { "sName": "Enabled", "bSortable": false, },
+                    {
+                        "sName": "Id",
+                        "bSortable": false,
+                        "fnRender": function (oObj) {
+                            var btnArray = "";
+                            if (oObj.aData[3] != "") {
+                                @if (setButton != null)
+                                {
+                                    <text>btnArray += '<button type="submit" class="btn btn-success btn-normal" title="@setButton.Text" onclick="SetButton(' + oObj.aData[oObj.aData.length - 1] + ')"><span class="@setButton.Icon"></span></button>'</text>
+                                }
+                            }
+                            @if (editButton != null)
+                            {
+                                <text>btnArray += '<button type="submit" class="btn btn-primary btn-normal" title="@editButton.Text" onclick="Edit(' + oObj.aData[oObj.aData.length - 1] + ')"><span class="@editButton.Icon"></span></button>'</text>
+                            }
+                            @if (deleteButton != null)
+                            {
+                                <text>btnArray += '<button type="submit" class="btn btn-danger btn-normal" title="@deleteButton.Text " onclick="Delete(' + oObj.aData[oObj.aData.length - 1] + ')"><span class="@deleteButton.Icon"></span></button>'</text>
+                            }
+                            return btnArray;
+                        }
+                    }
+            ];
+            //初始化表格
+            oTable = InitDatatables($(".data-table"), actionUrl, aoColumns, oTable);
+
+        });
+
+                //Icon点击事件
+                function fnFormatDetails(nTr) {
+                    var aData = oTable.fnGetData(nTr);
+                    var sOut = '<table class="table table-bordered data-table" cellpadding="5" cellspacing="0">';
+                    sOut += '<tr>';
+                    sOut += '<td width="5%">---</td>';
+                    sOut += '<td width="15%">模块(菜单)名称</td>';
+                    sOut += '<td width="10%">模块编码</td>';
+                    sOut += '<td width="12%">上级模块</td>';
+                    sOut += '<td width="18%">链接地址</td>';
+                    sOut += '<td width="8%">排序</th>';
+                    sOut += '<td width="8%">是否激活</td>';
+                    sOut += '<td width="22%">操作</td>';
+                    sOut += '</tr>';
+                    sOut += '<tr>';
+                    sOut += '<td width="5%"></td>';
+                    sOut += '<td width="15%">模块(菜单)名称</td>';
+                    sOut += '<td width="10%">模块编码</td>';
+                    sOut += '<td width="12%">上级模块</td>';
+                    sOut += '<td width="18%">链接地址</td>';
+                    sOut += '<td width="8%">排序</th>';
+                    sOut += '<td width="8%">是否激活</td>';
+                    sOut += '<td width="22%">操作</td>';
+                    sOut += '</tr>';
+                    sOut += '</table>';
+                    return sOut;
+                }
+
+                //查询
+                function Search() {
+                    var filterdata = $(".search-form").serialize();
+                    oTable.fnReloadAjax("@Url.Action("List")?rand=" + Math.random() + "&" + filterdata);
+        }
+
+        //新增
+        function Create() {
+            var actionUrl = "@Url.Action("Create")";
+            var param = {};
+            ShowModal(actionUrl, param, "新增模块");
+        }
+
+        //编辑
+        function Edit(id) {
+            var actionUrl = "@Url.Action("Edit")";
+            var param = { Id: id }
+            ShowModal(actionUrl, param, "编辑模块");
+        }
+
+        //保存
+        function Save() {
+            SaveModal(oTable);
+        }
+
+        //删除
+        function Delete(id) {
+            var actionUrl = "@Url.Action("Delete")";
+            var param = { Id: id }
+            DeleteRecord(actionUrl, param, oTable);
+        }
+
+        //设置按钮
+        function SetButton(id) {
+            var actionUrl = "@Url.Action("SetButton")";
+            var param = { Id: id }
+            ShowModal(actionUrl, param, "设置按钮");
+        }
+    </script>
+}

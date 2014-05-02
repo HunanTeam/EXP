@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace QuickRMS.Site.Models.SysConfig.OperateLog
+namespace ExpApp.Site.Models.SysConfig.OperateLog
 {
 	public class OperateLogModel
 	{

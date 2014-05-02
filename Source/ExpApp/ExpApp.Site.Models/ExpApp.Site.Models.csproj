@@ -68,6 +68,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminCommon\BreadCrumbModel.cs" />
+    <Compile Include="AdminCommon\ButtonModel.cs" />
+    <Compile Include="AdminCommon\ProfileModel.cs" />
+    <Compile Include="AdminCommon\SidebarMenuModel.cs" />
     <Compile Include="Authen\Module\ModuleModel.cs" />
     <Compile Include="Authen\Permission\PermissionModel.cs" />
     <Compile Include="Authen\RoleModulePermission\RoleModulePermissionModel.cs" />
@@ -85,9 +89,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ExpApp.Side.Common\ExpApp.Side.Common.csproj">
+    <ProjectReference Include="..\ExpApp.Side.Common\ExpApp.Site.Common.csproj">
       <Project>{8d7b0160-766e-47de-9521-8961f1d996eb}</Project>
-      <Name>ExpApp.Side.Common</Name>
+      <Name>ExpApp.Site.Common</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

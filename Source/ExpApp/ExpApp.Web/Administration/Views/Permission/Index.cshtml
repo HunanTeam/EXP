@@ -1,0 +1,98 @@
+﻿@using ExpApp.Site.Models.Authen.Permission
+@using ExpApp.Site.Models.AdminCommon
+@model PermissionModel
+@{
+    ViewBag.Title = ViewBag.CurrentTitle + " - QucikRMS";
+    var editButton = new ExpApp.Site.Models.AdminCommon.ButtonModel();
+    var deleteButton = new ExpApp.Site.Models.AdminCommon.ButtonModel();
+    editButton = ViewBag.Edit;
+    deleteButton = ViewBag.Delete;
+}
+
+<div id="content-body" class="row-fluid">
+    <div class="span22">
+        <!--操作 -->
+        @Html.Partial("Search")
+
+        <!--列表-->
+        @Html.Partial("List")
+
+        <!--新增 & 编辑-->
+        @Html.Partial("_FormModal")
+    </div>
+</div>
+
+@section scripts{
+    <script type="text/javascript">
+        var oTable = null;
+        $(function () {
+            var actionUrl = "@Url.Action("List")?rand=" + Math.random();
+            var aoColumns = [
+                    { "sName": "SortId", "bSortable": false },
+                    { "sName": "Name", "bSortable": false },
+                    { "sName": "Code", "bSortable": false },
+                    {
+                        "sName": "icon",
+                        "bSortable": false,
+                        "fnRender": function (oObj) {
+                            return '<i class="' + oObj.aData[3] + '"></i>';
+                        }
+                    },
+                    { "sName": "OrderSort", "bSortable": false },
+                    { "sName": "Description", "bSortable": false },
+                    { "sName": "Enabled", "bSortable": false },
+                    {
+                        "sName": "Id",
+                        "bSortable": false,
+                        "fnRender": function (oObj) {
+                            var btnArray = "";
+                            @if (editButton != null)
+                            {
+                                <text>btnArray += '<button type="submit" class="btn btn-primary btn-normal" title="@editButton.Text" onclick="Edit(' + oObj.aData[oObj.aData.length - 1] + ')"><span class="@editButton.Icon"></span></button>'</text>
+                            }
+                            @if (deleteButton != null)
+                            {
+                                <text>btnArray += '<button type="submit" class="btn btn-danger btn-normal" title="@deleteButton.Text" onclick="Delete(' + oObj.aData[oObj.aData.length - 1] + ')"><span class="@deleteButton.Icon"></span></button>'</text>
+                            }
+                            return btnArray;
+                        }
+                    }
+            ];
+            //初始化表格
+            oTable = InitDatatables($(".data-table"), actionUrl, aoColumns, oTable);
+        });
+
+                //查询
+                function Search() {
+                    var filterdata = $(".search-form").serialize();
+                    oTable.fnReloadAjax("@Url.Action("List")?rand=" + Math.random() + "&" + filterdata);
+        }
+
+        //新增
+        function Create() {
+            var actionUrl = "@Url.Action("Create")";
+            var param = {};
+            ShowModal(actionUrl, param, "新增权限");
+        }
+
+        //编辑
+        function Edit(id) {
+            var actionUrl = "@Url.Action("Edit")";
+            var param = { Id: id }
+            ShowModal(actionUrl, param, "编辑权限");
+        }
+
+        //保存
+        function Save() {
+            SaveModal(oTable);
+        }
+
+        //删除
+        function Delete(id) {
+            var actionUrl = "@Url.Action("Delete")";
+            var param = { Id: id }
+            DeleteRecord(actionUrl, param, oTable);
+        }
+
+    </script>
+}

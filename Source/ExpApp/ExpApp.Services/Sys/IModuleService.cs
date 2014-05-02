@@ -1,11 +1,12 @@
 ﻿using System.Linq;
 using Exp.Core;
-using ExpApp.Site.Models.Authen.RoleModulePermission;
+using ExpApp.Site.Models.Authen.Module;
 using ExpApp.Domain.Models.Sys;
+using System.Collections.Generic;
 
 namespace ExpApp.Services.Sys
 {
-	/// <summary>
+    /// <summary>
     /// 服务层接口 —— IModuleService
     /// </summary>
     public interface IModuleService
@@ -25,5 +26,10 @@ namespace ExpApp.Services.Sys
         OperationResult Delete(int Id);
 
         #endregion
-	}
+
+        #region 查询
+        IList<ModuleModel> QueryParentModules();
+        IList<ModuleModel> QueryModuleModels();
+        #endregion
+    }
 }

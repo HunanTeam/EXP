@@ -52,6 +52,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sys\IModulePermissionService.cs" />
     <Compile Include="Sys\IModuleService.cs" />
+    <Compile Include="Sys\IOperateLogService.cs" />
     <Compile Include="Sys\IPermissionService.cs" />
     <Compile Include="Sys\IRoleModulePermissionService.cs" />
     <Compile Include="Sys\IRoleService.cs" />
@@ -67,13 +68,17 @@
       <Project>{1d2dcba6-2479-4cd2-8121-cc56b1f0273d}</Project>
       <Name>Exp.Data</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Exp\Exp.Tool\Exp.Tool.csproj">
+      <Project>{eb72c07a-11ea-4f69-949c-04ad69b078e3}</Project>
+      <Name>Exp.Tool</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ExpApp.Domain.Models\ExpApp.Domain.Models.csproj">
       <Project>{623e6d3c-7ade-4bc1-953f-8d322ae20844}</Project>
       <Name>ExpApp.Domain.Models</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ExpApp.Side.Common\ExpApp.Side.Common.csproj">
+    <ProjectReference Include="..\ExpApp.Side.Common\ExpApp.Site.Common.csproj">
       <Project>{8d7b0160-766e-47de-9521-8961f1d996eb}</Project>
-      <Name>ExpApp.Side.Common</Name>
+      <Name>ExpApp.Site.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\ExpApp.Site.Models\ExpApp.Site.Models.csproj">
       <Project>{a279efe0-20a6-4855-be01-538d3337726b}</Project>

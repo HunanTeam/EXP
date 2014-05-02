@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ExpApp.Side.Common.Models
+namespace ExpApp.Site.Common.Models
 {
 	public enum PermissionCustomMode
 	{

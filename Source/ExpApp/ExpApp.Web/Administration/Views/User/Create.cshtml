@@ -1,0 +1,88 @@
+﻿@using QuickRMS.Site.Models.Authen.User
+@using Quick.Site.Common.Models
+@model UserModel
+
+<!-- Nav tabs -->
+<ul class="nav nav-tabs">
+    <li class="active"><a href="#base" data-toggle="tab">基本信息</a></li>
+    <li><a href="#role" data-toggle="tab">角色</a></li>
+</ul>
+
+<!-- Tab panes -->
+<div class="tab-content">
+    <div class="tab-pane active" id="base">
+
+        <div class="control-group">
+            <label class="control-label-form">
+                <label class="red">*</label>@Html.DisplayNameFor(t => t.LoginName) :
+            </label>
+            <div class="controls">
+                @Html.TextBoxFor(t => t.LoginName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.LoginName)
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label class="control-label-form">
+                <label class="red">*</label>@Html.DisplayNameFor(t => t.FullName) :
+            </label>
+            <div class="controls">
+                @Html.TextBoxFor(t => t.FullName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.FullName)
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label class="control-label-form">
+                <label class="red">*</label>@Html.DisplayNameFor(t => t.NewLoginPwd) :
+            </label>
+            <div class="controls">
+                @Html.PasswordFor(t => t.NewLoginPwd, new { @class = "form-control", value = Model.NewLoginPwd })
+                @Html.ValidationMessageFor(m => m.NewLoginPwd)
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label class="control-label-form">
+                <label class="red">*</label>@Html.DisplayNameFor(t => t.NewLoginPwdConfirm) :
+            </label>
+            <div class="controls">
+                @Html.PasswordFor(t => t.NewLoginPwdConfirm, new { @class = "form-control", value = Model.NewLoginPwdConfirm })
+                @Html.ValidationMessageFor(m => m.NewLoginPwdConfirm)
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label class="control-label-form">
+                <label class="red">*</label>@Html.DisplayNameFor(t => t.Email) :
+            </label>
+            <div class="controls">
+                @Html.TextBoxFor(t => t.Email, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Email)
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label class="control-label-form">
+                @Html.DisplayNameFor(t => t.Phone) :
+            </label>
+            <div class="controls">
+                @Html.TextBoxFor(t => t.Phone, new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label class="control-label-form">
+                @Html.DisplayNameFor(t => t.Enabled) :
+            </label>
+            <div class="controls">
+                @Html.CheckBoxFor(t => t.Enabled)
+            </div>
+        </div>
+
+    </div>
+    <div class="tab-pane" id="role">
+        @Html.CheckBoxListFor(t => t.SelectedRoleList, DisplayDirection.Horizon, new { style = "display:inline-block;width:500px;margin:0 10px;" }, new { style = "display:inline-block;width:150px;" })
+    </div>
+</div>
+

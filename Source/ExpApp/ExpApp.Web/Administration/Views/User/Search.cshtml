@@ -1,0 +1,86 @@
+﻿@using QuickRMS.Site.Models.Authen.User
+@using QuickRMS.Site.Models.AdminCommon
+@model SearchModel
+@{
+    var createButton = new ButtonModel();
+    createButton = ViewBag.Create;
+}
+
+<div class="widget-box">
+    <div class="widget-title">
+        <span class="icon"><i class="icon-search"></i></span>
+        <h5>查询条件</h5>
+    </div>
+    <div class="widget-content nopadding">
+        <form class="form-horizontal search-form" method="post" name="basic_validate" novalidate="novalidate">
+
+            <div class="control-group">
+                <div class="search-group">
+                    <label class="search-label">@Html.DisplayNameFor(t => t.LoginName)</label>
+                    <div class="span2 search-input">
+                        @Html.TextBoxFor(t => t.LoginName)
+                    </div>
+                </div>
+                <div class="search-group">
+                    <label class="search-label">@Html.DisplayNameFor(t => t.FullName)</label>
+                    <div class="span2 search-input">
+                        @Html.TextBoxFor(t => t.FullName)
+                    </div>
+                </div>
+                <div class="search-group">
+                    <label class="search-label">@Html.DisplayNameFor(t => t.Email)</label>
+                    <div class="span2 search-input">
+                        @Html.TextBoxFor(t => t.Email)
+                    </div>
+                </div>
+            </div>
+
+            <div class="control-group none-border">
+                <div class="search-group">
+                    <label class="search-label">@Html.DisplayNameFor(t => t.Phone)</label>
+                    <div class="span2 search-input">
+                        @Html.TextBoxFor(t => t.Phone)
+                    </div>
+                </div>
+                <div class="search-group">
+                    <label class="search-label">@Html.DisplayNameFor(t => t.Enabled)</label>
+                    <div class="span2 search-input">
+                        @Html.DropDownListFor(t => t.Enabled, Model.EnabledItems)
+                    </div>
+                </div>
+            </div>
+
+            <div class="control-group none-border">
+                <div class="search-group">
+                    <label class="search-label">@Html.DisplayNameFor(t => t.StartTime)</label>
+                    <div class="span2 search-input">
+                         @Html.DatePickerFor(t => t.StartTime)
+                    </div>
+                </div>
+                 <div class="search-group">
+                    <label class="search-label">@Html.DisplayNameFor(t => t.EndTime)</label>
+                    <div class="span2 search-input">
+                         @Html.DatePickerFor(t => t.EndTime)
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-actions form-operate text-right ">
+                <button type="button" class="btn btn-danger" onclick="ClearForm($('.search-form'));">
+                    <span class="icon-bullhorn"></span> 清空
+                </button>
+                <button type="button" class="btn btn-success" onclick="Search()">
+                    <span class="icon-search"></span> 搜索
+                </button>
+                @if (createButton != null)
+                {
+                    <button type="button" class="btn btn-primary" onclick="Create()">
+                        <span class="@createButton.Icon"></span> @createButton.Text
+                    </button>
+                }
+            </div>
+
+        </form>
+
+    </div>
+</div>

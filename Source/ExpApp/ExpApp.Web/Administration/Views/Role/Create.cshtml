@@ -1,0 +1,41 @@
+﻿@using ExpApp.Site.Models.Authen.Role
+@model RoleModel
+
+<div class="control-group">
+    <label class="control-label-form">
+        <label class="red">*</label>@Html.DisplayNameFor(t => t.Name) :           
+    </label>
+    <div class="controls">
+        @Html.TextBoxFor(t => t.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Name)          
+    </div>
+</div>
+
+<div class="control-group">
+    <label class="control-label-form">
+        @Html.DisplayNameFor(t => t.Description) :         
+    </label>
+    <div class="controls">
+        @Html.TextBoxFor(t => t.Description, new { @class = "form-control" })
+           
+    </div>
+</div>
+
+<div class="control-group">
+    <label class="control-label-form">
+        <label class="red">*</label>@Html.DisplayNameFor(t => t.OrderSort) :        
+    </label>
+    <div class="controls">
+        @Html.TextBoxFor(t => t.OrderSort, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.OrderSort)           
+    </div>
+</div>
+
+<div class="control-group">
+    <label class="control-label-form">
+        @Html.DisplayNameFor(t => t.Enabled) :          
+    </label>
+    <div class="controls">
+        @Html.CheckBoxFor(t => t.Enabled)          
+    </div>
+</div>

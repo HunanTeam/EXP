@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ExpApp.Side.Common.Models
+namespace ExpApp.Site.Common.Models
 {
     [AttributeUsage(AttributeTargets.Property | AttributeTargets.Field)]
     public class KeyValueAttribute : Attribute

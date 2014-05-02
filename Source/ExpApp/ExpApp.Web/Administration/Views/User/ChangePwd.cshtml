@@ -1,0 +1,44 @@
+﻿@using QuickRMS.Site.Models.Authen.User
+@model ChangePwdModel
+
+@Html.HiddenFor(t => t.Id)
+
+<div class="control-group">
+    <label class="control-label-form">
+        @Html.DisplayNameFor(t => t.LoginName) :          
+    </label>
+    <div class="controls">
+        <label class="label-text">
+            @Model.LoginName
+        </label>
+    </div>
+</div>
+<div class="control-group">
+    <label class="control-label-form">
+        @Html.DisplayNameFor(t => t.Email) :
+           
+    </label>
+    <div class="controls">
+        <label class="label-text">
+            @Model.Email
+        </label>
+    </div>
+</div>
+<div class="control-group">
+    <label class="control-label-form">
+        <label class="red">*</label>@Html.DisplayNameFor(t => t.NewLoginPwd) :
+    </label>
+    <div class="controls">
+        @Html.PasswordFor(t => t.NewLoginPwd, new { @class = "form-control", value = Model.NewLoginPwd })
+        @Html.ValidationMessageFor(m => m.NewLoginPwd)
+    </div>
+</div>
+<div class="control-group">
+    <label class="control-label-form">
+        <label class="red">*</label>@Html.DisplayNameFor(t => t.NewLoginPwdConfirm) :
+    </label>
+    <div class="controls">
+        @Html.PasswordFor(t => t.NewLoginPwdConfirm, new { @class = "form-control", value = Model.NewLoginPwdConfirm })
+        @Html.ValidationMessageFor(m => m.NewLoginPwdConfirm)
+    </div>
+</div>

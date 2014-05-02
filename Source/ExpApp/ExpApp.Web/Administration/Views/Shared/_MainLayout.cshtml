@@ -1,0 +1,60 @@
+﻿@using ExpApp.Web.Framework.Extension.MvcHelper
+@using ExpApp.Site.Models.AdminCommon
+@{
+    List<SidebarMenuModel> sidebarMenuDataList = ViewBag.SidebarMenuModel;
+    BreadCrumbNavModel breadCrumbNavData = ViewBag.BreadCrumbModel;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/bundles/css/bootstrap2")
+    @RenderSection("css", false)   
+    @Styles.Render("~/bundles/css/admin")    
+</head>
+<body>
+
+    <!--Header-Part-->
+    <div id="header">
+        <h1><a href="dashboard.html">Matrix Admin</a></h1>
+    </div>
+    <!--Header-Part-->
+
+    @Html.Partial("_HeaderMenu")
+
+    @Html.Partial("_TopSearch")
+
+     @Html.Partial("_SidebarMenu", sidebarMenuDataList)
+    <!--main-container-part-->
+    <div id="content">
+        <!--BreadCrumbs-->
+        @Html.Partial("_BreadCrumb", breadCrumbNavData)
+        <!--BreadCrumbs-->
+
+        <!--Body-->
+        <div class="container-fluid">
+            @RenderBody()
+        </div>
+        <!--Body-->
+    </div>
+    <!--end-main-container-part-->
+    
+    <!--Footer-part-->
+    @Html.Partial("_Footer") 
+    <!--end-Footer-part-->
+    @Scripts.Render("~/bundles/js/admin-jq")
+    @Scripts.Render("~/bundles/js/bootstrap2") 
+    @Scripts.Render("~/bundles/js/jqdataTables") 
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/js/admin-plugin")
+      
+    <script src="~/Content/admin/js/matrix.js"></script>
+
+    @RenderSection("scripts", required: false)
+    @Html.RenderScriptBlocks()
+</body>
+</html>

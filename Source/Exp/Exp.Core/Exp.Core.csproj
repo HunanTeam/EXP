@@ -97,6 +97,7 @@
     <Compile Include="Data\Repository.cs" />
     <Compile Include="EntityBase.cs" />
     <Compile Include="ExceptionMessager.cs" />
+    <Compile Include="Ioc.cs" />
     <Compile Include="OperationResult.cs" />
     <Compile Include="PublicHelper.cs" />
     <Compile Include="Extensions\CollectionExtensions.cs" />

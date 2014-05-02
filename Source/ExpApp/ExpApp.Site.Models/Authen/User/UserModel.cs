@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations;
 
  
 using System.Web.Mvc;
-using ExpApp.Side.Common.Models;
+using ExpApp.Site.Common.Models;
  
 
 namespace ExpApp.Site.Models.Authen.User
