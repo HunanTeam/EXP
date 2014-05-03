@@ -20,7 +20,7 @@ namespace Exp.Data
         public EFRepositoryContext(string connectionString, IEnumerable<IEntityMapper> entityMappers)
         {
             var efDbContext= new EFDbContext(connectionString);
-            
+            efDbContext.EntityMappers = entityMappers;
             this.DbContext = efDbContext;
         }
 

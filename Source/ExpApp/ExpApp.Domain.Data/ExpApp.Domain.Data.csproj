@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EntityMapperProvider.cs" />
     <Compile Include="Mapping\Sys\Configuration\ModuleMap.generated.cs" />
     <Compile Include="Mapping\Sys\Configuration\ModulePermissionMap.generated.cs" />
     <Compile Include="Mapping\Sys\Configuration\OperateLogMap.generated.cs" />

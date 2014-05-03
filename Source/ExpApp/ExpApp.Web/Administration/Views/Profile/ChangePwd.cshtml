@@ -1,0 +1,80 @@
+﻿@using ExpApp.Site.Models.Authen.User
+@using ExpApp.Site.Models.AdminCommon
+@model ChangePwdModel
+@{
+    ViewBag.Title = "个人资料 - QucikRMS";
+}
+
+<div id="content-body" class="row-fluid">
+    <div class="span22">
+        <div class="widget-box">
+            <div class="widget-title">
+                <span class="icon"><i class="icon-info-sign"></i></span>
+                <h5>修改密码</h5>
+            </div>
+            <div class="widget-content nopadding">
+                @using (Ajax.BeginForm("ChangePwd", "Profile", null, new AjaxOptions()
+                                {
+                                    HttpMethod = "Post",
+                                    OnSuccess = "OnSuccess"
+                                }, new { @class = "form-horizontal search-form" }))
+                {
+                    @Html.HiddenFor(t => t.Id)
+                    <div class="control-group">
+                        <label class="search-label">@Html.DisplayNameFor(t => t.LoginName) :</label>
+                        <div class="span3 search-label-input">
+                            @Model.LoginName
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="search-label">@Html.DisplayNameFor(t => t.Email) :</label>
+                        <div class="span3 search-label-input">
+                            @Model.Email
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="search-label">@Html.DisplayNameFor(t => t.OldLoginPwd) :</label>
+                        <div class="span3 search-input">
+                            @Html.PasswordFor(t => t.OldLoginPwd, new { @class = "form-control", value = Model.OldLoginPwd })
+                        </div>
+                        <div class="span3 search-label-input">
+                            @Html.ValidationMessageFor(m => m.OldLoginPwd)
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="search-label">@Html.DisplayNameFor(t => t.NewLoginPwd) :</label>
+                        <div class="span3 search-input">
+                            @Html.PasswordFor(t => t.NewLoginPwd, new { @class = "form-control", value = Model.NewLoginPwd })
+                        </div>
+                        <div class="span3 search-label-input">
+                            @Html.ValidationMessageFor(m => m.NewLoginPwd)
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="search-label">@Html.DisplayNameFor(t => t.NewLoginPwdConfirm) :</label>
+                        <div class="span3 search-input">
+                            @Html.PasswordFor(t => t.NewLoginPwdConfirm, new { @class = "form-control", value = Model.NewLoginPwdConfirm })
+                        </div>
+                        <div class="span3 search-label-input">
+                            @Html.ValidationMessageFor(m => m.NewLoginPwdConfirm)
+                        </div>
+                    </div>
+                    <div class="form-actions form-operate">
+                        <input type="submit" value="确定" class="btn btn-primary">
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script type="text/javascript">
+        function OnSuccess(data) {
+            bootbox.alert(data.Message);
+            if (data.ResultType == 0) {
+                location.href = "@Url.Action("Index", "Profile", new { Area = "Common" })";
+            }
+        }
+    </script>
+}

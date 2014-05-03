@@ -21,6 +21,7 @@ using ExpApp.Domain.Data.Repositories.Sys;
 using ExpApp.Domain.Data.Repositories.Sys.Impl;
 using ExpApp.Services.Sys;
 using ExpApp.Services.Sys.Impl;
+using ExpApp.Domain.Data;
 namespace ExpApp.Web.Framework
 {
     public class DependencyRegistrar : IDependencyRegistrar
@@ -70,16 +71,17 @@ namespace ExpApp.Web.Framework
             builder.Register(c => dataSettingsManager.LoadSettings()).As<DataSettings>();
             builder.Register(x => new EfDataProviderManager(x.Resolve<DataSettings>())).As<BaseDataProviderManager>().InstancePerDependency();
             builder.Register(x => x.Resolve<BaseDataProviderManager>().LoadDataProvider()).As<IDataProvider>().InstancePerDependency();
+            IEntityMapperProvider entityMapperProvider = new EntityMapperProvider();
             if (dataProviderSettings != null && dataProviderSettings.IsValid())
             {
                 var efDataProviderManager = new EfDataProviderManager(dataSettingsManager.LoadSettings());
                 var dataProvider = (IDataProvider)efDataProviderManager.LoadDataProvider();
                 dataProvider.InitDatabase();
-                builder.Register<IRepositoryContext>(c => new EFRepositoryContext(dataProviderSettings.DataConnectionString, null)).InstancePerHttpRequest();
+                builder.Register<IRepositoryContext>(c => new EFRepositoryContext(dataProviderSettings.DataConnectionString, entityMapperProvider.EntityMappers)).InstancePerHttpRequest();
             }
             else
             {
-                builder.Register<IRepositoryContext>(c => new EFRepositoryContext(dataSettingsManager.LoadSettings().DataConnectionString, null)).InstancePerHttpRequest();
+                builder.Register<IRepositoryContext>(c => new EFRepositoryContext(dataSettingsManager.LoadSettings().DataConnectionString, entityMapperProvider.EntityMappers)).InstancePerHttpRequest();
             }
           
             builder.RegisterGeneric(typeof(EFRepository<,>)).As(typeof(IRepository<,>)).InstancePerHttpRequest();

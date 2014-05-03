@@ -92,6 +92,7 @@
     <Compile Include="Extensions\DbContextExtensions.cs" />
     <Compile Include="IEFRepositoryContext.cs" />
     <Compile Include="IEntityMapper.cs" />
+    <Compile Include="IEntityMapperProvider.cs" />
     <Compile Include="Initializers\CreateCeDatabaseIfNotExists.cs" />
     <Compile Include="Initializers\CreateTablesIfNotExist.cs" />
     <Compile Include="Initializers\DropCreateCeDatabaseAlways.cs" />

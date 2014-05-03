@@ -1,0 +1,73 @@
+﻿@using ExpApp.Site.Models.Authen.User
+@using ExpApp.Site.Models.AdminCommon
+@model ProfileModel
+@{
+    ViewBag.Title = "个人资料 - QucikRMS";
+}
+
+<div id="content-body" class="row-fluid">
+    <div class="span12">
+        <div class="widget-box">
+            <div class="widget-title">
+                <span class="icon"><i class="icon-briefcase"></i></span>
+                <h5>个人资料</h5>
+            </div>
+            <div class="widget-content">
+                <div class="row-fluid">
+                    <div class="span6">
+                        <table class="">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <h4>@Model.LoginName</h4>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>QuickRMS</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="span6">
+                        <table class="table table-bordered table-invoice">
+                            <tbody>
+                                <tr>
+                                <tr>
+                                    <td class="width30">姓名:</td>
+                                    <td class="width70"><strong>@Model.FullName</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>手机号码:</td>
+                                    <td><strong>@Model.Phone</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>电子邮件:</td>
+                                    <td><strong>@Model.Email</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>登录次数:</td>
+                                    <td><strong>@Model.LoginCount</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>最后登录时间:</td>
+                                    <td><strong>@Model.LastLoginTime</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>注册时间:</td>
+                                    <td><strong>@Model.RegisterTime</strong></td>
+                                </tr>
+                            </tbody>
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script type="text/javascript">
+        
+    </script>
+}
