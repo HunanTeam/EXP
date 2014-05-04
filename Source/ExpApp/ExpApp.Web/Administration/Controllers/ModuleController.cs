@@ -16,7 +16,7 @@ using System.Web.Mvc;
 
 namespace ExpApp.Admin.Controllers
 {
-    public class ModuleController : AdminController
+    public class ModuleController : AdminBaseController
     {
 
         public ModuleController(IModuleService moduleService, IPermissionService permissionService, IModulePermissionService modulePermissionService)

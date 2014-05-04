@@ -78,7 +78,7 @@ namespace ExpApp.Web.Framework.Extension.Filters
             var parentModuleIdList = RoleModulePermissionService.RoleModulePermissions.Where(t => RoleIds.Contains(t.RoleId) && t.PermissionId == null && t.IsDeleted == false).Select(t => t.ModuleId).Distinct();
             var childModuleIdList = RoleModulePermissionService.RoleModulePermissions.Where(t => RoleIds.Contains(t.RoleId) && t.PermissionId != null && t.IsDeleted == false).Select(t => t.ModuleId).Distinct();
 
-            foreach (var pmId in parentModuleIdList)
+            foreach (var pmId in parentModuleIdList.ToList())
             {
                 //取出父菜单
                 var parentModule = ModuleService.Modules.FirstOrDefault(t => t.Id == pmId);
@@ -95,7 +95,7 @@ namespace ExpApp.Web.Framework.Extension.Filters
                     };
 
                     //取出子菜单
-                    foreach (var cmId in childModuleIdList)
+                    foreach (var cmId in childModuleIdList.ToList())
                     {
                         var childModule = ModuleService.Modules.FirstOrDefault(t => t.Id == cmId);
                         if (childModule != null && childModule.ParentId == sideBarMenu.Id)

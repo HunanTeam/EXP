@@ -14,6 +14,11 @@ namespace ExpApp.Services.Sys.Impl
    
     public class UserRoleService : IUserRoleService
 	{
+        public UserRoleService(IUserRoleRepository userRoleRepository)
+        {
+            this.UserRoleRepository = userRoleRepository;
+        }
+            
 		#region 属性
 
 		 

@@ -10,10 +10,10 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <title>QuickRMS - 后台管理系统</title>
     <link rel="shortcut icon" href="~/Content/image/icon.png" />
-    @Styles.Render("~/bundles/css/bootstrap2")
-    <link href="~/Content/admin/font-awesome/css/font-awesome.css" rel="stylesheet" />
-    <link href="~/Content/admin/css/font.css" rel="stylesheet" />
-    <link href="~/Content/admin/css/matrix-login.css" rel="stylesheet" />
+    @Styles.Render("~/Administration/bundles/css/bootstrap2")
+    <link href="~/Administration/Content/admin/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/Administration/Content/admin/css/font.css" rel="stylesheet" />
+    <link href="~/Administration/Content/admin/css/matrix-login.css" rel="stylesheet" />
 </head>
 <body>
     <div id="loginbox">
@@ -100,7 +100,7 @@
                         data: formData,
                         success: function (result) {
                             if (result.ResultType == 0) {
-                                location.href = "@Url.Action("Index", "Home", new { Area = "Common" })";
+                                location.href = "@Url.Action("Index", "Home")";
                             } else {
                                 bootbox.alert(result.Message);
                             }
