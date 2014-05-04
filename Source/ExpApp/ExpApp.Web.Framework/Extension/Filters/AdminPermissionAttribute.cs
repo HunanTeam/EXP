@@ -61,7 +61,7 @@ namespace ExpApp.Web.Framework.Extension.Filters
 			if (user == null)
 			{
 				//跳转到登录页面
-				filterContext.Result = new RedirectToRouteResult(new RouteValueDictionary(new { area = "Common", controller = "Login", action = "Index"}));
+				filterContext.Result = new RedirectToRouteResult(new RouteValueDictionary(new {  controller = "Login", action = "Index"}));
 			}
 			else
 			{

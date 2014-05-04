@@ -74,9 +74,14 @@ namespace ExpApp.Web.Framework
             IEntityMapperProvider entityMapperProvider = new EntityMapperProvider();
             if (dataProviderSettings != null && dataProviderSettings.IsValid())
             {
+              
                 var efDataProviderManager = new EfDataProviderManager(dataSettingsManager.LoadSettings());
-                var dataProvider = (IDataProvider)efDataProviderManager.LoadDataProvider();
+                //动态切换
+                var dataProvider = (IDataProvider)efDataProviderManager.LoadDataProvider(); 
+     
                 dataProvider.InitDatabase();
+
+               
                 builder.Register<IRepositoryContext>(c => new EFRepositoryContext(dataProviderSettings.DataConnectionString, entityMapperProvider.EntityMappers)).InstancePerHttpRequest();
             }
             else

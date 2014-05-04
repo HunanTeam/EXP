@@ -1,2 +1,2 @@
 DataProvider: mysql
-DataConnectionString: server=localhost;user id =root;password=;database=exp_01;charset=utf8
+DataConnectionString: server=localhost;port=3306;user id =root;password=;database=exp_01;charset=utf8;Allow Zero Datetime=true

@@ -34,6 +34,7 @@ namespace Exp.Data
             var customCommands = new List<string>();
 
             var initializer = new CreateTablesIfNotExist<EFDbContext>(tablesToValidate, customCommands.ToArray());
+            
             Database.SetInitializer(initializer);
         }
 
