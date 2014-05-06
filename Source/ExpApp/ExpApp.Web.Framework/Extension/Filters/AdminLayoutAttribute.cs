@@ -191,7 +191,7 @@ namespace ExpApp.Web.Framework.Extension.Filters
             if (module != null)
             {
                 var permissionIds = RoleModulePermissionService.RoleModulePermissions.Where(t => roleIds.Contains(t.RoleId) && t.ModuleId == module.Id).Select(t => t.PermissionId).Distinct();
-                foreach (var permissionId in permissionIds)
+                foreach (var permissionId in permissionIds.ToList())
                 {
                     var entity = PermissionService.Permissions.FirstOrDefault(t => t.Id == permissionId && t.Enabled == true && t.IsDeleted == false);
                     if (entity != null)
