@@ -1,4 +1,5 @@
 ﻿
+using Exp.Core;
 using Exp.Tool.Helpers.ToolsHelper;
 using ExpApp.Domain.Models.Sys;
 using ExpApp.Services.Sys;
@@ -26,9 +27,8 @@ namespace  ExpApp.Web.Framework.Extension.Filters
 
 		public AdminOperateLogAttribute()
 		{
-			var container = HttpContext.Current.Application["Container"] as CompositionContainer;
-			PermissionService = container.GetExportedValueOrDefault<IPermissionService>();
-			OperateLogService = container.GetExportedValueOrDefault<IOperateLogService>();
+            PermissionService = Ioc.Get<IPermissionService>();
+            OperateLogService = Ioc.Get<IOperateLogService>();
 		}
 
 

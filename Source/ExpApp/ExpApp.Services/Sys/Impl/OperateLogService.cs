@@ -56,7 +56,7 @@ namespace ExpApp.Services.Sys.Impl
 
         public OperationResult Delete()
         {
-			var entities = OperateLogRepository.Entities.Where(t => t.IsDeleted == false);
+			var entities = OperateLogRepository.Entities.Where(t => t.IsDeleted == false).ToList();
 			foreach (var entity in entities)
 			{
 				entity.IsDeleted = true;

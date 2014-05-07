@@ -33,17 +33,13 @@ namespace ExpApp.Web.Framework.Extension.Filters
         public AdminLayoutAttribute()
         {
 
-            var user = SessionHelper.GetSession("CurrentUser") as User;
-            if (user != null)
-            {
-               
-                UserService = Ioc.Get<IUserService>();
-                RoleService = Ioc.Get<IRoleService>();
-                RoleModulePermissionService = Ioc.Get<IRoleModulePermissionService>();
-                ModuleService = Ioc.Get<IModuleService>();
-                ModulePermissionService = Ioc.Get<IModulePermissionService>();
-                PermissionService = Ioc.Get<IPermissionService>();
-            }
+            UserService = Ioc.Get<IUserService>();
+            RoleService = Ioc.Get<IRoleService>();
+            RoleModulePermissionService = Ioc.Get<IRoleModulePermissionService>();
+            ModuleService = Ioc.Get<IModuleService>();
+            ModulePermissionService = Ioc.Get<IModulePermissionService>();
+            PermissionService = Ioc.Get<IPermissionService>();
+
         }
 
         public override void OnResultExecuting(ResultExecutingContext filterContext)

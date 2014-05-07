@@ -124,9 +124,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdminAreaRegistration.cs" />
+    <Compile Include="Controllers\AppendixController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ModuleController.cs" />
+    <Compile Include="Controllers\OperateLogController.cs" />
     <Compile Include="Controllers\PermissionController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
@@ -388,6 +390,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Test\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Appendix\Icon.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\OperateLog\Index.cshtml" />
+    <Content Include="Views\OperateLog\List.cshtml" />
+    <Content Include="Views\OperateLog\Search.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

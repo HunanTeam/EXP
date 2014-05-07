@@ -277,12 +277,15 @@ namespace ExpApp.Admin.Controllers
         {
             //选中模块
             List<int> selectedModuleId = new List<int>();
-
-            string[] strSelectedModules = selectedModules.Split(',');
-            foreach (var Id in strSelectedModules)
+            if (!string.IsNullOrWhiteSpace(selectedModules))
             {
-                selectedModuleId.Add(Convert.ToInt32(Id));
+                string[] strSelectedModules = selectedModules.Split(',');
+                foreach (var Id in strSelectedModules)
+                {
+                    selectedModuleId.Add(Convert.ToInt32(Id));
+                }
             }
+           
 
             //权限列表
             var model = new RoleSelectedPermissionModel();
@@ -321,7 +324,7 @@ namespace ExpApp.Admin.Controllers
                 }
 
                 //模块包含的按钮
-                var modulePermission = ModulePermissionService.ModulePermissions.Where(t => t.ModuleId == moduleId && t.IsDeleted == false);
+                var modulePermission = ModulePermissionService.ModulePermissions.Where(t => t.ModuleId == moduleId && t.IsDeleted == false).ToList();
                 var selectedModulePermission = RoleModulePermissionService.RoleModulePermissions.Where(t => t.RoleId == roleId && t.ModuleId == moduleId && t.IsDeleted == false);
 
                 if (module.ChildModule.Count > 0 && selectedModulePermission.Count() > 0)

@@ -21,11 +21,12 @@ namespace ExpApp.Services.Sys.Impl
      
     public class UserService : CoreServiceBase, IUserService
     {
-        public UserService(IRepositoryContext repositoryContext, IUserRepository userRepository, IRoleRepository roleRepository)
+        public UserService(IRepositoryContext repositoryContext, IUserRepository userRepository, IRoleRepository roleRepository,IUserRoleRepository userRoleRepository )
             : base(repositoryContext)
         {
             this.UserRepository = userRepository;
             this.RoleRepository = roleRepository;
+            this.UserRoleRepository = userRoleRepository;
         }
         #region 属性
 

@@ -1,0 +1,55 @@
+﻿@using ExpApp.Site.Models.SysConfig.OperateLog
+@model OperateLogModel
+@{
+    ViewBag.Title = ViewBag.CurrentTitle + " - QucikRMS";
+}
+@section css{
+     @Styles.Render("~/bundles/css/jqueryui")   
+}
+
+<div id="content-body" class="row-fluid">
+    <div class="span22">
+        <!--操作 -->
+        @Html.Partial("Search", Model.SearchModel)
+
+        <!--列表-->
+        @Html.Partial("List")
+
+    </div>
+</div>
+
+@section scripts{
+    @Scripts.Render("~/bundles/jqueryui")
+    <script type="text/javascript">
+        var oTable = null;
+
+        $(function () {
+            var actionUrl = "@Url.Action("List")?rand=" + Math.random();
+            var aoColumns = [                   
+                    { "sName": "SortId", "bSortable": false },
+                    { "sName": "LogTime", "bSortable": false },
+                    { "sName": "Area", "bSortable": false },
+                    { "sName": "Controller", "bSortable": false },
+                    { "sName": "Action", "bSortable": false },
+                    { "sName": "Description", "bSortable": false },
+                    { "sName": "IPAddress", "bSortable": false },                  
+                    { "sName": "LoginName", "bSortable": false }                  
+            ];
+            //初始化表格
+            oTable = InitDatatables($(".data-table"), actionUrl, aoColumns, oTable);
+        });
+
+        //查询
+        function Search() {
+            var filterdata = $(".search-form").serialize();
+            oTable.fnReloadAjax("@Url.Action("List")?rand=" + Math.random() + "&" + filterdata);
+        }
+
+        //删除
+        function DeleteAll() {
+            var actionUrl = "@Url.Action("DeleteAll")";
+            DeleteAllRecord(actionUrl, oTable);
+        }
+
+    </script>
+}
