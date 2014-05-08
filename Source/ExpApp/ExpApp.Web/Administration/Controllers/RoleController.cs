@@ -302,6 +302,7 @@ namespace ExpApp.Admin.Controllers
             //权限列表 (从选中的菜单获取)
             foreach (var moduleId in selectedModuleId.Distinct())
             {
+                
                 var module = ModuleService.Modules.FirstOrDefault(t => t.Id == moduleId);
 
                 var modulePermissionModel = new ModulePermissionModel
