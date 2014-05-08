@@ -20,7 +20,7 @@ namespace ExpApp.Admin.Controllers
 
         public ActionResult Index()
         {
-            this.UserService.Insert(new Site.Models.Authen.User.UserModel {FullName="lst",NewLoginPwd="123123" });
+          
             return View();
         }
 

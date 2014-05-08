@@ -51,6 +51,8 @@
     <Compile Include="Common\IMobileDeviceHelper.cs" />
     <Compile Include="Common\Impl\MobileDeviceHelper.cs" />
     <Compile Include="CoreServiceBase.cs" />
+    <Compile Include="TestService.cs" />
+    <Compile Include="ITestService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sys\IModulePermissionService.cs" />
     <Compile Include="Sys\IModuleService.cs" />

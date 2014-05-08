@@ -1,6 +1,4 @@
-﻿
-
-using Exp.Core;
+﻿using Exp.Core;
 using ExpApp.Site.Models.Authen.User;
 using System;
 using System.Linq;
@@ -37,6 +35,7 @@ namespace ExpApp.Services.Sys
         /// <returns></returns>
         OperationResult Delete(UserModel model);
 
+        
         #endregion
 	}
 }
