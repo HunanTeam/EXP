@@ -12,7 +12,7 @@ namespace ExpApp.Web.Framework.Common
     public class ConfigSettingHelper
     {
 
-        private readonly static string WebNamespace = "QuickRMS.Site.WebUI";
+        private readonly static string[] WebNamespaces = new[] { "ExpApp.Web", "ExpApp.Admin" };
         private readonly static string AdminController = "AdminController";
 
         /// <summary>
@@ -42,8 +42,11 @@ namespace ExpApp.Web.Framework.Common
         {
             var model = new List<MVCModuleModel>();
 
-            var types = Assembly.Load(WebNamespace).GetTypes();
-
+            List<Type> types = new List<Type>();
+            foreach (var webNamespace in WebNamespaces)
+            {
+                types.AddRange(Assembly.Load(webNamespace).GetTypes());
+            }
             foreach (var type in types)
             {
                 if (type.BaseType.Name == AdminController)
@@ -63,7 +66,7 @@ namespace ExpApp.Web.Framework.Common
                                 string controllerName = member.DeclaringType.Name.Substring(0, member.DeclaringType.Name.Length - 10);
                                 string actionName = member.Name;
                                 moduleModel.LinkUrl = string.Format("{0}/{1}/{2}", areaName, controllerName, actionName);
-                                
+
                                 model.Add(moduleModel);
                             }
                         }

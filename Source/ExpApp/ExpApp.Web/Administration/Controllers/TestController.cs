@@ -1,4 +1,5 @@
 ﻿using ExpApp.Services.Sys;
+using ExpApp.Web.Framework.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Web.Mvc;
 
 namespace ExpApp.Admin.Controllers
 {
-    public class TestController : Controller
+    public class TestController : AdminController
     {
         public TestController(IUserService userService)
         {
