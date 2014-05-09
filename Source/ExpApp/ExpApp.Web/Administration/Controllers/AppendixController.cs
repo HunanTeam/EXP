@@ -11,7 +11,7 @@ namespace ExpApp.Admin.Controllers
 {
      
     [AdminPermission(PermissionCustomMode.Ignore)]
-    public class AppendixController : AdminBaseController
+    public class AppendixController : AdminController
     {
         //
         // GET: /SysConfig/Config/

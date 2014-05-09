@@ -15,9 +15,9 @@ using System.Web.Mvc;
 namespace ExpApp.Web.Framework.Common
 {
 	[AdminPermission(PermissionCustomMode.Enforce)]
-    public class AdminBaseController : Controller
+    public class AdminController : Controller
     {
-		public AdminBaseController()
+		public AdminController()
 		{
 			//TODO: Test
             //var userRole = new List<UserRole> { new UserRole { Id = 1, UserId = 1, RoleId = 1 } };

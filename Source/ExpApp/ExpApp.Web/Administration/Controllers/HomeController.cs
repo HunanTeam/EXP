@@ -13,7 +13,7 @@ namespace ExpApp.Admin.Controllers
 {
  
 	[AdminPermission(PermissionCustomMode.Ignore)]
-    public class HomeController : AdminBaseController
+    public class HomeController : AdminController
     {
         //
         // GET: /Common/Home/

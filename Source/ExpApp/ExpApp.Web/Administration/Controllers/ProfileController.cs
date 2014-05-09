@@ -22,7 +22,7 @@ namespace ExpApp.Admin.Controllers
 	 
 	
     [AdminPermission(PermissionCustomMode.Ignore)]
-	public class ProfileController : AdminBaseController
+	public class ProfileController : AdminController
     {
         public ProfileController(IUserService userService)
         {

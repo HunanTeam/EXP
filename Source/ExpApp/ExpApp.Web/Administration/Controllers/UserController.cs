@@ -20,7 +20,7 @@ using System.Web.Mvc;
 namespace ExpApp.Admin.Controllers
 {
 	 
-    public class UserController : AdminBaseController
+    public class UserController : AdminController
 	{
 
         public UserController(IUserService userService, IRoleService roleService)

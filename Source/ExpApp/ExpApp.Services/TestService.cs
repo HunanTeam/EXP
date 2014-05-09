@@ -8,7 +8,7 @@ namespace ExpApp.Services
 {
     public partial class TestService:CoreServiceBase,ITestService
     {
-
+        public TestService() : base(null) { }
         public void Insert()
         {
             User user = new User();

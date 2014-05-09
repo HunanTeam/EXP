@@ -19,7 +19,7 @@ using System.Web.Mvc;
 namespace ExpApp.Admin.Controllers
 {
 	 
-    public class PermissionController : AdminBaseController
+    public class PermissionController : AdminController
     {
         //
 		// GET: /Authen/Permission/

@@ -22,7 +22,7 @@ using ExpApp.Site.Models.Authen.RoleModulePermission;
 namespace ExpApp.Admin.Controllers
 {
 
-    public class RoleController : AdminBaseController
+    public class RoleController : AdminController
     {
         public RoleController(IUserService userService, IRoleService roleService,
             IModuleService moduleService, IPermissionService permissionService,

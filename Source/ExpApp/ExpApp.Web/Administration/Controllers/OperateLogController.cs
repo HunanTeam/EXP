@@ -15,7 +15,7 @@ using System.Web.Mvc;
 
 namespace ExpApp.Admin.Controllers
 {
-    public class OperateLogController : AdminBaseController
+    public class OperateLogController : AdminController
     {
 
         public OperateLogController(IOperateLogService operateLogService)
