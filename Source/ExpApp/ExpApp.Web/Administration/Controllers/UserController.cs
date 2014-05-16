@@ -19,36 +19,40 @@ using System.Web.Mvc;
 
 namespace ExpApp.Admin.Controllers
 {
-	 
+
     public class UserController : AdminController
-	{
+    {
 
         public UserController(IUserService userService, IRoleService roleService)
         {
             this.UserService = userService;
             this.RoleService = roleService;
         }
-		//
-		// GET: /Authen/User/
+        //
+        // GET: /Authen/User/
 
-		#region 属性
-		 
-		public IUserService UserService { get; set; }
+        #region 属性
 
-		 
-		public IRoleService RoleService { get; set; }
-		#endregion	
+        public IUserService UserService { get; set; }
 
-		[AdminLayout]
+
+        public IRoleService RoleService { get; set; }
+        #endregion
+
+        [AdminLayout]
         public ActionResult Index()
         {
             var model = new UserModel();
             return View(model);
         }
 
-		[AdminPermission(PermissionCustomMode.Ignore)]
+        [AdminPermission(PermissionCustomMode.Ignore)]
         public ActionResult List(DataTableParameter param)
         {
+           var searchModel=new SearchModel();
+           
+            this.UpdateModel<SearchModel>(searchModel);
+            
 			string columns = Request["sColumns"];
 			string sortCol = Request["iSortCol_0"];
 			string sortDir = Request["sSortDir_0"];
@@ -74,42 +78,17 @@ namespace ExpApp.Admin.Controllers
 				default: sortName = sortColumns[6]; break;
 			}
 			
-			#region Test
-			//PropertySortCondition[] sortConditions = new[] { new PropertySortCondition(propertyName, sortDirection)};
-
-			//var filterResult = UserService.Users.Where(expr, param.iDisplayStart, param.iDisplayLength, out total, sortConditions)
-			//							 .Select(t => new UserModel
-			//								 {
-			//									 Id = t.Id,
-			//									 LoginName = t.LoginName,
-			//									 Email = t.Email,
-			//									 FullName = t.FullName,
-			//									 Phone = t.Phone,
-			//									 Enabled = t.Enabled,
-			//									 RegisterTime = t.RegisterTime,
-			//									 LastLoginTime = t.LastLoginTime
-			//								 }
-			//							  );
-			#endregion
-
+		 
+           
+            
 			int total = UserService.Users.Count(t => t.IsDeleted == false);
 
 			//构建查询表达式
 			var expr = BuildSearchCriteria();
 
-			var filterResult = UserService.Users.Where(expr).Select(t => new UserModel
-											 {
-												 Id = t.Id,
-												 LoginName = t.LoginName,
-												 Email = t.Email,
-												 FullName = t.FullName,
-												 Phone = t.Phone,
-												 Enabled = t.Enabled,
-												 RegisterTime = t.RegisterTime,
-												 LastLoginTime = t.LastLoginTime
-											 }
-										  ).OrderBy(sortName, sortDirection).Skip(param.iDisplayStart).Take(param.iDisplayLength).ToList();
 
+            var filterResult = this.UserService.Search(searchModel, sortName, sortDirection, param.iDisplayStart, param.iDisplayLength);
+            
             int sortId = param.iDisplayStart + 1;
 
             var result = from c in filterResult
@@ -136,76 +115,76 @@ namespace ExpApp.Admin.Controllers
             }, JsonRequestBehavior.AllowGet);
         }
 
-		#region 构建查询表达式
-		/// <summary>
-		/// 构建查询表达式
-		/// </summary>
-		/// <returns></returns>
-		private Expression<Func<User, Boolean>> BuildSearchCriteria()
-		{
+        #region 构建查询表达式
+        /// <summary>
+        /// 构建查询表达式
+        /// </summary>
+        /// <returns></returns>
+        private Expression<Func<User, Boolean>> BuildSearchCriteria()
+        {
             DynamicLambdaHelper<User> bulider = new DynamicLambdaHelper<User>();
-			Expression<Func<User, Boolean>> expr = null;
-			if (!string.IsNullOrEmpty(Request["LoginName"]))
-			{
-				var data = Request["LoginName"].Trim();
-				Expression<Func<User, Boolean>> tmp = t => t.LoginName.Contains(data);
-				expr = bulider.BuildQueryAnd(expr, tmp);
-			}
-			if (!string.IsNullOrEmpty(Request["FullName"]))
-			{
-				var data = Request["FullName"].Trim();
-				Expression<Func<User, Boolean>> tmp = t => t.FullName.Contains(data);
-				expr = bulider.BuildQueryAnd(expr, tmp);
-			}
-			if (!string.IsNullOrEmpty(Request["Email"]))
-			{
-				var data = Request["Email"].Trim();
-				Expression<Func<User, Boolean>> tmp = t => t.Email.Contains(data);
-				expr = bulider.BuildQueryAnd(expr, tmp);
-			}
-			if (!string.IsNullOrEmpty(Request["Phone"]))
-			{
-				var data = Request["Phone"].Trim();
-				Expression<Func<User, Boolean>> tmp = t => t.Phone.Contains(data);
-				expr = bulider.BuildQueryAnd(expr, tmp);
-			}
-			if (Request["Enabled"] == "0" || Request["Enabled"] == "1")
-			{
-				var data = Request["Enabled"] == "1" ? true: false ;
-				Expression<Func<User, Boolean>> tmp = t => t.Enabled == data;
-				expr = bulider.BuildQueryAnd(expr, tmp);
-			}
-			if (!string.IsNullOrEmpty(Request["StartTime"]))
-			{
-				var data = Convert.ToDateTime(Request["StartTime"].Trim());
-				Expression<Func<User, Boolean>> tmp = t => t.RegisterTime >= data;
-				expr = bulider.BuildQueryAnd(expr, tmp);
-			}
-			if (!string.IsNullOrEmpty(Request["EndTime"]))
-			{
-				var data = Convert.ToDateTime(Request["EndTime"].Trim()).AddDays(1);
-				Expression<Func<User, Boolean>> tmp = t => t.RegisterTime <= data;
-				expr = bulider.BuildQueryAnd(expr, tmp);
-			}
-			Expression<Func<User, Boolean>> tmpSolid = t => t.IsDeleted == false;
-			expr = bulider.BuildQueryAnd(expr, tmpSolid);
+            Expression<Func<User, Boolean>> expr = null;
+            if (!string.IsNullOrEmpty(Request["LoginName"]))
+            {
+                var data = Request["LoginName"].Trim();
+                Expression<Func<User, Boolean>> tmp = t => t.LoginName.Contains(data);
+                expr = bulider.BuildQueryAnd(expr, tmp);
+            }
+            if (!string.IsNullOrEmpty(Request["FullName"]))
+            {
+                var data = Request["FullName"].Trim();
+                Expression<Func<User, Boolean>> tmp = t => t.FullName.Contains(data);
+                expr = bulider.BuildQueryAnd(expr, tmp);
+            }
+            if (!string.IsNullOrEmpty(Request["Email"]))
+            {
+                var data = Request["Email"].Trim();
+                Expression<Func<User, Boolean>> tmp = t => t.Email.Contains(data);
+                expr = bulider.BuildQueryAnd(expr, tmp);
+            }
+            if (!string.IsNullOrEmpty(Request["Phone"]))
+            {
+                var data = Request["Phone"].Trim();
+                Expression<Func<User, Boolean>> tmp = t => t.Phone.Contains(data);
+                expr = bulider.BuildQueryAnd(expr, tmp);
+            }
+            if (Request["Enabled"] == "0" || Request["Enabled"] == "1")
+            {
+                var data = Request["Enabled"] == "1" ? true : false;
+                Expression<Func<User, Boolean>> tmp = t => t.Enabled == data;
+                expr = bulider.BuildQueryAnd(expr, tmp);
+            }
+            if (!string.IsNullOrEmpty(Request["StartTime"]))
+            {
+                var data = Convert.ToDateTime(Request["StartTime"].Trim());
+                Expression<Func<User, Boolean>> tmp = t => t.RegisterTime >= data;
+                expr = bulider.BuildQueryAnd(expr, tmp);
+            }
+            if (!string.IsNullOrEmpty(Request["EndTime"]))
+            {
+                var data = Convert.ToDateTime(Request["EndTime"].Trim()).AddDays(1);
+                Expression<Func<User, Boolean>> tmp = t => t.RegisterTime <= data;
+                expr = bulider.BuildQueryAnd(expr, tmp);
+            }
+            Expression<Func<User, Boolean>> tmpSolid = t => t.IsDeleted == false;
+            expr = bulider.BuildQueryAnd(expr, tmpSolid);
 
-			return expr;
-		}
+            return expr;
+        }
 
-		#endregion
+        #endregion
 
-		[AdminPermission(PermissionCustomMode.Ignore)]
-		public JsonResult CheckLoginName(string loginName)
-		{
-			bool isExist = false;
-			var entity = UserService.Users.FirstOrDefault(t => t.LoginName.ToLower() == loginName.ToLower());
-			if (entity != null)
-			{
-				isExist = true;
-			}
-			return Json(!isExist, JsonRequestBehavior.AllowGet);
-		}
+        [AdminPermission(PermissionCustomMode.Ignore)]
+        public JsonResult CheckLoginName(string loginName)
+        {
+            bool isExist = false;
+            var entity = UserService.Users.FirstOrDefault(t => t.LoginName.ToLower() == loginName.ToLower());
+            if (entity != null)
+            {
+                isExist = true;
+            }
+            return Json(!isExist, JsonRequestBehavior.AllowGet);
+        }
 
         public ActionResult Create()
         {
@@ -216,12 +195,12 @@ namespace ExpApp.Admin.Controllers
         }
 
         [HttpPost]
-		[AdminOperateLog]
+        [AdminOperateLog]
         public ActionResult Create(UserModel model)
         {
             if (ModelState.IsValid)
             {
-				this.CreateBaseData<UserModel>(model);
+                this.CreateBaseData<UserModel>(model);
                 OperationResult result = UserService.Insert(model);
                 if (result.ResultType == OperationResultType.Success)
                 {
@@ -239,7 +218,7 @@ namespace ExpApp.Admin.Controllers
                 //User Role
                 model.RoleList = RoleService.GetKeyValueList();
                 return PartialView(model);
-            }          
+            }
         }
 
         public ActionResult Edit(int Id)
@@ -247,9 +226,9 @@ namespace ExpApp.Admin.Controllers
             var model = new UpdateUserModel();
             var entity = UserService.Users.FirstOrDefault(t => t.Id == Id);
             if (null != entity)
-            { 
-                model = new UpdateUserModel 
-                { 
+            {
+                model = new UpdateUserModel
+                {
                     Id = entity.Id,
                     LoginName = entity.LoginName,
                     Email = entity.Email,
@@ -257,14 +236,14 @@ namespace ExpApp.Admin.Controllers
                     Phone = entity.Phone,
                     Enabled = entity.Enabled,
                     RegisterTime = entity.RegisterTime,
-                    LastLoginTime = entity.LastLoginTime                  
+                    LastLoginTime = entity.LastLoginTime
                 };
                 //Selected Role 
                 foreach (var userRole in entity.UserRole.Where(t => t.IsDeleted == false))
                 {
                     model.SelectedRoleList.Add(userRole.RoleId);
                 }
-                
+
             }
             //User Role
             model.RoleList = RoleService.GetKeyValueList();
@@ -272,12 +251,12 @@ namespace ExpApp.Admin.Controllers
         }
 
         [HttpPost]
-		[AdminOperateLog]
+        [AdminOperateLog]
         public ActionResult Edit(UpdateUserModel model)
         {
             if (ModelState.IsValid)
             {
-				this.UpdateBaseData<UpdateUserModel>(model);
+                this.UpdateBaseData<UpdateUserModel>(model);
                 OperationResult result = UserService.Update(model);
                 if (result.ResultType == OperationResultType.Success)
                 {
@@ -291,54 +270,55 @@ namespace ExpApp.Admin.Controllers
             else
             {
                 return PartialView(model);
-            }   
+            }
         }
 
-		public ActionResult ChangePwd(int Id)
-		{
-			var model = new ChangePwdModel();
-			var entity = UserService.Users.FirstOrDefault(t => t.Id == Id);
-			if (entity != null)
-			{
-				model.Id = entity.Id;
-				model.LoginName = entity.LoginName;
-				model.Email = entity.Email;
-			}
-			return PartialView(model);
-		}
+        public ActionResult ChangePwd(int Id)
+        {
+            var model = new ChangePwdModel();
+            var entity = UserService.Users.FirstOrDefault(t => t.Id == Id);
+            if (entity != null)
+            {
+                model.Id = entity.Id;
+                model.LoginName = entity.LoginName;
+                model.Email = entity.Email;
+            }
+            return PartialView(model);
+        }
 
-		[HttpPost]
-		[AdminOperateLog]
-		public ActionResult ChangePwd(ChangePwdModel model)
-		{
-			if (ModelState.IsValid)
-			{
-				this.UpdateBaseData<ChangePwdModel>(model);
-				OperationResult result = UserService.Update(model);
-				if (result.ResultType == OperationResultType.Success)
-				{
-					return Json(result);
-				}
-				else
-				{
-					return PartialView(model);
-				}
-			}
-			else
-			{
-				return PartialView(model);
-			}
-		}
+        [HttpPost]
+        [AdminOperateLog]
+        public ActionResult ChangePwd(ChangePwdModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                this.UpdateBaseData<ChangePwdModel>(model);
+                OperationResult result = UserService.Update(model);
+                if (result.ResultType == OperationResultType.Success)
+                {
+                    return Json(result);
+                }
+                else
+                {
+                    return PartialView(model);
+                }
+            }
+            else
+            {
+                return PartialView(model);
+            }
+        }
 
-		[AdminOperateLog]
+        [AdminOperateLog]
         public ActionResult Delete(int Id)
         {
-			var model = new UserModel { 
-				Id = Id
-			};
-			this.UpdateBaseData<UserModel>(model);
-			OperationResult result = UserService.Delete(model);
+            var model = new UserModel
+            {
+                Id = Id
+            };
+            this.UpdateBaseData<UserModel>(model);
+            OperationResult result = UserService.Delete(model);
             return Json(result);
         }
-	}
+    }
 }

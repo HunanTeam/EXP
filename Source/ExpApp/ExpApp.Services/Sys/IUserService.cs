@@ -3,6 +3,7 @@ using ExpApp.Site.Models.Authen.User;
 using System;
 using System.Linq;
 using ExpApp.Domain.Models.Sys;
+using System.ComponentModel;
 
 
 namespace ExpApp.Services.Sys
@@ -14,9 +15,11 @@ namespace ExpApp.Services.Sys
     {
 		#region 属性
 
-        IQueryable<User> Users { get; }
+       IQueryable<User> Users { get; }
 
         #endregion
+
+
 
         #region 公共方法
 
@@ -27,7 +30,6 @@ namespace ExpApp.Services.Sys
         OperationResult Update(UpdateUserModel model);
 
 		OperationResult Update(ChangePwdModel model);
-
         /// <summary>
         /// 逻辑删除
         /// </summary>
@@ -35,7 +37,12 @@ namespace ExpApp.Services.Sys
         /// <returns></returns>
         OperationResult Delete(UserModel model);
 
-        
+
+        OperationResult CheckLogin(LoginModel lgoinModel);
+
+        IPagedList<UserModel> Search(SearchModel searchModel, string orderBy, ListSortDirection sortDirection, int pageIndex, int pageSize);
         #endregion
+
+
 	}
 }

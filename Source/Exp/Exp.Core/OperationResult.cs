@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
+using System.Web.Script.Serialization;
 
 namespace Exp.Core
 {
@@ -93,7 +94,8 @@ namespace Exp.Core
         ///     获取或设置 操作结果附加信息
         /// </summary>
         public object AppendData { get; set; }
-
+        [ScriptIgnore]
+        public dynamic Result { get; set; }
         #endregion
     }
     /// <summary>
