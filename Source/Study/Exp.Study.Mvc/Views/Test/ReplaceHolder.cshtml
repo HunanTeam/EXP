@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "ReplaceHolder";
+}
+
+
+<input type="button" value="设置" id="btnSet" onclick="Do();" />
+<input type="button" value="添加" id="btnAdd2" />
+<div id="placeHolderContainer"></div>
+@section scripts{
+    <script type="text/javascript">
+
+        function Do() {
+            $("#btnAdd2").click(function () {
+                $.get("@Url.Action("PlaceHolderContent")", function (data) {
+                    $("#placeHolderContainer").html("");
+                    $("#placeHolderContainer").html(data);
+                });
+            });
+        }
+    </script>
+}
