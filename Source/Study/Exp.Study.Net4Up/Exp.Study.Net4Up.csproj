@@ -4,13 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E3390369-A8F7-4E2B-B55A-51C404AE69D6}</ProjectGuid>
+    <ProjectGuid>{20D1D82D-5A07-44A7-BB24-AC2046E9DE6D}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Exp.Study</RootNamespace>
-    <AssemblyName>Exp.Study</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <RootNamespace>Exp.Study.Net4Up</RootNamespace>
+    <AssemblyName>Exp.Study.Net4Up</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -32,56 +33,29 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Exp.Study.CSharper.DynamicObjectTest</StartupObject>
+    <StartupObject>Exp.Study.Net4Up.DynamicDo.DynamicJsonTest</StartupObject>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=4.4.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="NewLife.CommonEntity">
-      <HintPath>..\..\lib\NewLife\NewLife.CommonEntity.dll</HintPath>
-    </Reference>
-    <Reference Include="NewLife.Core">
-      <HintPath>..\..\lib\NewLife\NewLife.Core.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="XCode">
-      <HintPath>..\..\lib\NewLife\XCode.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EF\BaseEntity.cs" />
-    <Compile Include="EF\Demo.cs" />
-    <Compile Include="EF\Entities\Role.cs" />
-    <Compile Include="EF\Entities\User.cs" />
-    <Compile Include="EF\Entities\UserRole.cs" />
-    <Compile Include="LinqDo\Demo.cs" />
-    <Compile Include="NewLifeDo\Customer.cs" />
-    <Compile Include="NewLifeDo\Demo.cs" />
-    <Compile Include="NewLifeDo\Entity\Address.Biz.cs" />
-    <Compile Include="NewLifeDo\Entity\Address.cs" />
-    <Compile Include="NewLifeDo\Entity\LoginInfo.Biz.cs" />
-    <Compile Include="NewLifeDo\Entity\LoginInfo.cs" />
-    <Compile Include="NewLifeDo\Entity\User.Biz.cs" />
-    <Compile Include="NewLifeDo\Entity\User.cs" />
+    <Compile Include="DynamicDo\DynamicJson.cs" />
+    <Compile Include="DynamicDo\DynamicJsonTest.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="说明.txt" />
+    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
+    <Content Include="说明.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
