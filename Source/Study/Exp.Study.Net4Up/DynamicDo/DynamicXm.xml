@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Root>
+  <Settings>
+    <Setting name="Test">
+      <Item Key="1" Val="001" Desc="测试属性"></Item>
+      <Item Key="2" Val="002"></Item>
+    </Setting>
+  </Settings>
+  
+</Root>

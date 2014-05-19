@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Exp.Study.Net4Up.DynamicDo.DynamicJsonTest</StartupObject>
+    <StartupObject>Exp.Study.Net4Up.IQueryableDo.IQueryableTest</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -48,6 +48,9 @@
   <ItemGroup>
     <Compile Include="DynamicDo\DynamicJson.cs" />
     <Compile Include="DynamicDo\DynamicJsonTest.cs" />
+    <Compile Include="DynamicDo\DynamicXml.cs" />
+    <Compile Include="DynamicDo\DynamicXmlTest.cs" />
+    <Compile Include="IQueryableDo\IQueryableTest.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -55,6 +58,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DynamicDo\DynamicXm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="说明.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
