@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exp.Study.MVC5", "Study\Exp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exp.Study.Net4Up", "Study\Exp.Study.Net4Up\Exp.Study.Net4Up.csproj", "{20D1D82D-5A07-44A7-BB24-AC2046E9DE6D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exp.Study.EF6", "Study\Exp.Study.EF6\Exp.Study.EF6.csproj", "{A288B4A9-3118-4C11-B817-6EC39D6FB0A8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{20D1D82D-5A07-44A7-BB24-AC2046E9DE6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{20D1D82D-5A07-44A7-BB24-AC2046E9DE6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{20D1D82D-5A07-44A7-BB24-AC2046E9DE6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A288B4A9-3118-4C11-B817-6EC39D6FB0A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A288B4A9-3118-4C11-B817-6EC39D6FB0A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A288B4A9-3118-4C11-B817-6EC39D6FB0A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A288B4A9-3118-4C11-B817-6EC39D6FB0A8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
