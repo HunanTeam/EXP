@@ -39,11 +39,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -115,7 +121,16 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\EFController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Data\Context\EfRepository.cs" />
+    <Compile Include="Data\Context\MyDbContext.cs" />
+    <Compile Include="Data\Entites\Address.cs" />
+    <Compile Include="Data\Entites\User.cs" />
+    <Compile Include="Data\BaseEntity.cs" />
+    <Compile Include="Data\Init\CreateTablesIfNotExist.cs" />
+    <Compile Include="Data\Maps\AddressMap.cs" />
+    <Compile Include="Data\Maps\UserMap.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -151,6 +166,8 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\EF\Index.cshtml" />
+    <Content Include="Views\EF\InitUser.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

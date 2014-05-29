@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Exp.Study.EF6.Data.Context;
+using Exp.Study.EF6.Data.Init;
+using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -16,6 +19,10 @@ namespace Exp.Study.EF6
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+
+            var initializer = new CreateTablesIfNotExist<MyDbContext>(null, null);
+            Database.SetInitializer(initializer);
         }
     }
 }

@@ -1,0 +1,11 @@
+﻿@using Exp.Study.EF6.Data.Entites;
+@model IEnumerable<User>
+@{
+    ViewBag.Title = "InitUser";
+}
+
+@foreach (var u in Model)
+{
+    @u.Name  <br />
+}
+
